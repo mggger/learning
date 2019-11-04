@@ -1,0 +1,596 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>jackson - 学习笔记</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../../scala/f.html"><strong aria-hidden="true">1.</strong> 函数式编程</a></li><li><ol class="section"><li><a href="../../scala/functional/theory.html"><strong aria-hidden="true">1.1.</strong> 理论</a></li></ol></li><li><a href="../../scala/akka.html"><strong aria-hidden="true">2.</strong> akka</a></li><li><ol class="section"><li><a href="../../scala/akka/future.html"><strong aria-hidden="true">2.1.</strong> future</a></li><li><a href="../../scala/akka/distribute.html"><strong aria-hidden="true">2.2.</strong> 分布式</a></li><li><a href="../../scala/akka/config_log.html"><strong aria-hidden="true">2.3.</strong> 配置与日志</a></li><li><a href="../../scala/akka/structure.html"><strong aria-hidden="true">2.4.</strong> Actor的结构模式</a></li><li><a href="../../scala/akka/router.html"><strong aria-hidden="true">2.5.</strong> 路由消息</a></li><li><a href="../../scala/akka/channel.html"><strong aria-hidden="true">2.6.</strong> 消息通道</a></li><li><a href="../../scala/akka/stream.html"><strong aria-hidden="true">2.7.</strong> 流</a></li><li><a href="../../scala/akka/profile.html"><strong aria-hidden="true">2.8.</strong> 性能调优</a></li></ol></li><li><a href="../../kafka/index.html"><strong aria-hidden="true">3.</strong> kafka</a></li><li><ol class="section"><li><a href="../../kafka/chapter_1.html"><strong aria-hidden="true">3.1.</strong> kafka使用场景</a></li><li><a href="../../kafka/chapter_2.html"><strong aria-hidden="true">3.2.</strong> kafka使用指南-生产者</a></li><li><a href="../../kafka/chapter_3.html"><strong aria-hidden="true">3.3.</strong> kafka使用指南-消费者</a></li><li><a href="../../kafka/chapter_4.html"><strong aria-hidden="true">3.4.</strong> 消息可靠性保证</a></li><li><ol class="section"><li><a href="../../kafka/chapter_4_1.html"><strong aria-hidden="true">3.4.1.</strong> 生产者</a></li><li><a href="../../kafka/chapter_4_2.html"><strong aria-hidden="true">3.4.2.</strong> 消费者</a></li></ol></li><li><a href="../../kafka/kafka-streaming.html"><strong aria-hidden="true">3.5.</strong> kafka-streams</a></li><li><ol class="section"><li><a href="../../kafka/kafka-state.html"><strong aria-hidden="true">3.5.1.</strong> 流和状态</a></li><li><a href="../../kafka/join.html"><strong aria-hidden="true">3.5.2.</strong> join</a></li><li><a href="../../kafka/timestamp.html"><strong aria-hidden="true">3.5.3.</strong> 时间戳</a></li><li><a href="../../kafka/ktable.html"><strong aria-hidden="true">3.5.4.</strong> KTable</a></li><li><a href="../../kafka/watch.html"><strong aria-hidden="true">3.5.5.</strong> 性能测量</a></li><li><a href="../../kafka/transaction.html"><strong aria-hidden="true">3.5.6.</strong> 精确一次处理语义</a></li></ol></li></ol></li><li><a href="../../druid/about.html"><strong aria-hidden="true">4.</strong> druid</a></li><li><ol class="section"><li><a href="../../druid/source/source.html"><strong aria-hidden="true">4.1.</strong> 源码学习</a></li><li><ol class="section"><li><a href="../../druid/source/maven.html"><strong aria-hidden="true">4.1.1.</strong> maven</a></li><li><a href="../../druid/source/debug.html"><strong aria-hidden="true">4.1.2.</strong> 调试</a></li><li><a href="../../druid/source/3libs.html"><strong aria-hidden="true">4.1.3.</strong> 第三方库</a></li><li><ol class="section"><li><a href="../../druid/source/google_guice.html"><strong aria-hidden="true">4.1.3.1.</strong> google guice</a></li><li><a href="../../druid/source/curator.html"><strong aria-hidden="true">4.1.3.2.</strong> curator</a></li><li><a href="../../druid/source/jackson.html" class="active"><strong aria-hidden="true">4.1.3.3.</strong> jackson</a></li></ol></li></ol></li><li><a href="../../druid/deploy/deploy.html"><strong aria-hidden="true">4.2.</strong> 运维</a></li><li><ol class="section"><li><a href="../../druid/deploy/docker.html"><strong aria-hidden="true">4.2.1.</strong> docker</a></li></ol></li></ol></li><li><a href="../../flink/about.html"><strong aria-hidden="true">5.</strong> flink</a></li><li><ol class="section"><li><a href="../../flink/flink/1.html"><strong aria-hidden="true">5.1.</strong> 架构</a></li><li><a href="../../flink/flink/2.html"><strong aria-hidden="true">5.2.</strong> 状态管理</a></li><li><a href="../../flink/flink/3.html"><strong aria-hidden="true">5.3.</strong> 时间戳</a></li><li><a href="../../flink/table.html"><strong aria-hidden="true">5.4.</strong> flink table</a></li><li><ol class="section"><li><a href="../../flink/table/1.html"><strong aria-hidden="true">5.4.1.</strong> 关系代数</a></li><li><a href="../../flink/table/2.html"><strong aria-hidden="true">5.4.2.</strong> apache calcite</a></li></ol></li></ol></li><li><a href="../../spark/about.html"><strong aria-hidden="true">6.</strong> spark</a></li><li><ol class="section"><li><a href="../../spark/sparksql.html"><strong aria-hidden="true">6.1.</strong> SparkSql</a></li><li><a href="../../spark/antlr.html"><strong aria-hidden="true">6.2.</strong> Antlr</a></li><li><a href="../../spark/optimized_in_prod.html"><strong aria-hidden="true">6.3.</strong> 常用优化手段</a></li><li><a href="../../spark/deploy.html"><strong aria-hidden="true">6.4.</strong> spark on k8s</a></li></ol></li><li><a href="../../k8s/k8s/about.html"><strong aria-hidden="true">7.</strong> k8s</a></li><li><ol class="section"><li><a href="../../k8s/k8s/headless.html"><strong aria-hidden="true">7.1.</strong> Headless Services</a></li><li><a href="../../k8s/k8s/disruptions.html"><strong aria-hidden="true">7.2.</strong> Disruptions</a></li><li><a href="../../k8s/k8s/stateful.html"><strong aria-hidden="true">7.3.</strong> stateful service</a></li><li><a href="../../k8s/helm.html"><strong aria-hidden="true">7.4.</strong> Helm</a></li></ol></li><li><a href="../../design/about.html"><strong aria-hidden="true">8.</strong> 设计模式</a></li><li><ol class="section"><li><a href="../../design/uml.html"><strong aria-hidden="true">8.1.</strong> 深入浅出UML类图</a></li><li><a href="../../design/create.html"><strong aria-hidden="true">8.2.</strong> 创建型模式</a></li><li><a href="../../design/structure.html"><strong aria-hidden="true">8.3.</strong> 结构性模式</a></li><li><a href="../../design/behavior.html"><strong aria-hidden="true">8.4.</strong> 行为模式</a></li></ol></li><li><a href="../../postgres/about.html"><strong aria-hidden="true">9.</strong> postgres</a></li><li><ol class="section"><li><a href="../../postgres/mvcc.html"><strong aria-hidden="true">9.1.</strong> MVCC</a></li><li><a href="../../postgres/index.html"><strong aria-hidden="true">9.2.</strong> 索引</a></li><li><a href="../../postgres/statistics.html"><strong aria-hidden="true">9.3.</strong> 统计信息</a></li><li><a href="../../postgres/partition.html"><strong aria-hidden="true">9.4.</strong> 分区</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">学习笔记</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#jackson" id="jackson"><h1>Jackson</h1></a>
+<p>Jackson是java通过json做序列化， 反序列化的第三方库</p>
+<a class="header" href="#jackson-annotation" id="jackson-annotation"><h2>Jackson Annotation</h2></a>
+<a class="header" href="#序列化注解" id="序列化注解"><h3>序列化注解</h3></a>
+<a class="header" href="#jsonanygetter" id="jsonanygetter"><h4>@JsonAnyGetter</h4></a>
+<p>@JsonAnyGetter 序列化java的Map数据结构</p>
+<p>Example:</p>
+<pre><code class="language-java">public class Bean
+{
+
+  public String name;
+
+  private Map&lt;String, String&gt; properties;
+
+
+  @JsonAnyGetter
+  public Map&lt;String, String&gt; getProperties()
+  {
+    return properties;
+  }
+
+  public Bean(String name)
+  {
+
+    this.name = name;
+    this.properties = new HashMap&lt;String, String&gt;();
+
+  }
+
+
+  public void add(String k, String v)
+  {
+
+    this.properties.put(k, v);
+
+  }
+}
+
+</code></pre>
+<pre><code class="language-java">public class Main
+{
+
+
+  public static void main(String[] args) throws JsonProcessingException
+  {
+
+
+    Bean bean = new Bean(&quot;1&quot;);
+    bean.add(&quot;attr1&quot;, &quot;va11&quot;);
+    bean.add(&quot;attr2&quot;, &quot;val2&quot;);
+
+    String result = new ObjectMapper().writeValueAsString(bean);
+    System.out.println(result);
+  }
+}
+
+</code></pre>
+<a class="header" href="#jsonpropertyorder" id="jsonpropertyorder"><h4>@JsonPropertyOrder</h4></a>
+<p>保持序列化的顺序</p>
+<pre><code class="language-java">@JsonPropertyOrder({ &quot;name&quot;, &quot;id&quot; })
+public class MyBean {
+    public int id;
+    public String name;
+}
+
+</code></pre>
+<p>Output:</p>
+<pre><code>{
+    &quot;name&quot;:&quot;My bean&quot;,
+    &quot;id&quot;:1
+}
+</code></pre>
+<a class="header" href="#jsonrawvalue" id="jsonrawvalue"><h4>@JsonRawValue</h4></a>
+<p>一般用于嵌入json</p>
+<pre><code class="language-Java">public class RawBean {
+    public String name;
+ 
+    @JsonRawValue
+    public String json;
+}
+
+</code></pre>
+<p>Output:</p>
+<pre><code>{
+    &quot;name&quot;:&quot;My bean&quot;,
+    &quot;json&quot;:{
+        &quot;attr&quot;:false
+    }
+}
+
+</code></pre>
+<a class="header" href="#jsonvalue" id="jsonvalue"><h4>@JsonValue</h4></a>
+<p>序列化实例的单个方法</p>
+<pre><code class="language-java">public enum Bean
+{
+  Type1(&quot;type 1&quot;), Type2(&quot;Type 2&quot;);
+
+
+  private String name;
+
+  Bean(String name)
+  {
+    this.name = name;
+  }
+
+  @JsonValue
+  public String getName()
+  {
+    return name;
+  }
+}
+</code></pre>
+<a class="header" href="#jsonrootname" id="jsonrootname"><h4>@JsonRootName</h4></a>
+<p>使用注释来指定要使用的根包装齐器的名称.</p>
+<pre><code>
+@JsonRootName(value = &quot;user&quot;)
+public class Bean
+{
+  @JsonProperty
+  private String name;
+
+  @JsonProperty
+  private int Id;
+
+  public Bean(String name, int Id)
+  {
+    this.name = name;
+    this.Id = Id;
+  }
+}
+</code></pre>
+<p>Output:</p>
+<pre><code>{&quot;user&quot;:{&quot;name&quot;:&quot;wang&quot;,&quot;Id&quot;:1}}
+</code></pre>
+<a class="header" href="#jsonserialize" id="jsonserialize"><h4>@JsonSerialize</h4></a>
+<p>按照自定义的格式进行序列化， 常用于时间</p>
+<a class="header" href="#反序列化注解" id="反序列化注解"><h3>反序列化注解</h3></a>
+<a class="header" href="#jsoncreator" id="jsoncreator"><h4>@JsonCreator</h4></a>
+<p>配合JsonProperty将字符串序列化为java的类</p>
+<pre><code class="language-java">public class Bean
+{
+  public String name;
+
+  public int Id;
+
+  @JsonCreator
+  public Bean(
+      @JsonProperty(&quot;name&quot;) String name,
+      @JsonProperty(&quot;id&quot;) int Id
+  )
+  {
+    this.name = name;
+    this.Id = Id;
+  }
+}
+</code></pre>
+<a class="header" href="#jacksoninject" id="jacksoninject"><h4>@JacksonInject</h4></a>
+<p>@JacksonInject表示属性将从注入中获取其值，而不是从JSON数据中获取。</p>
+<a class="header" href="#jsonanysetter" id="jsonanysetter"><h4>@JsonAnySetter</h4></a>
+<p>@jacaksonAnySetter将json映射为java的map类型</p>
+<a class="header" href="#jsonsetter" id="jsonsetter"><h4>@JsonSetter</h4></a>
+<p>@JsonSetter是@JsonProperty的替代方案</p>
+<a class="header" href="#jsondeserialize" id="jsondeserialize"><h4>@JsonDeserialize</h4></a>
+<p>按照自定义时间字符串反序列化java的property</p>
+<a class="header" href="#jsonalias" id="jsonalias"><h4>@JsonAlias</h4></a>
+<p>@JsonAlias在反序列化期间为属性定义了一个或多个备用名称</p>
+<p>Example:</p>
+<pre><code class="language-java">public class AliasBean {
+    @JsonAlias({ &quot;fName&quot;, &quot;f_name&quot; })
+    private String firstName;   
+    private String lastName;
+}
+</code></pre>
+<a class="header" href="#jacakson一些属性过滤的注解" id="jacakson一些属性过滤的注解"><h3>jacakson一些属性过滤的注解</h3></a>
+<a class="header" href="#jsonignoreproperties" id="jsonignoreproperties"><h4>@JsonIgnoreProperties</h4></a>
+<p>忽略某个属性</p>
+<p>level: class</p>
+<a class="header" href="#jsonignore" id="jsonignore"><h4>@JsonIgnore</h4></a>
+<p>@JsonIgnore注释用于标记属性要在字段级别忽略</p>
+<p>level: field</p>
+<a class="header" href="#jsonignoretype" id="jsonignoretype"><h4>@JsonIgnoreType</h4></a>
+<p>@JsonIgnoreType标记要忽略的带注释类型的所有属性。</p>
+<a class="header" href="#jsoninclude" id="jsoninclude"><h4>@JsonInclude</h4></a>
+<p>我们可以使用@JsonInclude来排除具有 empty/ null / defualt的属性。</p>
+<a class="header" href="#jsonautodetect" id="jsonautodetect"><h4>@JsonAutoDetect</h4></a>
+<p>@JsonAutoDetect可以覆盖哪些属性可见而哪些不可见的默认语义。</p>
+<p>序列化私有的properties</p>
+<pre><code class="language-java">@JsonAutoDetect(fieldVisibility = Visibility.ANY)
+public class PrivateBean {
+    private int id;
+    private String name;
+}
+</code></pre>
+<a class="header" href="#jackson多态类型处理注释" id="jackson多态类型处理注释"><h3>jackson多态类型处理注释</h3></a>
+<ul>
+<li>@JsonTypeInfo – 表示序列化中包含的类型信息的详细信息</li>
+<li>@JsonSubTypes - 表示带注释的类型的子类型</li>
+<li>@JsonTypeName - 定义用于带注释的类的逻辑类型名称</li>
+</ul>
+<p>Example</p>
+<pre><code class="language-java">public class Zoo
+{
+
+  public Animal animal;
+
+
+  @JsonTypeInfo(
+      use = JsonTypeInfo.Id.NAME,
+      include = JsonTypeInfo.As.PROPERTY,
+      property = &quot;type&quot;
+  )
+  @JsonSubTypes(
+      {
+          @JsonSubTypes.Type(value = Dog.class, name = &quot;dog&quot;),
+      }
+  )
+  public static class Animal
+  {
+    public String name;
+
+  }
+
+
+  public Zoo(Animal a)
+  {
+    this.animal = a;
+  }
+
+  @JsonTypeName(&quot;dog&quot;)
+  public static class Dog extends Animal
+  {
+    public double barkVolume;
+
+    public Dog(String name)
+    {
+      this.name = name;
+    }
+
+  }
+}
+</code></pre>
+<pre><code class="language-java">public class Main
+{
+  public static void main(String[] args) throws JsonProcessingException
+  {
+
+    Zoo.Dog dog = new Zoo.Dog(&quot;Lacy&quot;);
+
+    Zoo bean = new Zoo(dog);
+
+
+    String result = new ObjectMapper().writeValueAsString(bean);
+
+    System.out.println(result);
+  }
+}
+</code></pre>
+<p><strong>output:</strong> {&quot;animal&quot;:{&quot;type&quot;:&quot;dog&quot;,&quot;name&quot;:&quot;Lacy&quot;,&quot;barkVolume&quot;:0.0}}</p>
+<a class="header" href="#jackson-常用注解" id="jackson-常用注解"><h3>Jackson 常用注解</h3></a>
+<a class="header" href="#jsonproperty" id="jsonproperty"><h4>@JsonProperty</h4></a>
+<p>我们可以添加@JsonProperty注释来指示JSON中的属性名称</p>
+<a class="header" href="#jsonformat" id="jsonformat"><h4>@JsonFormat</h4></a>
+<p>@JsonFormat注释指定序列化日期/时间值时的格式。</p>
+<p>Example:</p>
+<pre><code class="language-java">public class Event {
+    public String name;
+ 
+    @JsonFormat(
+      shape = JsonFormat.Shape.STRING,
+      pattern = &quot;dd-MM-yyyy hh:mm:ss&quot;)
+    public Date eventDate;
+}
+
+</code></pre>
+<a class="header" href="#jsonunwrapped" id="jsonunwrapped"><h4>@JsonUnwrapped</h4></a>
+<p>@JsonUnwrapped定义了序列化/反序列化时应解包/展平的值。</p>
+<p>Example:</p>
+<pre><code class="language-java">public class UnwrappedUser {
+    public int id;
+ 
+    @JsonUnwrapped
+    public Name name;
+ 
+    public static class Name {
+        public String firstName;
+        public String lastName;
+    }
+}
+</code></pre>
+<a class="header" href="#jsonview" id="jsonview"><h4>@JsonView</h4></a>
+<p>@JsonView表示将包含属性以进行序列化/反序列化的视图。</p>
+<p>Example:</p>
+<pre><code class="language-java">public class Views {
+    public static class Public {}
+    public static class Internal extends Public {}
+}
+
+
+
+public class Item {
+    @JsonView(Views.Public.class)
+    public int id;
+ 
+    @JsonView(Views.Public.class)
+    public String itemName;
+ 
+    @JsonView(Views.Internal.class)
+    public String ownerName;
+}
+</code></pre>
+<a class="header" href="#jsonmanagedreference-jsonbackreference" id="jsonmanagedreference-jsonbackreference"><h4>@JsonManagedReference, @JsonBackReference</h4></a>
+<p>@JsonManagedReference和@JsonBackReference注释可以处理父/子关系并解决循环问题。</p>
+<pre><code class="language-java">public class ItemWithRef
+{
+
+  public int id;
+  public String itemName;
+
+  @JsonManagedReference
+  public UserWithRef owner;
+
+
+  public ItemWithRef(int id, String itemName, UserWithRef o)
+  {
+    this.id = id;
+
+    this.itemName = itemName;
+
+    this.owner = o;
+
+  }
+}
+</code></pre>
+<pre><code class="language-java">public class UserWithRef
+{
+
+  public int id;
+  public String name;
+
+
+  @JsonBackReference
+  public List&lt;ItemWithRef&gt; userItems;
+
+  public UserWithRef(int id, String name)
+  {
+
+    this.id = id;
+    this.name = name;
+
+    this.userItems = new LinkedList&lt;ItemWithRef&gt;();
+
+  }
+
+
+  public void add(ItemWithRef item)
+  {
+    userItems.add(item);
+  }
+
+}
+</code></pre>
+<pre><code class="language-java">public class Main
+{
+
+
+  public static void main(String[] args) throws JsonProcessingException
+  {
+
+
+    UserWithRef user = new UserWithRef(1, &quot;john&quot;);
+
+    ItemWithRef item = new ItemWithRef(2, &quot;book&quot;, user);
+
+    user.add(item);
+
+
+    String result = new ObjectMapper().writeValueAsString(item);
+
+    System.out.println(result);
+
+
+  }
+}
+
+</code></pre>
+<p><strong>output:</strong> {&quot;id&quot;:2,&quot;itemName&quot;:&quot;book&quot;,&quot;owner&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;john&quot;}}</p>
+<a class="header" href="#jsonidentityinfo" id="jsonidentityinfo"><h4>@JsonIdentityInfo</h4></a>
+<p>@JsonIdentityInfo指示在序列化/反序列化值时应使用对象标识 - 例如，处理无限递归类型的问题。</p>
+<a class="header" href="#jsonfilter" id="jsonfilter"><h4>@JsonFilter</h4></a>
+<p>@JsonFilter注释指定在序列化期间使用的过滤器。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../druid/source/curator.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../druid/deploy/deploy.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../../druid/source/curator.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../../druid/deploy/deploy.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

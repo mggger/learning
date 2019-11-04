@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>行为模式 - 学习笔记</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../scala/f.html"><strong aria-hidden="true">1.</strong> 函数式编程</a></li><li><ol class="section"><li><a href="../scala/functional/theory.html"><strong aria-hidden="true">1.1.</strong> 理论</a></li></ol></li><li><a href="../scala/akka.html"><strong aria-hidden="true">2.</strong> akka</a></li><li><ol class="section"><li><a href="../scala/akka/future.html"><strong aria-hidden="true">2.1.</strong> future</a></li><li><a href="../scala/akka/distribute.html"><strong aria-hidden="true">2.2.</strong> 分布式</a></li><li><a href="../scala/akka/config_log.html"><strong aria-hidden="true">2.3.</strong> 配置与日志</a></li><li><a href="../scala/akka/structure.html"><strong aria-hidden="true">2.4.</strong> Actor的结构模式</a></li><li><a href="../scala/akka/router.html"><strong aria-hidden="true">2.5.</strong> 路由消息</a></li><li><a href="../scala/akka/channel.html"><strong aria-hidden="true">2.6.</strong> 消息通道</a></li><li><a href="../scala/akka/stream.html"><strong aria-hidden="true">2.7.</strong> 流</a></li><li><a href="../scala/akka/profile.html"><strong aria-hidden="true">2.8.</strong> 性能调优</a></li></ol></li><li><a href="../kafka/index.html"><strong aria-hidden="true">3.</strong> kafka</a></li><li><ol class="section"><li><a href="../kafka/chapter_1.html"><strong aria-hidden="true">3.1.</strong> kafka使用场景</a></li><li><a href="../kafka/chapter_2.html"><strong aria-hidden="true">3.2.</strong> kafka使用指南-生产者</a></li><li><a href="../kafka/chapter_3.html"><strong aria-hidden="true">3.3.</strong> kafka使用指南-消费者</a></li><li><a href="../kafka/chapter_4.html"><strong aria-hidden="true">3.4.</strong> 消息可靠性保证</a></li><li><ol class="section"><li><a href="../kafka/chapter_4_1.html"><strong aria-hidden="true">3.4.1.</strong> 生产者</a></li><li><a href="../kafka/chapter_4_2.html"><strong aria-hidden="true">3.4.2.</strong> 消费者</a></li></ol></li><li><a href="../kafka/kafka-streaming.html"><strong aria-hidden="true">3.5.</strong> kafka-streams</a></li><li><ol class="section"><li><a href="../kafka/kafka-state.html"><strong aria-hidden="true">3.5.1.</strong> 流和状态</a></li><li><a href="../kafka/join.html"><strong aria-hidden="true">3.5.2.</strong> join</a></li><li><a href="../kafka/timestamp.html"><strong aria-hidden="true">3.5.3.</strong> 时间戳</a></li><li><a href="../kafka/ktable.html"><strong aria-hidden="true">3.5.4.</strong> KTable</a></li><li><a href="../kafka/watch.html"><strong aria-hidden="true">3.5.5.</strong> 性能测量</a></li><li><a href="../kafka/transaction.html"><strong aria-hidden="true">3.5.6.</strong> 精确一次处理语义</a></li></ol></li></ol></li><li><a href="../druid/about.html"><strong aria-hidden="true">4.</strong> druid</a></li><li><ol class="section"><li><a href="../druid/source/source.html"><strong aria-hidden="true">4.1.</strong> 源码学习</a></li><li><ol class="section"><li><a href="../druid/source/maven.html"><strong aria-hidden="true">4.1.1.</strong> maven</a></li><li><a href="../druid/source/debug.html"><strong aria-hidden="true">4.1.2.</strong> 调试</a></li><li><a href="../druid/source/3libs.html"><strong aria-hidden="true">4.1.3.</strong> 第三方库</a></li><li><ol class="section"><li><a href="../druid/source/google_guice.html"><strong aria-hidden="true">4.1.3.1.</strong> google guice</a></li><li><a href="../druid/source/curator.html"><strong aria-hidden="true">4.1.3.2.</strong> curator</a></li><li><a href="../druid/source/jackson.html"><strong aria-hidden="true">4.1.3.3.</strong> jackson</a></li></ol></li></ol></li><li><a href="../druid/deploy/deploy.html"><strong aria-hidden="true">4.2.</strong> 运维</a></li><li><ol class="section"><li><a href="../druid/deploy/docker.html"><strong aria-hidden="true">4.2.1.</strong> docker</a></li></ol></li></ol></li><li><a href="../flink/about.html"><strong aria-hidden="true">5.</strong> flink</a></li><li><ol class="section"><li><a href="../flink/flink/1.html"><strong aria-hidden="true">5.1.</strong> 架构</a></li><li><a href="../flink/flink/2.html"><strong aria-hidden="true">5.2.</strong> 状态管理</a></li><li><a href="../flink/flink/3.html"><strong aria-hidden="true">5.3.</strong> 时间戳</a></li><li><a href="../flink/table.html"><strong aria-hidden="true">5.4.</strong> flink table</a></li><li><ol class="section"><li><a href="../flink/table/1.html"><strong aria-hidden="true">5.4.1.</strong> 关系代数</a></li><li><a href="../flink/table/2.html"><strong aria-hidden="true">5.4.2.</strong> apache calcite</a></li></ol></li></ol></li><li><a href="../spark/about.html"><strong aria-hidden="true">6.</strong> spark</a></li><li><ol class="section"><li><a href="../spark/sparksql.html"><strong aria-hidden="true">6.1.</strong> SparkSql</a></li><li><a href="../spark/antlr.html"><strong aria-hidden="true">6.2.</strong> Antlr</a></li><li><a href="../spark/optimized_in_prod.html"><strong aria-hidden="true">6.3.</strong> 常用优化手段</a></li><li><a href="../spark/deploy.html"><strong aria-hidden="true">6.4.</strong> spark on k8s</a></li></ol></li><li><a href="../k8s/k8s/about.html"><strong aria-hidden="true">7.</strong> k8s</a></li><li><ol class="section"><li><a href="../k8s/k8s/headless.html"><strong aria-hidden="true">7.1.</strong> Headless Services</a></li><li><a href="../k8s/k8s/disruptions.html"><strong aria-hidden="true">7.2.</strong> Disruptions</a></li><li><a href="../k8s/k8s/stateful.html"><strong aria-hidden="true">7.3.</strong> stateful service</a></li><li><a href="../k8s/helm.html"><strong aria-hidden="true">7.4.</strong> Helm</a></li></ol></li><li><a href="../design/about.html"><strong aria-hidden="true">8.</strong> 设计模式</a></li><li><ol class="section"><li><a href="../design/uml.html"><strong aria-hidden="true">8.1.</strong> 深入浅出UML类图</a></li><li><a href="../design/create.html"><strong aria-hidden="true">8.2.</strong> 创建型模式</a></li><li><a href="../design/structure.html"><strong aria-hidden="true">8.3.</strong> 结构性模式</a></li><li><a href="../design/behavior.html" class="active"><strong aria-hidden="true">8.4.</strong> 行为模式</a></li></ol></li><li><a href="../postgres/about.html"><strong aria-hidden="true">9.</strong> postgres</a></li><li><ol class="section"><li><a href="../postgres/mvcc.html"><strong aria-hidden="true">9.1.</strong> MVCC</a></li><li><a href="../postgres/index.html"><strong aria-hidden="true">9.2.</strong> 索引</a></li><li><a href="../postgres/statistics.html"><strong aria-hidden="true">9.3.</strong> 统计信息</a></li><li><a href="../postgres/partition.html"><strong aria-hidden="true">9.4.</strong> 分区</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">学习笔记</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#行为模式" id="行为模式"><h1>行为模式</h1></a>
+<a class="header" href="#chain-of-responsibility-职责链" id="chain-of-responsibility-职责链"><h2>chain of responsibility 职责链</h2></a>
+<p>意图: 使多个对象都有机会处理请求， 从而避免请求的发送者和接收者之间的耦合关系。</p>
+<p>适用性:</p>
+<ul>
+<li>有多个的对象可以处理一个请求， 那个对象处理该请求运行时刻自动确定</li>
+<li>可处理一个请求的对象集合应被动态指定.</li>
+</ul>
+<p>可以参考 nginx通过函数调用链实现模块化</p>
+<a class="header" href="#command-命令" id="command-命令"><h2>command 命令</h2></a>
+<p>意图: 将一个请求封装为一个对象， 从而使你可用不同的请求对客户进行参数化； 对请求排队或记录请求日志， 以及支持可撤销的操作。</p>
+<p>适用性:</p>
+<ul>
+<li>抽象出待执行的动作以参数化某对象。</li>
+<li>在不同的时刻指定， 排列和执行请求。</li>
+<li>支持取消操作</li>
+<li>支持修改日志</li>
+<li>用构建在原语操作上的高层操作构造一个系统。</li>
+</ul>
+<a class="header" href="#iterator-迭代器" id="iterator-迭代器"><h2>ITERATOR 迭代器</h2></a>
+<p>意图: 提供一种方法顺序访问一个聚合对象中各个元素， 而友不需要暴露该对象的内部表示</p>
+<p>适用性：</p>
+<ul>
+<li>访问一个聚合对象的内容而无需暴露它的内部表示</li>
+<li>支持对聚合对象的多种遍历</li>
+<li>为遍历不同的聚合结构提供一个统一的接口</li>
+</ul>
+<a class="header" href="#mediator-中介者" id="mediator-中介者"><h2>MEDIATOR 中介者</h2></a>
+<p>意图： 用一个中介对象来封装一系列的对象交互。 中介者使各对象不需要显式地相互引用， 从而使其耦合松散，而且可以独立地改变它们之间的交互.</p>
+<p>适用性:</p>
+<ul>
+<li>一组对象以定义良好但是复杂的方式进行通信</li>
+<li>一个对象引用其他很多对象并且直接与这些对象通信， 导致难以复用该对象</li>
+<li>想定制一个分布在多个类中的行为, 而又不想生成太多的子类.</li>
+</ul>
+<a class="header" href="#memento-备忘录" id="memento-备忘录"><h2>MEMENTO 备忘录</h2></a>
+<p>意图: 在不破外封装性的前提下， 捕获一个对象的内部状态， 并在该对象之外保持这个状态. 这样以后就可将该对象恢复到原先保存的状态</p>
+<p>适用性:</p>
+<ul>
+<li>必须保存一个对象在某一个时刻的状态， 这样以后需要时它才能恢复到先前的状态</li>
+<li>如果一个用接口来让其他对象直接得到这些状态， 将会暴露对象的实现细节并破坏对象的封装性.</li>
+</ul>
+<a class="header" href="#observer-观察者" id="observer-观察者"><h2>OBSERVER 观察者</h2></a>
+<p>意图: 定义对象间的一种一对多的依赖关系， 当一个对象的状态发生改变时， 所有依赖于它的对象都得到通知并被自动更新</p>
+<p>适用性:</p>
+<ul>
+<li>当一个抽象模型有两个方面， 其中一个方面依赖于另一个方面。将这两者封装在独立的对象中以使它们可以独立地改变和复用</li>
+<li>当对一个对象的改变需要同时改变其他对象， 而不知道具体有多少对象有待改变.</li>
+<li>当一个对象必须通知其他对象, 而它又不能假定其他对象是谁.</li>
+</ul>
+<a class="header" href="#state-状态" id="state-状态"><h2>STATE 状态</h2></a>
+<p>意图: 允许一个对象在其内部状态改变时改变它的行为， 对象看起来似乎修改了它的类。</p>
+<ul>
+<li>一个对象的行为取决于它的状态， 并且它必须在运行时刻根据状态改变它的行为</li>
+<li>一个操作中含有庞大的多分支的条件语句， 且这些分支依赖于该对象的状态。</li>
+</ul>
+<a class="header" href="#strategy-策略" id="strategy-策略"><h2>STRATEGY 策略</h2></a>
+<p>定义一系列的算法， 把它们一个个封装起来， 并且使它们可相互替换。</p>
+<p>适用性:</p>
+<ul>
+<li>许多相关的类仅仅是行为有异.</li>
+<li>需要使用一个算法的不同变体.</li>
+<li>算法使用客户不应该知道的数据</li>
+<li>一个类定义了多种行为， 并且这些行为在这个类的操作中以多个条件语句的形式出现。</li>
+</ul>
+<a class="header" href="#template-method-模版方法" id="template-method-模版方法"><h2>template method (模版方法)</h2></a>
+<p>定义一个操作中的算法的骨架， 而将一些步骤延迟到子类中.</p>
+<p>适用于下列情况:</p>
+<ul>
+<li>一次性实现了一个算法的不变的部分， 并将可行的行为留给子类来实现</li>
+<li>各子类中公共的行为应被提取出来并集中到一个公共父类中以避免代码重复。</li>
+<li>控制子类扩展</li>
+</ul>
+<a class="header" href="#visitor-访问者" id="visitor-访问者"><h2>VISITOR 访问者</h2></a>
+<p>表示一个作用于某对象结构中的各元素的操作。</p>
+<p>适用性:</p>
+<ul>
+<li>一个对象结构包含很多类对象, 它们有不同的接口</li>
+<li>需要对一个对象结构中的对象进行很多不同的并且不相关的操作</li>
+<li>定义对象结构的类很少改变， 但经常要在此结构上定义新的操作。</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../design/structure.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../postgres/about.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../design/structure.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../postgres/about.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

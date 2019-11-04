@@ -1,0 +1,3691 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>学习笔记</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="scala/f.html"><strong aria-hidden="true">1.</strong> 函数式编程</a></li><li><ol class="section"><li><a href="scala/functional/theory.html"><strong aria-hidden="true">1.1.</strong> 理论</a></li></ol></li><li><a href="scala/akka.html"><strong aria-hidden="true">2.</strong> akka</a></li><li><ol class="section"><li><a href="scala/akka/future.html"><strong aria-hidden="true">2.1.</strong> future</a></li><li><a href="scala/akka/distribute.html"><strong aria-hidden="true">2.2.</strong> 分布式</a></li><li><a href="scala/akka/config_log.html"><strong aria-hidden="true">2.3.</strong> 配置与日志</a></li><li><a href="scala/akka/structure.html"><strong aria-hidden="true">2.4.</strong> Actor的结构模式</a></li><li><a href="scala/akka/router.html"><strong aria-hidden="true">2.5.</strong> 路由消息</a></li><li><a href="scala/akka/channel.html"><strong aria-hidden="true">2.6.</strong> 消息通道</a></li><li><a href="scala/akka/stream.html"><strong aria-hidden="true">2.7.</strong> 流</a></li><li><a href="scala/akka/profile.html"><strong aria-hidden="true">2.8.</strong> 性能调优</a></li></ol></li><li><a href="kafka/index.html"><strong aria-hidden="true">3.</strong> kafka</a></li><li><ol class="section"><li><a href="kafka/chapter_1.html"><strong aria-hidden="true">3.1.</strong> kafka使用场景</a></li><li><a href="kafka/chapter_2.html"><strong aria-hidden="true">3.2.</strong> kafka使用指南-生产者</a></li><li><a href="kafka/chapter_3.html"><strong aria-hidden="true">3.3.</strong> kafka使用指南-消费者</a></li><li><a href="kafka/chapter_4.html"><strong aria-hidden="true">3.4.</strong> 消息可靠性保证</a></li><li><ol class="section"><li><a href="kafka/chapter_4_1.html"><strong aria-hidden="true">3.4.1.</strong> 生产者</a></li><li><a href="kafka/chapter_4_2.html"><strong aria-hidden="true">3.4.2.</strong> 消费者</a></li></ol></li><li><a href="kafka/kafka-streaming.html"><strong aria-hidden="true">3.5.</strong> kafka-streams</a></li><li><ol class="section"><li><a href="kafka/kafka-state.html"><strong aria-hidden="true">3.5.1.</strong> 流和状态</a></li><li><a href="kafka/join.html"><strong aria-hidden="true">3.5.2.</strong> join</a></li><li><a href="kafka/timestamp.html"><strong aria-hidden="true">3.5.3.</strong> 时间戳</a></li><li><a href="kafka/ktable.html"><strong aria-hidden="true">3.5.4.</strong> KTable</a></li><li><a href="kafka/watch.html"><strong aria-hidden="true">3.5.5.</strong> 性能测量</a></li><li><a href="kafka/transaction.html"><strong aria-hidden="true">3.5.6.</strong> 精确一次处理语义</a></li></ol></li></ol></li><li><a href="druid/about.html"><strong aria-hidden="true">4.</strong> druid</a></li><li><ol class="section"><li><a href="druid/source/source.html"><strong aria-hidden="true">4.1.</strong> 源码学习</a></li><li><ol class="section"><li><a href="druid/source/maven.html"><strong aria-hidden="true">4.1.1.</strong> maven</a></li><li><a href="druid/source/debug.html"><strong aria-hidden="true">4.1.2.</strong> 调试</a></li><li><a href="druid/source/3libs.html"><strong aria-hidden="true">4.1.3.</strong> 第三方库</a></li><li><ol class="section"><li><a href="druid/source/google_guice.html"><strong aria-hidden="true">4.1.3.1.</strong> google guice</a></li><li><a href="druid/source/curator.html"><strong aria-hidden="true">4.1.3.2.</strong> curator</a></li><li><a href="druid/source/jackson.html"><strong aria-hidden="true">4.1.3.3.</strong> jackson</a></li></ol></li></ol></li><li><a href="druid/deploy/deploy.html"><strong aria-hidden="true">4.2.</strong> 运维</a></li><li><ol class="section"><li><a href="druid/deploy/docker.html"><strong aria-hidden="true">4.2.1.</strong> docker</a></li></ol></li></ol></li><li><a href="flink/about.html"><strong aria-hidden="true">5.</strong> flink</a></li><li><ol class="section"><li><a href="flink/flink/1.html"><strong aria-hidden="true">5.1.</strong> 架构</a></li><li><a href="flink/flink/2.html"><strong aria-hidden="true">5.2.</strong> 状态管理</a></li><li><a href="flink/flink/3.html"><strong aria-hidden="true">5.3.</strong> 时间戳</a></li><li><a href="flink/table.html"><strong aria-hidden="true">5.4.</strong> flink table</a></li><li><ol class="section"><li><a href="flink/table/1.html"><strong aria-hidden="true">5.4.1.</strong> 关系代数</a></li><li><a href="flink/table/2.html"><strong aria-hidden="true">5.4.2.</strong> apache calcite</a></li></ol></li></ol></li><li><a href="spark/about.html"><strong aria-hidden="true">6.</strong> spark</a></li><li><ol class="section"><li><a href="spark/sparksql.html"><strong aria-hidden="true">6.1.</strong> SparkSql</a></li><li><a href="spark/antlr.html"><strong aria-hidden="true">6.2.</strong> Antlr</a></li><li><a href="spark/optimized_in_prod.html"><strong aria-hidden="true">6.3.</strong> 常用优化手段</a></li><li><a href="spark/deploy.html"><strong aria-hidden="true">6.4.</strong> spark on k8s</a></li></ol></li><li><a href="k8s/k8s/about.html"><strong aria-hidden="true">7.</strong> k8s</a></li><li><ol class="section"><li><a href="k8s/k8s/headless.html"><strong aria-hidden="true">7.1.</strong> Headless Services</a></li><li><a href="k8s/k8s/disruptions.html"><strong aria-hidden="true">7.2.</strong> Disruptions</a></li><li><a href="k8s/k8s/stateful.html"><strong aria-hidden="true">7.3.</strong> stateful service</a></li><li><a href="k8s/helm.html"><strong aria-hidden="true">7.4.</strong> Helm</a></li></ol></li><li><a href="design/about.html"><strong aria-hidden="true">8.</strong> 设计模式</a></li><li><ol class="section"><li><a href="design/uml.html"><strong aria-hidden="true">8.1.</strong> 深入浅出UML类图</a></li><li><a href="design/create.html"><strong aria-hidden="true">8.2.</strong> 创建型模式</a></li><li><a href="design/structure.html"><strong aria-hidden="true">8.3.</strong> 结构性模式</a></li><li><a href="design/behavior.html"><strong aria-hidden="true">8.4.</strong> 行为模式</a></li></ol></li><li><a href="postgres/about.html"><strong aria-hidden="true">9.</strong> postgres</a></li><li><ol class="section"><li><a href="postgres/mvcc.html"><strong aria-hidden="true">9.1.</strong> MVCC</a></li><li><a href="postgres/index.html"><strong aria-hidden="true">9.2.</strong> 索引</a></li><li><a href="postgres/statistics.html"><strong aria-hidden="true">9.3.</strong> 统计信息</a></li><li><a href="postgres/partition.html"><strong aria-hidden="true">9.4.</strong> 分区</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">学习笔记</h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#函数式编程" id="函数式编程"><h1>函数式编程</h1></a>
+<ul>
+<li>函数式编程强调没有&quot;副作用&quot;，意味着函数要保持独立，所有功能就是返回一个新的值，没有其他行为，尤其是不得修改外部变量的值。</li>
+<li>不修改变量，意味着状态不能保存在变量中。函数式编程使用参数保存状态，最好的例子就是递归。下面的代码是一个将字符串逆序排列的函数，它演示了不同的参数如何决定了运算所处的&quot;状态&quot;。</li>
+</ul>
+<a class="header" href="#理论" id="理论"><h1>理论</h1></a>
+<p>google到数学里定义的群(group): G为非空集合，如果在G上定义的二元运算 *，满足</p>
+<pre><code>（1）封闭性（Closure）：对于任意a，b∈G，有a*b∈G
+（2）结合律（Associativity）：对于任意a，b，c∈G，有（a*b）*c=a*（b*c）
+（3）幺元 （Identity）：存在幺元e，使得对于任意a∈G，e*a=a*e=a
+（4）逆元：对于任意a∈G，存在逆元a^-1，使得a^-1*a=a*a^-1=e
+</code></pre>
+<p>来自<a href="http://hongjiang.info/semigroup-and-monoid/">hongjiang's blog</a></p>
+<p><strong>Monoids:</strong>  Monoids是一种元素的集合，它需要满足结合律和幺元(这种元和其他元素结合时， 不会改变元素)。  中文名称为: <em>幺半群</em></p>
+<p><strong>Semigroup:</strong> 仅仅只满足结合律, 称为: <em>半群</em></p>
+<hr />
+<p><strong>functors:</strong>  函子， 在函数式编程中， 代表处理序列操作的抽象。</p>
+<hr />
+<p>在函数式程序设计中，它是一种制定计算次序的机制.  <strong>monad(单子)可以看作是自函子范畴上的一个幺半群</strong></p>
+<a class="header" href="#monoids" id="monoids"><h2>Monoids</h2></a>
+<p>因为monoid是种很广泛的代数结构, 一旦可以利用这代数结构的性质做些什么事情, 同样也可以应用到满足这些性质的数据类型(instance).</p>
+<pre><code class="language-scala">trait  Monoid[A] {
+    def combine(x: A, y: A): A
+    def empty: A
+}
+</code></pre>
+<p>比如string的monoid</p>
+<pre><code class="language-scala">val monoid: Monoid[String] = new Monoid[String] {
+
+    def combine(x: String, y: String) = 
+        x + y
+
+    def empty = &quot;&quot;
+}
+</code></pre>
+<a class="header" href="#functor" id="functor"><h2>Functor</h2></a>
+<pre><code class="language-scala">trait Functor[F[_]] {
+    def map[A, B](fa: F[A])(f: A =&gt; B): F[B]
+}
+</code></pre>
+<p>不论我们将多个小操作一个接一个地排序，还是在映射前将它们组合成一个更大的功能，函子都保证相同的语义。为确保确实如此，必须遵守以下法律：</p>
+<p><strong>identity:</strong></p>
+<pre><code class="language-scala">fa.map(a =&gt; a) == fa 
+</code></pre>
+<p>** Composi􏰃on:**</p>
+<pre><code class="language-scala">fa.map(g(f(_))) == fa.map(f).map(g)
+</code></pre>
+<a class="header" href="#monod" id="monod"><h2>Monod</h2></a>
+<p>首先通过一个例子:</p>
+<pre><code class="language-scala">def stringDivideBy(aStr: String, bStr: String): Option[Int] = 
+    parseInt(aStr).flatMap { 
+        // return None or Some
+        aNum =&gt; 
+            // if return Some, then step this
+            // return None or Some
+            parseInt(bStr).flatMap {
+
+                // if return Some, then step this 
+                bNum =&gt; divide(aNum, bNum)
+            }
+    }
+</code></pre>
+<p>每个Monod同样也是一个functor， 同样可以运用map和flatmap来制定计算的次序</p>
+<pre><code class="language-scala">def stringDivideBy(aStr: String, bStr: String): Option[Int] = 
+    for {
+        aNum &lt;- parseInt(aStr)
+        bNum &lt;- parseInt(bStr)
+        ans &lt;- divide(aNum, bNum)
+    } yield ans
+</code></pre>
+<p><strong>定义一个Monad:</strong></p>
+<pre><code class="language-scala">type Monad[F[_]] {
+    def pure[A](value: A): F[A]
+
+    def flatMap[A, B](value: F[A])(func: A =&gt; F[B]): F[B]
+}
+</code></pre>
+<p><strong>Monad的规则:</strong></p>
+<p>pureMap和flatMap必须遵守一组法律，这些法律允许我们自由地对操作进行排序，而不会出现意外故障和副作用：</p>
+<p><em>Left Identity:</em> <code>pure(a).flatMap(func) == func(a)</code></p>
+<p><em>Right Indentity:</em> <code>m.flatMap(pure) == m</code></p>
+<p><em>Associavity:</em> <code>m.flatMap(f).flatMap(g) == m.flatMap(x =&gt; f(x).flatMap(g))</code></p>
+<a class="header" href="#akka" id="akka"><h1>AkkA</h1></a>
+<p><img src="./images/akka.png" alt="akka" /></p>
+<a class="header" href="#future" id="future"><h1>Future</h1></a>
+<p>Futre 是函数结果(成功或者失败的)占位符, 这个结果可在将来的某个时间点获得。 它实际上是一个异步处理的句柄， 不能从外界改变， 是一个只读的占位符， 一旦函数执行结束， Future就会包含一个成功的结果或者失败的结果。</p>
+<p>使用场景:</p>
+<ul>
+<li>处理函数结果时不想被阻塞。</li>
+<li>一次性方式调用函数， 并将在未来的某点上处理结果</li>
+<li>组合多个一次性函数或结果</li>
+<li>调用多个竞争函数， 只使用部分结果， 例如只使用响应最快的结果</li>
+<li>调用函数，当函数抛出异常时返回默认结果， 以便于流程可以继续</li>
+</ul>
+<a class="header" href="#异步调用" id="异步调用"><h2>异步调用</h2></a>
+<pre><code class="language-scala">val request = EventRequest(ticketNr)  //在线程X上运行 
+
+val futureEvent: Future[Event] = Future {     // 调用代码在另一线程 (线程Y) 上阻塞
+    val response = callEventService(request)  // 线程Y上运行
+    response.event                            // 线程Y访问
+}
+
+...                                          // 线程Y上引用futureEvent, 把它传递给其他函数。
+
+</code></pre>
+<p><strong>处理活动结果</strong></p>
+<pre><code class="language-scala">
+futureEvent.foreach {
+    event =&gt;  xxx
+}
+
+</code></pre>
+<a class="header" href="#promise" id="promise"><h3>Promise</h3></a>
+<p>Future只是为了读， 如果想写的话则需要使用Promise.</p>
+<p>通过一个例子来说明如何使用Promise</p>
+<pre><code class="language-scala">def sendToKafka(record: ProducerRecord): Future[RecordMetaData] = 
+    val promise: Promise[RecordMetadata]] = Promise[RecordMetadata] // 创建promise
+
+    val future: Future[RecordMetadata] = promise.future // 获取可以传递future的引用
+
+    val callback = new Callbcak() {
+        def onCompletion(metadata.RecordMetadata, e: Exception): = {
+
+            if (e != null) promise.failure(e)         // 如果发生错误，向promise写入一个失败异常
+            else promise.success(metadata)            // 否则向promise写入成功结果
+        }
+    }
+
+    producer.send(record, callback)                  // 实际工作， 并传入回调
+    future                                           // 返回结果
+</code></pre>
+<a class="header" href="#错误处理" id="错误处理"><h2>错误处理</h2></a>
+<pre><code class="language-scala">import scala.util._         // Try, Success, Failure
+import scala.concurrent._
+
+val futureFail = Future {
+    throw new Execption(&quot;error!&quot;)
+}
+
+futureFail.onComplete {                      // 这段代码给予了一个Try值， Try支持模式匹配
+    case Success(value) =&gt; println(value)    // 成功的逻辑  
+    case Failure(value) =&gt; println(value)    // 失败的逻辑
+}
+
+</code></pre>
+<p>或者使用future的 <code>recover</code>方法传入故障处理的代码块</p>
+<a class="header" href="#future组合" id="future组合"><h2>future组合</h2></a>
+<p>使用<code>firstCompleteOf</code>获取响应最快的future</p>
+<pre><code class="language-scala">val f = Future {
+    Thread.sleep(100)
+    2
+}
+
+val f1 = Future {
+    Thread.sleep(300)
+    1
+}
+
+val fast: Future[Int] = Future.firstCompletedOf(List(f, f1))
+
+fast.map {
+    v =&gt; println(v)
+}
+</code></pre>
+<p>使用<code>find</code>获取第一个成功的结果</p>
+<pre><code class="language-scala">val f = Future {
+    Thread.sleep(200)
+    Some(2)
+}
+
+val f1 = Future {
+    Thread.sleep(100)
+    None
+}
+
+val fast: Future[Option[Int]] =
+    Future.find(List(f1, f))(v =&gt; !v.isEmpty).map(_.flatten)
+
+fast.onComplete {
+    case Success(v) =&gt; println(v)
+}
+</code></pre>
+<p>使用<code>sequence</code> 将多个future组合一个包含结果列表的future</p>
+<pre><code class="language-scala">val f = Future {
+    Thread.sleep(200)
+    1
+}
+
+val f1 = Future {
+    Thread.sleep(100)
+    2
+}
+
+
+val fast: Future[Seq[Int]] =
+    Future.sequence(Seq(f, f1))
+
+
+fast.onComplete {
+    case Success(v) =&gt; v.map(a =&gt; println(a))
+}
+</code></pre>
+<a class="header" href="#分布式" id="分布式"><h1>分布式</h1></a>
+<p>akka提供了两种方式获取远程节点上的actor引用， 一种是按actor的路径进行查找； 另一种是创建一个actor, 获取它的引用, 并进行远程部署.</p>
+<a class="header" href="#例子" id="例子"><h2>例子</h2></a>
+<p>backend 有一个actor foo， 打印收到的消息</p>
+<pre><code class="language-scala">val conf =
+    &quot;&quot;&quot;
+      |akka {
+      |  loglevel = &quot;INFO&quot;
+      |  actor {
+      |    provider = &quot;akka.remote.RemoteActorRefProvider&quot;
+      |  }
+      |
+      |  remote {
+      |    enabled-transports = [&quot;akka.remote.netty.tcp&quot;]
+      |    netty.tcp {
+      |       hostname = &quot;0.0.0.0&quot;
+      |       port = 10000
+      |    }
+      |  }
+      |}
+    &quot;&quot;&quot;.stripMargin
+
+val config = ConfigFactory.parseString(conf)
+
+val backend = ActorSystem(&quot;backend&quot;, config)
+
+backend.actorOf(Props[Foo], &quot;foo&quot;)
+</code></pre>
+<p>frontend 对后端的actor进行引用， 并发送消息</p>
+<pre><code class="language-scala">val conf =
+    &quot;&quot;&quot;
+      |akka {
+      |  loglevel = &quot;INFO&quot;
+      |  actor {
+      |    provider = &quot;akka.remote.RemoteActorRefProvider&quot;
+      |  }
+      |
+      |  remote {
+      |    enabled-transports = [&quot;akka.remote.netty.tcp&quot;]
+      |    netty.tcp {
+      |       hostname = &quot;0.0.0.0&quot;
+      |       port = 10001
+      |    }
+      |  }
+      |}
+    &quot;&quot;&quot;.stripMargin
+
+val config = ConfigFactory.parseString(conf)
+
+val frontend = ActorSystem(&quot;frontend&quot;, config)
+
+val path = &quot;akka.tcp://backend@0.0.0.0:10000/user/foo&quot;
+
+val foo = frontend.actorSelection(path)
+
+foo ! &quot;hello world&quot;
+foo ! &quot;yes&quot;s
+</code></pre>
+<a class="header" href="#remoteloopupproxy" id="remoteloopupproxy"><h3>RemoteLoopupProxy</h3></a>
+<p>解决了什么问题:  获取远程actor的actorRef时候， 当相关的actor死亡后， 返回的actorRef的行为与本地actorRef的行为不同。</p>
+<ul>
+<li>远程Actor可能还未启动， 或者已经崩溃， 或者可能已经重新启动</li>
+<li>远程Actor本身已经崩溃或重启</li>
+<li>控制actor的启动顺序.</li>
+</ul>
+<p>下面将实现一个RemoteLookupProxy的actor， 它是一个状态机， 识别或激活状态.</p>
+<pre><code class="language-scala">class RemoteLookupProxy(path: String) extends Actor with ActorLogging {
+
+  // 如果3s内没有收到消息， 则发送ReceiveTimeout的消息
+  context.setReceiveTimeout(3 seconds)
+
+  // 立即启动Actor的请求识别
+  sendIdentifyRequest()
+
+  def sendIdentifyRequest() = {
+
+    val selection = context.actorSelection(path)
+    selection ! Identify(path)
+
+  }
+
+  // 初始Actor为识别接收状态
+  def receive = identity
+
+  def identity: Receive = {
+
+    // actor已经被识别， 并返回它的actorRef
+    case ActorIdentity(path, Some(actor)) =&gt;
+      // 如果actor没有收到消息， 则没有必要发送ReceivedTimeout消息
+      context.setReceiveTimeout(Duration.Undefined)
+
+      log.info(&quot;switching to active state&quot;)
+      context.become(active(actor))
+      actor ! &quot;hello&quot;
+      context.watch(actor)
+
+    // actor 不可用
+    case ActorIdentity(path, None) =&gt;
+      log.error(s&quot;Remote actor with path: $path  is not available&quot;)
+
+    case ReceiveTimeout =&gt;
+      // 如果未收到消息，则持续识别远程的actor
+      sendIdentifyRequest()
+
+    case msg: Any =&gt;
+      log.error(s&quot;Ignoring message $msg. not ready ret&quot;)
+  }
+
+
+  def active(actor: ActorRef): Receive = {
+
+    // context.watch(actor) 捕获
+    case Terminated(actorRef: ActorRef) =&gt;
+      log.info(s&quot;Actor $actorRef terminated&quot;)
+      context.become(identity)
+      log.info(&quot;switching to identify state&quot;)
+      context.setReceiveTimeout(3 seconds)
+      sendIdentifyRequest()
+
+    // 处于active状态的时候， 转发消息
+    case msg: Any =&gt; actor forward msg
+  }
+}
+</code></pre>
+<a class="header" href="#akka配置" id="akka配置"><h1>Akka配置</h1></a>
+<p>使用指定的配置</p>
+<pre><code class="language-scala">val configuration = ConfigFactory.load(&quot;myapp&quot;)
+val systemA = ActorSystem(&quot;mySystem&quot;, configuration)
+</code></pre>
+<a class="header" href="#多系统" id="多系统"><h2>多系统</h2></a>
+<p>比如有一个baseConfig的配置文件</p>
+<pre><code>myApp {
+    version = 10
+    description = &quot;My application&quot;
+}
+</code></pre>
+<p>现在有一个子系统</p>
+<pre><code>include &quot;baseConfig&quot;
+
+
+MyApp {
+    description = &quot;My application1&quot;   
+}
+</code></pre>
+<a class="header" href="#akka日志" id="akka日志"><h1>Akka日志</h1></a>
+<p>通过配置开启日志</p>
+<pre><code>akka {
+   loggers = [&quot;akka.event.Logging$DefaultLogger&quot;] 
+   loblevel = &quot;DEBUG&quot;
+}
+</code></pre>
+<p>或者使用slf4j</p>
+<pre><code>akka {
+    loggers = [&quot;akka.event.slf4j.slf4jLogger&quot;]
+    loglevel = &quot;DEBUG&quot;
+}
+</code></pre>
+<a class="header" href="#使用日志" id="使用日志"><h2>使用日志</h2></a>
+<p>创建日志示例:</p>
+<pre><code class="language-scala">val log = Logging(context.system, this)
+</code></pre>
+<p>或者使用ActorLogging Trait</p>
+<pre><code class="language-scala">class MyActor extends Actor with ActorLogging {
+    
+}
+
+</code></pre>
+<a class="header" href="#actor的结构模式" id="actor的结构模式"><h1>Actor的结构模式</h1></a>
+<p>Actor一般有两种结构:</p>
+<ol>
+<li>pipeline</li>
+<li>分发-收集模式</li>
+</ol>
+<a class="header" href="#pipeline" id="pipeline"><h2>Pipeline</h2></a>
+<p>以需要处理的actor作为构造参数</p>
+<pre><code class="language-scala">class Pipe1(pipe: ActorRef) extends Actor {
+  def receive = {
+    case msg:Any =&gt; pipe ! s&quot;[pipe1] $msg&quot;
+  }
+}
+</code></pre>
+<a class="header" href="#分发收集模式" id="分发收集模式"><h2>分发收集模式</h2></a>
+<p>适用场景:</p>
+<ol>
+<li>任务的功能是相同的， 但只有一个传递给收集组件作为结果。</li>
+<li>工作被分开并行处理， 每个处理器提供自己的结果， 然后由收集器组合到一个结果集中。</li>
+</ol>
+<p>分发任务:  以需要处理的actor序列作为参数传入</p>
+<pre><code class="language-scala">class RecipientList(recip: Seq[ActorRef]) extends Actor {
+  def receive = {
+    case msg: AnyRef =&gt; recip.foreach(_ ! msg)
+  }
+}
+</code></pre>
+<p>收集任务: actor里面缓存收到的消息</p>
+<a class="header" href="#路由消息" id="路由消息"><h1>路由消息</h1></a>
+<p>理论：</p>
+<p><em>Router池:</em> 这些router管理routee. 它们负责创建routee， 并在routee结束时把它们从列表中移除。
+<em>Router群组:</em>* 这类router不管理routee, Routee由系统创建， Router群组使用actor选择查找routee, 不负责routee的监察。</p>
+<p>Router池是最简单的， 它提供了管理功能， 但代价是没有足够的容量定义routee自己需要的逻辑.</p>
+<a class="header" href="#akka的router" id="akka的router"><h2>Akka的router</h2></a>
+<table><thead><tr><th align="left">逻辑</th><th align="left">池</th><th align="left">群组</th><th align="left">说明</th></tr></thead><tbody>
+<tr><td align="left">RoundRobin<br> Routing-Logic</td><td align="left">RoundRobin-Pool</td><td align="left">RoundRobinGroup</td><td align="left">把先收到的消息发送给第一个routee, 再收到的消息发送给第二个routee， 依此类推</td></tr>
+<tr><td align="left">RandomRouting<br>Logic</td><td align="left">RandomPool</td><td align="left">RandomGroup</td><td align="left">这个逻辑把每个收到的消息发送给随机选定的routee</td></tr>
+<tr><td align="left">SmallestMailbox<br>RoutingLogic</td><td align="left">SmallestMail-boxPool</td><td align="left">无</td><td align="left">Router检查所有routee的邮箱， 选择邮箱最小的routee。</td></tr>
+<tr><td align="left">无</td><td align="left">BalancingPool</td><td align="left">无</td><td align="left">这个router把消息分发给空闲的routee</td></tr>
+<tr><td align="left">BroadcastRoutingLogic</td><td align="left">BroadcastPool</td><td align="left">BroadcastGroup</td><td align="left">把收到的消息发送到所有的routee</td></tr>
+<tr><td align="left">ScatterGather<br>firstCompletedRoutingLogic</td><td align="left">ScatterGather<br>FirstCompletedPool</td><td align="left">ScatterGather<br>FirstCompletedGroup</td><td align="left">这个Router把消息发送到所有的routee， 并把第一个响应发送给原发送者。 </td></tr>
+<tr><td align="left">ConsistenHashing<br>RoutingLogic</td><td align="left">Consistent<br>HashingPool</td><td align="left">Consisten<br>HashingGroup</td><td align="left">该router使用消息的一致性散列选择routee.</td></tr>
+</tbody></table>
+<ol>
+<li>创建Router池</li>
+</ol>
+<p>定义配置</p>
+<pre><code>akka {
+  loglevel = &quot;INFO&quot;
+  actor {
+    provider = &quot;akka.remote.RemoteActorRefProvider&quot;
+    deployment {
+        /poolRouter {                        // router名称
+           router = balancing-pool           // router逻辑
+           resizer {                         // 弹性
+             enabled = on
+             lower-bound = 1                 // routee数目最小值 
+             upper-bound = 30                // routee数目最大值 
+             pressure-threshold = 1          // 定义压力阀道
+             rampup-rate = 0.25              // 定义routee的增加速度
+             backoff-threshold = 0.3         // 定义减少阀值
+             backoff-rate = 0.1              // routee的减少速度
+             messages-per-resize = 10        // 定义大小调整频率
+           }
+        }
+    }
+  }
+
+  remote {
+    enabled-transports = [&quot;akka.remote.netty.tcp&quot;]
+    netty.tcp {
+       hostname = &quot;0.0.0.0&quot;
+       port = 10000
+    }
+  }
+
+}
+</code></pre>
+<pre><code class="language-scala">val router = backend.actorOf(
+    FromConfig.props(Props(new Foo())),
+   &quot;poolRouter&quot;                     // 与配置对应
+)
+
+</code></pre>
+<a class="header" href="#消息通道" id="消息通道"><h1>消息通道</h1></a>
+<p>消息通道有两种类型</p>
+<ol>
+<li>点对点通道</li>
+<li>发布订阅通道</li>
+</ol>
+<p>点对点通道是使用最多的通道， 将消息从一个actor发送到另外一个actor</p>
+<a class="header" href="#发布-订阅通道" id="发布-订阅通道"><h2>发布-订阅通道</h2></a>
+<p>Akka使用发布-订阅通道的方式是使用EventStream. 每个ActorSystem都有一个,  因此任何Actor都以通过<code>context.system.eventStream</code>获取.</p>
+<p>通过api <code>publish</code> 进行订阅， 通过 <code>unsubscribe</code> 进行取消订阅 , <code>publish</code> 进行发布消息</p>
+<pre><code class="language-scala">val backend = ActorSystem(&quot;backend&quot;, config)
+
+
+val foo = backend.actorOf(Props(new Foo))
+
+backend.eventStream.subscribe(foo, classOf[String])
+
+backend.eventStream.publish(&quot;hello&quot;)
+
+backend.eventStream.unsubscribe(foo)
+
+backend.eventStream.publish(&quot;hello again&quot;)
+</code></pre>
+<a class="header" href="#自定义事件总线接口" id="自定义事件总线接口"><h3>自定义事件总线接口</h3></a>
+<p>Akka 定义了一个通用的接口： EventBus, 可以实现这个接口创建一个发布 - 订阅通道.</p>
+<ul>
+<li>Event(事件)</li>
+<li>Subscriber(订阅者)</li>
+<li>Classifier(分类器)</li>
+</ul>
+<a class="header" href="#特殊通道" id="特殊通道"><h2>特殊通道</h2></a>
+<p>死信: 只有当消息出现问题时， 消息才会被放到此通道中.</p>
+<a class="header" href="#流" id="流"><h1>流</h1></a>
+<p>使用akka-stream， 用有限的缓冲处理无限的流数据. 它的优点有:</p>
+<ul>
+<li>有限内存使用</li>
+<li>异步非阻塞式IO</li>
+<li>速度均衡</li>
+</ul>
+<p>使用akka-stream的步骤如下:</p>
+<ol>
+<li>定义蓝图， 流处理的图(graph)组件。 图定义了流如何处理</li>
+<li>执行蓝图， 在ActorSystem中运行图， 图被转换成执行实际流处理的actor</li>
+</ol>
+<p>示例:</p>
+<pre><code class="language-scala">object Main extends App {
+
+  val inputFile  = Paths.get(args(0))
+  val outputFile = Paths.get(args(1))
+
+  // 定义source
+  val source: Source[ByteString, Future[IOResult]] =
+    FileIO.fromPath(inputFile)
+
+  // 定义sink
+  val sink: Sink[ByteString, Future[IOResult]] =
+    FileIO.toPath(outputFile, Set(CREATE, WRITE, APPEND))
+
+  // 定义蓝图
+  val runnableGraph:RunnableGraph[Future[IOResult]] = source.to(sink)
+
+  implicit val system = ActorSystem()
+  implicit val ec = system.dispatcher
+  implicit val materializer = ActorMaterializer()
+
+  // 执行蓝图
+  runnableGraph.run().foreach {
+    result =&gt; println(s&quot;${result.status}, ${result.count} bytes read&quot;)
+      system.terminate()
+  }
+}
+
+</code></pre>
+<p>注:</p>
+<pre><code>可以设置-Xmx10m 读取40M的文件看效果
+</code></pre>
+<a class="header" href="#内部缓存" id="内部缓存"><h2>内部缓存</h2></a>
+<p>反应流提供了无阻塞后端压力的方式进行异步流处理的标准， akka-streams使用内部缓存优化吞吐量， 其在内部是进行请求和分布的, 而不是请求和发布单个元素。</p>
+<ol>
+<li>从文件中读取的块大小可以通过fromPath进行设置， 默认值是8KB</li>
+<li>最大输入缓冲区的大小设置元素的最大数目， 可以在配置中通过akka.stream.materializer.max-input-buffersize进行配置.默认值是16</li>
+</ol>
+<a class="header" href="#用flow处理事件" id="用flow处理事件"><h3>用FLow处理事件</h3></a>
+<p>Akka-strema预定义了几个FLow， 用于识别数 据流中的帧， 可以使用<code>Frameing.delimiter Flow</code> 把特定的Bytestring作为分隔符检测流中的数据, 第二个参数限制frame的最大值.</p>
+<p>一个flow具有两个开发端口， 一个输入和一个输出， 可以使用<code>via</code> 和<code>to</code>结合source与sink 变成runnableGraph</p>
+<pre><code class="language-scala">val source: Source[ByteString, Future[IOResult]] =
+    FileIO.fromPath(inputFile)
+
+val sink: Sink[ByteString, Future[IOResult]] =
+    FileIO.toPath(outputFile, Set(CREATE, WRITE, APPEND))
+
+val filterFlow: Flow[ByteString, ByteString, NotUsed] =
+    Framing.delimiter(ByteString(&quot;\n&quot;), 100)
+    .filter(s =&gt; !s.startsWith(&quot;a&quot;))
+</code></pre>
+<a class="header" href="#性能调优" id="性能调优"><h1>性能调优</h1></a>
+<p>主要有两种类型的性能问题:</p>
+<ul>
+<li>吞吐量太低</li>
+<li>延迟太长</li>
+</ul>
+<p>吞吐量问题一般采用扩展解决， 延迟问题需要对应用的设计进行变更.</p>
+<p>指标:</p>
+<ul>
+<li>到达率:   到达率是在一定时间内到达的作业或消息数目， 在观察周期2s内到达了8个消息， 则到达率为每秒4个.</li>
+<li>服务时间: 延迟是进入和退出的时间， 服务时间和延迟之间的区别是消息在邮箱中等待的时间.</li>
+<li>吞吐量: 一定时间内完成的处理消息的数目.</li>
+<li>利用度: 如果处理花费的时间是50%， 另外50%的时间空闲， 则称利用度为50%</li>
+</ul>
+<a class="header" href="#actor性能测量" id="actor性能测量"><h2>Actor性能测量</h2></a>
+<p>需要收集下面的数据</p>
+<ul>
+<li>何时收到消息并添加到邮箱中</li>
+<li>何时被发送处理， 从邮箱中删除， 并提交到处理单元</li>
+<li>何时处理完毕并离开处理单元</li>
+</ul>
+<p>收集方式可以通过下面的方法:</p>
+<ol>
+<li>自定义dispatcher</li>
+<li>以特质的方式为actor扩展</li>
+</ol>
+<a class="header" href="#自定义dispatcher" id="自定义dispatcher"><h3>自定义dispatcher</h3></a>
+<p>定义metric结构</p>
+<pre><code class="language-scala">case class MailBoxStatistics(
+  queueSize: Int,
+  receiver: String,
+  sender: String,
+  entryTime: Long, // 消息到达时间
+  exitTIme: Long // 消息离开时间
+)
+</code></pre>
+<p>实现自定义消息队列</p>
+<pre><code class="language-scala">case class MonitorEnvelope(
+  queueSize: Int,
+  receiver: String,
+  entryTime: Long,
+  handle: Envelope
+)
+
+
+class MonoitorQueue(val system: ActorSystem) extends MessageQueue
+  with UnboundedMessageQueueSemantics
+  with LoggerMessageQueueSemantics
+{
+  private final val queue = new ConcurrentLinkedQueue[MonitorEnvelope]()
+
+  def enqueue(receiver: ActorRef, handle: Envelope) = {
+    val env = MonitorEnvelope(queueSize = queue.size() + 1,
+      receiver = receiver.toString(),
+      entryTime = System.currentTimeMillis(),
+      handle = handle
+    )
+
+    queue.add(env)
+  }
+
+  def dequeue(): Envelope = {
+    val monoitor = queue.poll()
+    if (monoitor != null) {
+      monoitor.handle.message match {
+        case stat: MailBoxStatistics =&gt; // skip
+        case _ =&gt; {
+          val stat = MailBoxStatistics(
+            queueSize = monoitor.queueSize,
+            receiver = monoitor.receiver,
+            sender = monoitor.handle.sender.toString(),
+            entryTime = monoitor.entryTime,
+            exitTIme = System.currentTimeMillis()
+          )
+
+          // 投递metric
+          system.eventStream.publish(stat)
+        }
+      }
+      monoitor.handle
+    } else {
+      null
+    }
+  }
+
+  def numberOfMessages: Int = queue.size
+
+  def hasMessages: Boolean = queue.isEmpty
+
+  def cleanUp(owner: ActorRef, deadLetters: MessageQueue): Unit = {
+    if (hasMessages) {
+      var envelope = dequeue
+      while (envelope ne null) {
+        deadLetters.enqueue(owner, envelope)
+        envelope = dequeue()
+      }
+    }
+  }
+}
+
+class MonitorMailboxType(settings: ActorSystem.Settings, config: Config) extends akka.dispatch.MailboxType
+  with ProducesMessageQueue[MonoitorQueue]
+{
+
+  final override def create(
+    owner: Option[ActorRef],
+    system: Option[ActorSystem]
+  ): MessageQueue =
+  {
+
+    system match {
+      case Some(sys) =&gt; new MonoitorQueue(sys)
+      case _ =&gt; throw new IllegalArgumentException(&quot;requires a system&quot;)
+    }
+  }
+}
+</code></pre>
+<p>实现测试actor</p>
+<pre><code class="language-scala">class ProcessTestActor(serviceTime: Duration) extends Actor {
+
+  def receive: Receive = {
+    case msg: Any =&gt; {
+      Thread.sleep(serviceTime.toMillis)  // 模拟任务消耗时间
+      println(msg)
+    }
+  }
+}
+</code></pre>
+<p>实现metirc订阅者， 打印metric消息</p>
+<pre><code class="language-scala">class Foo extends Actor {
+  def receive: Receive = {
+    case msg =&gt; println(msg)
+  }
+}
+</code></pre>
+<p>运行起来</p>
+<pre><code class="language-scala">val conf =
+    s&quot;&quot;&quot;
+       |akka.actor.default-mailbox {
+       |  mailbox-type = MonitorMailboxType
+       |}
+       |
+       |my-dispatcher {
+       |  mailbox-type = MonitorMailboxType
+       |  throughput = 100
+       |}
+     &quot;&quot;&quot;.stripMargin
+
+val config = ConfigFactory.parseString(conf)
+val system = ActorSystem(&quot;system&quot;, config)
+
+val foo  = system.actorOf(Props(new Foo))
+val test = system.actorOf(Props(new ProcessTestActor(1 seconds)).withDispatcher(&quot;my-dispatcher&quot;), &quot;monitorActor&quot;)
+
+system.eventStream.subscribe(
+    foo,
+    classOf[MailBoxStatistics]
+)
+
+test ! &quot;asda&quot;
+test ! &quot;asdasd&quot;
+test ! &quot;sddd&quot;
+</code></pre>
+<a class="header" href="#以特质的方式为actor扩展" id="以特质的方式为actor扩展"><h3>以特质的方式为actor扩展</h3></a>
+<pre><code class="language-scala">import akka.actor.Actor
+
+case class ActorStatistics(
+  receiver: String,
+  sender: String,
+  entryTime: Long,
+  exitTIme: Long
+)
+
+
+trait MonoitorActor extends Actor {
+
+  abstract override def receive= {
+    case m:Any =&gt;
+      val start =System.currentTimeMillis()
+
+      super.receive(m)
+
+      val end = System.currentTimeMillis()
+
+      val stat = ActorStatistics(
+        self.toString(),
+        sender.toString(),
+        start,
+        end
+      )
+
+      context.system.eventStream.publish(stat)
+  }
+}
+</code></pre>
+<p>使用方式</p>
+<pre><code>val test = system.actorOf(Props(new ProcessTestActor(1 seconds) with MonoitorActor), &quot;monitorActor&quot;)
+</code></pre>
+<a class="header" href="#kafka" id="kafka"><h1>kafka</h1></a>
+<a class="header" href="#kafka的使用场景" id="kafka的使用场景"><h1>kafka的使用场景</h1></a>
+<p>作为业务数据的pipeline. 各业务线将数据投递到kafka.</p>
+<a class="header" href="#离线数据统计" id="离线数据统计"><h2>离线数据统计</h2></a>
+<p><img src="./images/c1.png" alt="c1" /></p>
+<ol>
+<li>业务端发送埋点数据到kafka， 通过secor对消息做持久化， 以parquet格式上传到文件系统</li>
+<li>通过spark计算， 并将计算结果存在文件系统</li>
+<li>业务端按需同步数据， 写入db</li>
+</ol>
+<hr />
+<p>优点： 计算结果准确</p>
+<p>缺点： 离线数据统计时间太长</p>
+<a class="header" href="#实时数据统计" id="实时数据统计"><h2>实时数据统计</h2></a>
+<p><img src="./images/c11.png" alt="c11.png" /></p>
+<ol>
+<li>业务将数据上报到kafka</li>
+<li>在druid集群启动index-kafka任务消费数据</li>
+<li>提供业务端报表api</li>
+</ol>
+<hr />
+<p>优点： 实时处理， 以api的方式反馈给业务端， 灵活度高</p>
+<a class="header" href="#kafka使用指南-生产者" id="kafka使用指南-生产者"><h1>kafka使用指南-生产者</h1></a>
+<p>下图展示了向kafka发送消息的主要步骤
+<img src="./images/c21.png" alt="c21" /></p>
+<a class="header" href="#参数" id="参数"><h2>参数</h2></a>
+<p>一个应用程序在很多情况下需要往kafka写入消息， kafka生产者api提供了很多参数供我们在不同的场景下面选择</p>
+<table><thead><tr><th>参数名</th><th>意义</th></tr></thead><tbody>
+<tr><td>bootstrap.servers</td><td>breoker的地址清单</td></tr>
+<tr><td>key.serializer</td><td>序列化key</td></tr>
+<tr><td>value.serializer</td><td>序列化value</td></tr>
+<tr><td>acks</td><td>acks=0, 生产者在成功写入消息之前不会等待任何来自服务器的响应. acks=1, 集群的leader收到信息。acks=all, 集群所有brokers收到消息</td></tr>
+<tr><td>buffer.memory</td><td>生产者内存缓冲区的大小</td></tr>
+<tr><td>compression.type</td><td>压缩方式</td></tr>
+<tr><td>retries</td><td>生产者可以重发消息的次数</td></tr>
+<tr><td>batch.size</td><td>当有多个消息需要被发送到同一个分区时, 生产者会把它们放在同一个批次</td></tr>
+<tr><td>linger.ms</td><td>指定了生产者在发送批次之前等待更多消息加入批次的时间</td></tr>
+<tr><td>client.id</td><td>服务器用来识别消息的来源</td></tr>
+</tbody></table>
+<a class="header" href="#分区" id="分区"><h3>分区</h3></a>
+<p>默认的分区器:</p>
+<ol>
+<li>如果key为空， 记录将被随机地发送到主题内各个可用的分区上。分区器使用轮询(Round Robin)算法将消息均衡地分布到各个分区上。</li>
+<li>如果key不为空， 取key的哈希值， 根据哈希值将消息映射到特定的分区上。</li>
+</ol>
+<a class="header" href="#kafka使用指南-消费者" id="kafka使用指南-消费者"><h1>kafka使用指南-消费者</h1></a>
+<p>Kafka消费者属于消费者群组。一个群组里的消费者订阅的是同-个主题，每个消费者接收主题一部分分区的消息。</p>
+<p>如果消费组G1有4个消费者， 主题T1有4个分区， 整个过程如图所示
+<img src="./images/c31.png" alt="31" /></p>
+<p><strong>如果我们往群组里添加更多的消费者，超过主题的分区数量，那么有一部分消费者就会被闲置，不会接收到任何消息</strong></p>
+<a class="header" href="#消费者群组和分区再均衡" id="消费者群组和分区再均衡"><h2>消费者群组和分区再均衡</h2></a>
+<p>分区的所有权从一个消费者转移到另一个消费者， 这样的行为称为再均衡。在再均衡期间，消费者无陆读取消息，造成整个群组一小段时间的不可用。另外，当分区被重新分配给另一个消费者时，消费者当前的读取状态会丢失，它有可能还需要去刷新缓存 ，在它重新恢复状态之前会拖慢应用程序</p>
+<p>消费者通过发送心跳到群组协调器的broker来维持它们和群组的从属关系， 只要消费者以正常的时间间隔发送心跳, 就被认为是活跃的。消费者会在轮询消息或者提交偏移量的时候发送心跳， 如果消费者停止发送心跳的时间足够长, 会话会过期， 协调器会触发一次再均衡.</p>
+<a class="header" href="#参数-1" id="参数-1"><h3>参数</h3></a>
+<p>消费者api也提供多个api， 支持开发者在不同场景下做选择.</p>
+<table><thead><tr><th>参数</th><th>意义</th></tr></thead><tbody>
+<tr><td>fetch.min.bytes</td><td>从服务器获取记录最小的字节数</td></tr>
+<tr><td>fetch.max.wait.ms</td><td>指定broker返回数据给消费者的时间</td></tr>
+<tr><td>max.partition.fetch.bytes</td><td>从每个分区返回给消费者的最大字节数</td></tr>
+<tr><td>session.timeout.ms</td><td>会话超时时间</td></tr>
+<tr><td>auto.offset.reset</td><td>latest， 在偏移量无效的情况下， 消费者从最新的记录开始读取数据；earliest, 偏移量无效的情况， 消费者从起始位置读取分区的记录</td></tr>
+<tr><td>enable.auto.commit</td><td>true 消费者自动提交偏移量, false， 自己控制何时提交偏移量</td></tr>
+<tr><td>partition.assignment.strategy</td><td>分配策略</td></tr>
+<tr><td>client.id</td><td>客户端标示</td></tr>
+</tbody></table>
+<a class="header" href="#提交和偏移量" id="提交和偏移量"><h4>提交和偏移量</h4></a>
+<p>提交: 更新分区当前位置</p>
+<p>消费者通过向_consumer_offset的特殊主题发送消息， 消息包含每个分区的偏移量.</p>
+<p>当发生分区再均衡的时候，</p>
+<ol>
+<li>如果提交的偏移量小于客户端处理的最后一个消息的偏移量, 那么处于两个偏移量之间的消息就会被重复处理.</li>
+<li>如果提交的偏移量大于客户端处理的最后一个消息的偏移量，那么处于两个偏移量之间的消息就会被丢失.</li>
+</ol>
+<p>避免方式: 发生分区再均衡的时候使用手动提交.</p>
+<a class="header" href="#消息可靠性保证" id="消息可靠性保证"><h1>消息可靠性保证</h1></a>
+<p>kafka在可靠性方面作了以下保证:</p>
+<ul>
+<li>kafka可以保证分区消息的顺序</li>
+<li>只有当消息被写入分区的所有同步副本时候， 它才会被认为是 &quot;已提交&quot;。</li>
+<li>只要还有一个副本是活跃的， 那么已经提交的消息就不会被丢失.</li>
+<li>消费者只能读取已经提交的消息.</li>
+</ul>
+<a class="header" href="#复制" id="复制"><h2>复制</h2></a>
+<p>kafka的复制机制和分区的多副本架构是kafka可靠性保证的核心。</p>
+<p>分区首领是同步副本， 跟随者副本需要满足以下条件才能被认为是同步的:</p>
+<ul>
+<li>与zookeeper之前有一个活跃的会话</li>
+<li>在过去的一段时间内(可配置)从首领那里获取过信息</li>
+<li>在过去的一段时间内从首领那里获取过最新的消息</li>
+</ul>
+<a class="header" href="#broker的配置" id="broker的配置"><h3>broker的配置</h3></a>
+<p>broker有3个配置参数会影响kafka消息存储的可靠性。与其他配置参数一样， 它们可以应用在broker级别， 用于控制所有主题的行为， 也可以用在主题级别， 用于控制个别主题的行为。</p>
+<a class="header" href="#复制系数" id="复制系数"><h4>复制系数</h4></a>
+<p>topic级别的配置参数是replication.factor
+broker级别的配置参数是default.replication.factor</p>
+<a class="header" href="#不完全的首领选举" id="不完全的首领选举"><h4>不完全的首领选举</h4></a>
+<p>unclean.leader.election 只能在broker级别(cluster)进行配置， 默认值是true, 允许不同步的副本成为首领</p>
+<p>完全选举： 分区首领不可用时候,  一个同步副本会选为新首领。如果在选举过程中没有丢失数据， 也就是说提交的数据同时存在于所有的同步副本上。</p>
+<p>如果首领不可用时， 其他副本都是不同步的, 比如下面两种场景:</p>
+<ul>
+<li>分区有3个副本， 其中的两个跟随者副本不可用， 这个时候， 如果生产者继续往首领写入数据， 所有消息都会得到确认并被提交。 假设首领不可用了， 另外一个跟随者重新启动， 它就成为了分区唯一的不同步脚本.</li>
+<li>分区有3个副本， 因为网络原因导致两个副本落后于首领副本， 此时首领副本不可用了， 另外两个副本也无法变成同步</li>
+</ul>
+<p>针对上面两种情况我们可以在可靠与可用之间作出选择：</p>
+<ul>
+<li>可靠: 不允许不同步的副本成为首领， 接受较低的可用性</li>
+<li>可用：允许不同步的副本成为首领， 接受承担丢失数据和出现数据不一致的风险</li>
+</ul>
+<a class="header" href="#参数总结" id="参数总结"><h5>参数总结</h5></a>
+<table><thead><tr><th>参数</th><th>意义</th></tr></thead><tbody>
+<tr><td>replication.factor</td><td>topic级别的复制系数</td></tr>
+<tr><td>default.replication.factor</td><td>broker级别的复制系数</td></tr>
+<tr><td>unclean.leader.election</td><td>true允许不同步的副本成为首领</td></tr>
+<tr><td>min.insync.replicas</td><td>最少同步副本</td></tr>
+</tbody></table>
+<a class="header" href="#可靠的系统使用生产者" id="可靠的系统使用生产者"><h1>可靠的系统使用生产者</h1></a>
+<p>当我们使用kafka的生产者， 需要注意两件事情:</p>
+<ul>
+<li>根据可靠性需求配置恰当的acks值</li>
+<li>在参数配置和代码里正确处理错误</li>
+</ul>
+<a class="header" href="#发送确认" id="发送确认"><h2>发送确认</h2></a>
+<ul>
+<li>acks = 0  意味着生产者能够通过网络把消息发送出去, 那么就认为消息已成功写入kafka</li>
+<li>acks = 1  首领在收到消息并把它写入到分区数据文件时会返回确认或错误响应。</li>
+<li>acks = all 意味着首领在返回确认或错误响应之前， 会等待所有同步副本都收到消息。</li>
+</ul>
+<a class="header" href="#配置生产者的重试参数" id="配置生产者的重试参数"><h3>配置生产者的重试参数</h3></a>
+<p>生产者需要处理的错误包括两部分: 一部分是生产者可以自动处理的错误，还有一部分是需要开发者手动处理的错误。
+如果broker返回的错误可以通过重试来解决，那么生产者会自动处理这些错误。</p>
+<p>重试发送一个已经失败的消息会带来一些风险，如果两个消息都写入成功，会导致消息重复, 所以需要保证消息的幂等性.</p>
+<a class="header" href="#在可靠的系统里使用消费者" id="在可靠的系统里使用消费者"><h1>在可靠的系统里使用消费者</h1></a>
+<p>如果一个消费者退出，另一个消费者需要知道从什么地方开始继续处理，它需要知道前一个消费者在退出前处理的最后一个偏移量是多少。所谓的“另一个”消费者，也可能就是它自 己重启之后重新回来工作。这也就是为什么消费者要“提交”它们的偏移量。它们把当前读取的偏移量保存起来，在退出之后，同一个群组里的其他消费者就可以接手它们的工作。如果消费者提交了偏移量却未能处理完消息，那么就有可能造成消息丢失，这也是消费者丢失消息的主要原因。</p>
+<p>我们可以通过手动提交偏移量来避免重复处理或者丢失消息。</p>
+<ol>
+<li>总是在处理完事件后再提交偏移量</li>
+<li>提交频度是性能和重复消息数量之间的权衡</li>
+</ol>
+<a class="header" href="#kafka-streams" id="kafka-streams"><h1>kafka-streams</h1></a>
+<p>kafka Streams 是kafka提供的一个用于构建流式处理程序库， 它与spark不同， 是一个仅依赖于Kafka的库.</p>
+<p>它的优点: <strong>不需要额外的流式处理集群， 提供了轻量级， 易用的流式处理API</strong></p>
+<a class="header" href="#编写一个kafka-streams程序" id="编写一个kafka-streams程序"><h2>编写一个kafka streams程序</h2></a>
+<p>主要有以下步骤：</p>
+<ol>
+<li>创建一个StreamsConfig实例</li>
+<li>创建一个Serde对象 (用于反序列化)</li>
+<li>编写计算程序代码</li>
+<li>启动kafka streams程序</li>
+</ol>
+<p><strong>下面是官方提供的quick start</strong></p>
+<pre><code class="language-scala">import java.util.Properties
+import java.util.concurrent.TimeUnit
+ 
+import org.apache.kafka.streams.kstream.Materialized
+import org.apache.kafka.streams.scala.ImplicitConversions._
+import org.apache.kafka.streams.scala._
+import org.apache.kafka.streams.scala.kstream._
+import org.apache.kafka.streams.{KafkaStreams, StreamsConfig}
+ 
+object WordCountApplication extends App {
+  import Serdes._
+ 
+  val props: Properties = {
+    val p = new Properties()
+    p.put(StreamsConfig.APPLICATION_ID_CONFIG, &quot;wordcount-application&quot;)
+    p.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, &quot;kafka-broker1:9092&quot;)
+    p
+  }
+ 
+  val builder: StreamsBuilder = new StreamsBuilder
+  val textLines: KStream[String, String] = builder.stream[String, String](&quot;TextLinesTopic&quot;)
+  val wordCounts: KTable[String, Long] = textLines
+    .flatMapValues(textLine =&gt; textLine.toLowerCase.split(&quot;\\W+&quot;))
+    .groupBy((_, word) =&gt; word)
+    .count()(Materialized.as(&quot;counts-store&quot;))
+  wordCounts.toStream.to(&quot;WordsWithCountsTopic&quot;)
+ 
+  val streams: KafkaStreams = new KafkaStreams(builder.build(), props)
+  streams.start()
+ 
+  sys.ShutdownHookThread {
+     streams.close(10, TimeUnit.SECONDS)
+  }
+}
+</code></pre>
+<a class="header" href="#流和状态" id="流和状态"><h1>流和状态</h1></a>
+<p>有时候一个单独的事件并不能提供足够的信息来作决定, 比如需要对一个值进行累加， 这个时候就需要增加一些上下文， 产生静态资源的映像.</p>
+<p>在流数据处理并不总是需要状态， 在某些情况下， 离散事件或记录可能已独自携带了足够有价值的信息。但通常情况下， 流入的数据需要从某类存储的数据来加以丰富.</p>
+<a class="header" href="#将流状态操作应用到kafka-stream" id="将流状态操作应用到kafka-stream"><h2>将流状态操作应用到kafka stream</h2></a>
+<p>场景： 将客户消费进行累加。</p>
+<p>stream数据:</p>
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;wang&quot;,
+    &quot;sex&quot;: &quot;male&quot;,
+    &quot;age&quot;: 11,
+    &quot;money&quot;: 999
+}
+</code></pre>
+<a class="header" href="#serde" id="serde"><h3>Serde</h3></a>
+<p><strong>通过json来做序列化和反序列化</strong></p>
+<p>自定义数据类型：</p>
+<pre><code class="language-scala">case class Purchase(
+  name: String,
+  sex: String,
+  age: Int,
+  money: Int
+)
+</code></pre>
+<a class="header" href="#定义json数据类型" id="定义json数据类型"><h4>定义json数据类型</h4></a>
+<pre><code class="language-scala">object Json {
+
+  type ParseException = JsonParseException
+  type UnrecognizedPropertyException = UPE
+
+  private val mapper = new ObjectMapper()
+  mapper.registerModule(DefaultScalaModule)
+  mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL)
+
+  private def typeReference[T: Manifest] = new TypeReference[T] {
+    override def getType = typeFromManifest(manifest[T])
+  }
+
+  private def typeFromManifest(m: Manifest[_]): Type = {
+    if (m.typeArguments.isEmpty) {
+      m.runtimeClass
+    }
+    else {
+      new ParameterizedType {
+        def getRawType = m.runtimeClass
+
+        def getActualTypeArguments = m.typeArguments.map(typeFromManifest).toArray
+
+        def getOwnerType = null
+      }
+    }
+  }
+
+  object ByteArray {
+    def encode(value: Any): Array[Byte] = mapper.writeValueAsBytes(value)
+
+    def decode[T: Manifest](value: Array[Byte]): T =
+      mapper.readValue(value, typeReference[T])
+  }
+
+}
+</code></pre>
+<a class="header" href="#序列化和反序列化" id="序列化和反序列化"><h4>序列化和反序列化</h4></a>
+<pre><code class="language-scala">class JSONSerializer[T] extends Serializer[T] {
+  override def configure(configs: util.Map[String, _], isKey: Boolean): Unit = ()
+
+  override def serialize(topic: String, data: T): Array[Byte] =
+    Json.ByteArray.encode(data)
+
+  override def close(): Unit = ()
+}
+
+/**
+  * JSON deserializer for JSON serde
+  *
+  * @tparam T
+  */
+class JSONDeserializer[T &gt;: Null &lt;: Any : Manifest] extends Deserializer[T] {
+  override def configure(configs: util.Map[String, _], isKey: Boolean): Unit = ()
+
+  override def close(): Unit = ()
+
+  override def deserialize(topic: String, data: Array[Byte]): T = {
+    if (data == null) {
+      return null
+    } else {
+      Json.ByteArray.decode[T](data)
+    }
+  }
+}
+</code></pre>
+<a class="header" href="#jsonserde" id="jsonserde"><h4>JSONSerde</h4></a>
+<pre><code>class JSONSerde[T &gt;: Null &lt;: Any : Manifest] extends Serde[T] {
+  override def deserializer(): Deserializer[T] = new JSONDeserializer[T]
+
+  override def configure(configs: util.Map[String, _], isKey: Boolean): Unit = ()
+
+  override def close(): Unit = ()
+
+  override def serializer(): Serializer[T] = new JSONSerializer[T]
+}
+
+</code></pre>
+<p>官方推荐的序列化用的是avro， 有兴趣的话可以参考<a href="https://aseigneurin.github.io/2018/08/06/kafka-tutorial-7-kafka-streams-serdes-and-avro.html">这篇文章</a></p>
+<a class="header" href="#开发过程中调试" id="开发过程中调试"><h3>开发过程中调试</h3></a>
+<p>可通过Kstraem.print打印信息, 比如下面将原始流打印：</p>
+<pre><code class="language-scala">object Main extends App {
+
+  import Serdes._
+
+  val props: Properties = {
+    val p = new Properties()
+    p.put(StreamsConfig.APPLICATION_ID_CONFIG, &quot;purchase&quot;)
+    p.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, &quot;xxxxx:9092&quot;)
+    p
+  }
+
+  val builder: StreamsBuilder = new StreamsBuilder
+
+  implicit val purchaseSuede = new JSONSerde[Purchase]
+
+  val pstream = builder.stream[String, Purchase](&quot;xxxx&quot;)
+
+
+  pstream.print(Printed.toSysOut[String, Purchase])
+
+  val streams: KafkaStreams = new KafkaStreams(builder.build(), props)
+  streams.start()
+
+  sys.ShutdownHookThread {
+    streams.close(10, TimeUnit.SECONDS)
+  }
+
+}
+</code></pre>
+<hr />
+<a class="header" href="#处理步骤" id="处理步骤"><h3>处理步骤</h3></a>
+<p>使用值转换器(transformValues)处理器将无状态的奖励处理器转换为有状态的处理器.</p>
+<p><img src="./images/kafka-stream1.png" alt="kafka-stream1" /></p>
+<p>transformValues 接受一个ValueTransformerSupplier[V, R]对象的参数。</p>
+<p>以下为实现的几个类</p>
+<p>V =&gt;  Purchase</p>
+<p>R =&gt;  RewardAccumulator</p>
+<p>PurchaseRewardTransformer =&gt;  实现ValueTransformer</p>
+<pre><code class="language-scala">class PurchaseRewardTransformer(val storeName: String)
+  extends ValueTransformer[Purchase, RewardAccumulator]
+{
+
+  private var stateStore: KeyValueStore[String, Int] = _
+
+  private var context: ProcessorContext = _
+
+
+  override def init(context: ProcessorContext): Unit = {
+
+    this.context = context
+    stateStore = this.context.getStateStore(storeName).asInstanceOf[KeyValueStore[String, Int]]
+  }
+
+  override def transform(p: Purchase): RewardAccumulator = {
+
+    var r = RewardAccumulator.build(p)
+
+    val value = stateStore.get(r.name)
+
+    if (value != null) {
+      r.purchaseTotal += value
+    }
+
+    stateStore.put(r.name, r.purchaseTotal)
+    r
+  }
+
+  override def close(): Unit = {}
+}
+</code></pre>
+<a class="header" href="#新建一个store" id="新建一个store"><h4>新建一个store</h4></a>
+<ul>
+<li>用高阶api</li>
+</ul>
+<pre><code>(Materialized.as(&quot;counts-store&quot;))
+</code></pre>
+<ul>
+<li>用低阶api, 使用Store类几个静态工厂方法来创建存储供应者
+<ul>
+<li>Stores.inMemoryKeyValueStore</li>
+<li>Stores.persistentKeyValueStore;</li>
+<li>Stores.lruMap</li>
+<li>Stores.persistentWindowStore</li>
+<li>Stores.persistentSessionStore</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>
+<p>新建stateStore实例</p>
+<pre><code class="language-scala">    var storeSupplier = Stores.inMemoryKeyValueStore(&quot;store1&quot;)
+</code></pre>
+</li>
+<li>
+<p>创建StoreBuilder并指定键和值的类型</p>
+<pre><code class="language-scala">    var storeBuilder = Stores.keyValueStoreBuilder(storeSupplier, Serdes.String, Serdes.Integer)
+</code></pre>
+</li>
+<li>
+<p>将状态存储添加到拓扑</p>
+<pre><code class="language-scala">    builder.addStateStore(storeBuilder)
+</code></pre>
+</li>
+</ol>
+<a class="header" href="#完整代码" id="完整代码"><h4>完整代码</h4></a>
+<p>从topic为data1读取， 存储状态到store1， 输出到data2 topic</p>
+<pre><code class="language-scala">object Main extends App {
+
+  import Serdes._
+
+  val props: Properties = {
+    val p = new Properties()
+    p.put(StreamsConfig.APPLICATION_ID_CONFIG, &quot;purchase&quot;)
+    p.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, &quot;xxxxx:9092&quot;)
+    p
+  }
+
+  val builder: StreamsBuilder = new StreamsBuilder
+
+  implicit val purchaseSuede          = new JSONSerde[Purchase]
+  implicit val rewardAccumulatorSuede = new JSONSerde[RewardAccumulator]
+
+  val pstream = builder.stream[String, Purchase](&quot;data1&quot;)
+
+  var storeSupplier = Stores.inMemoryKeyValueStore(&quot;store1&quot;)
+
+  var storeBuilder = Stores.keyValueStoreBuilder(storeSupplier, Serdes.String, Serdes.Integer)
+
+  builder.addStateStore(storeBuilder)
+
+
+  val accuStream = pstream.transformValues(() =&gt; new PurchaseRewardTransformer(&quot;store1&quot;), &quot;store1&quot;)
+    .asInstanceOf[KStream[String, RewardAccumulator]]
+    .to(&quot;data2&quot;)
+
+  val streams: KafkaStreams = new KafkaStreams(builder.build(), props)
+  streams.start()
+
+  sys.ShutdownHookThread {
+    streams.close(10, TimeUnit.SECONDS)
+  }
+
+}
+</code></pre>
+<a class="header" href="#容错" id="容错"><h3>容错</h3></a>
+<p>所有的StateStoreSupplier类型默认都启用了日志(新建了一个topic)， 比如上面会创建一个topic[purchase-store1-changelog], 一旦运行kafka stream应用程序的机器宕机了， 重新启动即可， 这台机器的状态存储会恢复到它们原来的内容</p>
+<p>可以通过设置 <strong>retention.ms</strong> 和 <strong>retention.bytes</strong>进行设置日志保留时间</p>
+<a class="header" href="#join" id="join"><h1>join</h1></a>
+<a class="header" href="#分流" id="分流"><h2>分流</h2></a>
+<p>kafka 流支持分流， 通过Kstraem.branch(predict1, predict2), 接受谓词将一个流拆分为其他的流</p>
+<p>示例：将消费信息流分成男， 女两个不同的流</p>
+<pre><code class="language-scala">val malePurchase   = (key: String, p: Purchase) =&gt; p.sex.equalsIgnoreCase(&quot;male&quot;)
+  val femalePurchase = (key: String, p: Purchase) =&gt; p.sex.equalsIgnoreCase(&quot;female&quot;)
+
+val bstream = pstream.
+    selectKey((k, v) =&gt; v.name)
+    .branch(malePurchase, femalePurchase)
+</code></pre>
+<p>通过index去获取对应的流， 比如想获取性别为男的流</p>
+<pre><code>val maleStream = bstream(0)
+val femaleStream = bstream(1)
+</code></pre>
+<a class="header" href="#链接" id="链接"><h2>链接</h2></a>
+<p>要创建于链接记录， 需要创建一个ValueJoiner[V1,V2,R]的示例， ValueJoiner接受两个对象， 返回单个对象.</p>
+<p>假设已经实现了 valueJoiner =&gt;  pursechaseJoiner</p>
+<pre><code class="language-scala">
+// 连接的两个流最大时间差, 时间戳在20分钟内
+val twentyMinuteWondow = JoinWindows.of(60 * 1000 * 20) 
+
+val joinedKstream = 
+    maleStream.join(femaleStream,
+                    pursechaseJoiner,
+                    twentyMinuteWondow
+                    )
+
+</code></pre>
+<p>另外还有其他的连接方式</p>
+<ul>
+<li>outerJoin 外连接</li>
+<li>leftJoin  左外连接</li>
+</ul>
+<a class="header" href="#时间戳" id="时间戳"><h1>时间戳</h1></a>
+<p>kafka streams中的时间戳有以下用法：</p>
+<ul>
+<li>链接流</li>
+<li>更新变更日志 (KTable API)</li>
+<li>决定Processor.punctuate 方法何时被触发 (处理器API)</li>
+</ul>
+<p>可以将时间戳分为3类:</p>
+<ul>
+<li>事件时间。事件发生时设置的时间戳， 通常内置在对象中用于表示事件。</li>
+<li>摄取时间。数据首次进入数据处理管道时设置的时间戳。 可以考虑由Kafka代理设置的时间戳</li>
+<li>处理时间。当数据或事件记录首次开始流经处理管道时设置的时间戳。</li>
+</ul>
+<a class="header" href="#时间戳提取器" id="时间戳提取器"><h2>时间戳提取器</h2></a>
+<ul>
+<li>FailOnInvalidTimestamp  在时间戳无效的情况下抛出异常</li>
+<li>LogAndSkipOnInvalidTimeStamp 返回无效的时间戳， 并产生一条警告日志, 该记录由于时间戳无效而被丢弃</li>
+<li>UsePreviousTimeOnInvalidTimeStamp 在时间戳无效的情况下， 返回上次有效提取的时间戳</li>
+<li>WallclockTimestampExtractor  通过调用System.currentTimeMills(), 以毫秒数返回当前时间。</li>
+<li>自定义时间提取器， 实现TimestampExtractor</li>
+</ul>
+<a class="header" href="#应用时间戳提取器" id="应用时间戳提取器"><h3>应用时间戳提取器</h3></a>
+<ol>
+<li>通过配置指定 StreamsConfig.DEFAULT_TIMESTAMP_EXTRACTOR_CLASS_CONFIG</li>
+<li>通过cousumed对象指定 <code>Consumed.withTimeStampExtractor()</code></li>
+</ol>
+<a class="header" href="#ktable" id="ktable"><h1>KTable</h1></a>
+<p>KStream 定义为无限的事件序列</p>
+<p>KTable 可以定义为KStraem的更新流</p>
+<p>比如KStream</p>
+<table><thead><tr><th align="left">offset</th><th align="left">name</th><th align="left">value</th></tr></thead><tbody>
+<tr><td align="left">1</td><td align="left">wang</td><td align="left">11</td></tr>
+<tr><td align="left">2</td><td align="left">wang</td><td align="left">12</td></tr>
+<tr><td align="left">3</td><td align="left">li</td><td align="left">13</td></tr>
+<tr><td align="left">4</td><td align="left">zhang</td><td align="left">14</td></tr>
+<tr><td align="left">5</td><td align="left">li</td><td align="left">22</td></tr>
+</tbody></table>
+<p>对应的KTable就是:</p>
+<table><thead><tr><th>offset</th><th>name</th><th>value</th></tr></thead><tbody>
+<tr><td align="left">2</td><td align="left">wang</td><td align="left">12</td></tr>
+<tr><td align="left">4</td><td align="left">zhang</td><td align="left">14</td></tr>
+<tr><td align="left">5</td><td align="left">li</td><td align="left">22</td></tr>
+</tbody></table>
+<p>KTable 记录存储在本地状态， 它是通过一部分缓存和新数据对比， 将更新记录发送到下游.</p>
+<p><code>cache.max.bytes.buffering</code> 为本地缓存， 默认10M
+<code>commit.interval.ms</code> 提交间隔， 默认值30s</p>
+<a class="header" href="#聚合" id="聚合"><h2>聚合</h2></a>
+<p>KStream 通过groupbykey 或者 grouoby 生成KgroupedStream 会生成KGroupedStream， 聚合之后生成KTable</p>
+<a class="header" href="#开窗" id="开窗"><h2>开窗</h2></a>
+<p>窗口类型:</p>
+<ul>
+<li>会话窗口</li>
+<li>翻转窗口</li>
+<li>滑动 / 跳跃窗口</li>
+</ul>
+<p>选择那种类型的窗口取决于业务需求。 翻转和跳跃窗口是有时间限制的， 而会话窗口偏重于用户活跃度， 会话的长度取决于用户的活跃度。 对于所有类型窗口的一个关键点事它们都是基于记录中的时间戳.</p>
+<a class="header" href="#会话窗口" id="会话窗口"><h3>会话窗口</h3></a>
+<p>api: <code>xxx.windowdBy(SessionWindows.with(20).until(900))</code></p>
+<p>上面设置了一个会话窗口 不活跃的时间为20s， 保留时间为15分钟</p>
+<a class="header" href="#示例" id="示例"><h4>示例</h4></a>
+<p>现在有以下事件流：</p>
+<table><thead><tr><th>key</th><th>value</th><th>time</th></tr></thead><tbody>
+<tr><td align="left">A</td><td align="left">1</td><td align="left">10</td></tr>
+<tr><td align="left">A</td><td align="left">2</td><td align="left">15</td></tr>
+<tr><td align="left">A</td><td align="left">3</td><td align="left">40</td></tr>
+</tbody></table>
+<p>以上有2个会话窗口，  时间10， 15为一个， 40为另外一个，</p>
+<p>这时候有1条数据为 <code>key: A, value: 2, time 30</code>, 这时候会合成一个会话窗口</p>
+<hr />
+<a class="header" href="#翻转窗口" id="翻转窗口"><h3>翻转窗口</h3></a>
+<p>翻转窗口是最常用的场景， 统计每20秒内统计公司的一个交易量. <code>TimeWindows.of(20)</code></p>
+<a class="header" href="#滑动--跳跃窗口" id="滑动--跳跃窗口"><h3>滑动 / 跳跃窗口</h3></a>
+<p>滑动或者跳跃窗口和翻转窗口有点类似，  比如每20秒内统计公司的一个交易量， 但是每5s更新一次。 <code>TimeWindows.of(20).advanceBy(5)</code></p>
+<a class="header" href="#globalktable" id="globalktable"><h2>GlobalKTable</h2></a>
+<p>在某种情况下，你希望链接的查找数据尽可能相对比较下， 并且查找数据的整个副本可以在每个节点上本地匹配，这个时候就可以使用GlobalKtable</p>
+<a class="header" href="#性能测量" id="性能测量"><h1>性能测量</h1></a>
+<p>性能测量对流式应用程序是至关重要的</p>
+<ul>
+<li>线程指标
+<ul>
+<li>提交，轮询和处理操作的平均时间；</li>
+<li>每秒创建的任务数， 以及每秒关闭的任务数.</li>
+</ul>
+</li>
+<li>任务指标
+<ul>
+<li>每秒提交任务的平均数</li>
+<li>平均提交时间</li>
+</ul>
+</li>
+<li>处理器节点指标
+<ul>
+<li>平均以及最大处理时间</li>
+<li>每秒处理操作的平均数</li>
+<li>转发速率</li>
+</ul>
+</li>
+<li>状态存储指标
+<ul>
+<li>put, get 和flush操作的平均执行时间</li>
+<li>平均每秒执行put， get和flush操作数</li>
+</ul>
+</li>
+</ul>
+<p>可以通过设置<code>StreamingConfig.METRICS_RECORING_LEVEL_CONFIG, &quot;DEBUG&quot;)</code> 来设置指标汇报</p>
+<a class="header" href="#查看指标" id="查看指标"><h2>查看指标</h2></a>
+<p>通过Jconsole查看指标</p>
+<p><img src="./images/kafka-watch.png" alt="kafka-watch" /></p>
+<p>如上图所示， 可以知道每秒处理的速率是93</p>
+<a class="header" href="#精确一次处理语义" id="精确一次处理语义"><h1>精确一次处理语义</h1></a>
+<p>在0.11.0版本之前， kafka的投递语义被描述为至少一次或至多一次， 这取决于生产者。</p>
+<a class="header" href="#至少一次处理语义" id="至少一次处理语义"><h2>至少一次处理语义</h2></a>
+<p>假设生产者配置了acks=&quot;all&quot;, 并且配置了等待确认的超时时间， 如果生产者配置了重试次数大于0， 那么生产者将会重新发送该消息， 并不知道先前的消息已被成功持久化， 在这种场景下(虽然比较少见), 重复的消息将会被投递给消费者， 因此被称为最少一次</p>
+<a class="header" href="#至多一次处理语义" id="至多一次处理语义"><h2>至多一次处理语义</h2></a>
+<p>重试次数设为0, 有问题的消息只会被投递一次， 不会重试。</p>
+<a class="header" href="#精确一次处理语义-1" id="精确一次处理语义-1"><h2>精确一次处理语义</h2></a>
+<p>即使在生产者重新发送一条之前已持久化到主题的消息的情况下， 消费者也将精确地接受一次消息， 要启用事务或生产者精确一次处理， 需要配置transactionl.id</p>
+<pre><code class="language-java">Props.put(&quot;transactional.id&quot;, &quot;transactional.id&quot;)
+
+
+producer.initTransactions()
+
+
+try {
+
+    producer.beginTranscation();
+
+    ...
+
+    producer.commmitTransaction();
+} 
+
+</code></pre>
+<p>事务中使用消费者</p>
+<pre><code>props.put(&quot;isolation.level&quot;, &quot;read_committed&quot;)
+
+</code></pre>
+<p>要使kafka Streams精确一次语义， 需要设置<code>StraemsConfig.PROCESSING_GUARANTEE_CONFIG = exactly_once</code></p>
+<a class="header" href="#简介" id="简介"><h1>简介</h1></a>
+<p>Apache Druid是一款实时多维计算的时序数据库服务,  它的架构为存储与计算分离。</p>
+<p><img src="./images/cluster.png" alt="cluster.png" /></p>
+<p>druid含有6个服务</p>
+<ul>
+<li>coordinator</li>
+<li>overload</li>
+<li>middle manager</li>
+<li>historical</li>
+<li>broker</li>
+<li>router</li>
+</ul>
+<p>基于zookeeper做服务注册与服务发现， 在各服务启动时候向zookeeper注册其地址。</p>
+<p>并通过数据库(mysql / postgresql / derby )保存其元数据信息</p>
+<p><strong>coordinator:</strong> 协调服务， 获取segments的信息, 设置rules</p>
+<p><strong>overload:</strong> 统治节点， 相当于yarn的resoruce manager</p>
+<p><strong>middle manager:</strong> 中间节点， 当接受到用户的任务后， 启动一个劳工进行处理， 相当于yarn的node manager</p>
+<p><strong>histroical:</strong> 存储节点</p>
+<p><strong>broker:</strong> 查询节点</p>
+<p><strong>router:</strong> 路由节点</p>
+<a class="header" href="#源码学习" id="源码学习"><h1>源码学习</h1></a>
+<p>学习druid的设计模式， 数据结构， 第三方库， 架构, 计算引擎， 存储引擎.</p>
+<a class="header" href="#maven-简介" id="maven-简介"><h1>Maven 简介</h1></a>
+<p>Maven通过完成以下的工作， 来帮助人类减少构建软件过程中的错误。</p>
+<ul>
+<li>下载依赖</li>
+<li>将附加的jars附加到类的路径</li>
+<li>编译源代码到二进制码</li>
+<li>运行测试</li>
+<li>打包成jar， war</li>
+<li>部署</li>
+</ul>
+<a class="header" href="#project-object-model" id="project-object-model"><h2>Project Object Model</h2></a>
+<p>pom是maven项目的配置文件， pom定义了项目， 管理依赖， 配置插件, 下面示例是一个pom文件的基本结构.</p>
+<pre><code class="language-xml">&lt;project&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;groupId&gt;...&lt;/groupId&gt;
+    &lt;artifactId&gt;...&lt;/artifactId&gt;
+    &lt;packaging&gt;jar&lt;/packaging&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+    &lt;name&gt;...&lt;/name&gt;
+    &lt;url&gt;...&lt;/url&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;junit&lt;/groupId&gt;
+            &lt;artifactId&gt;junit&lt;/artifactId&gt;
+            &lt;version&gt;4.12&lt;/version&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+            //...
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+</code></pre>
+<a class="header" href="#project-identifiers" id="project-identifiers"><h3>Project Identifiers</h3></a>
+<ul>
+<li><em>groupId</em> - 组织或者公司名</li>
+<li><em>artifactId</em> - 项目独一无二的名字</li>
+<li><em>version</em> - 项目的版本</li>
+<li><em>packaging</em> - 打包方法( war / jar / zip)</li>
+</ul>
+<a class="header" href="#dependencies" id="dependencies"><h3>Dependencies</h3></a>
+<pre><code class="language-xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-core&lt;/artifactId&gt;
+    &lt;version&gt;4.3.5.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>maven会从远程仓库自动下载依赖</p>
+<a class="header" href="#repositories" id="repositories"><h3>Repositories</h3></a>
+<p>Maven中的存储库用于保存不同类型的构建工件和依赖项。默认本地存储库位于用户主目录下的.m2/repository文件夹中。</p>
+<p>如果本地已存在依赖， maven会使用它， 否则maven会从<a href="https://search.maven.org/classic/#search%7Cga%7C1%7Ccentra">Maven central</a>进行下载, 如果有些项目在maven库找不到的话，
+可以自己提供repository url</p>
+<pre><code class="language-xml">&lt;repositories&gt;
+    &lt;repository&gt;
+        &lt;id&gt;JBoss repository&lt;/id&gt;
+        &lt;url&gt;http://repository.jboss.org/nexus/content/groups/public/&lt;/url&gt;
+    &lt;/repository&gt;
+&lt;/repositories&gt;
+</code></pre>
+<a class="header" href="#properties" id="properties"><h3>Properties</h3></a>
+<p>用户可以使用 ${name} 来使用定义的属性， 比如下面的示例</p>
+<pre><code class="language-xml">&lt;properties&gt;
+    &lt;spring.version&gt;4.3.5.RELEASE&lt;/spring.version&gt;
+&lt;/properties&gt;
+ 
+&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-core&lt;/artifactId&gt;
+        &lt;version&gt;${spring.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
+        &lt;version&gt;${spring.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+</code></pre>
+<p>以后需要升级版本的时候只需要改变<code>&lt;spring.version&gt;</code>即可</p>
+<a class="header" href="#build" id="build"><h3>Build</h3></a>
+<p>tag为build的部分，定义了编译之后的信息， 如下面的示例</p>
+<pre><code class="language-xml">&lt;build&gt;
+    &lt;defaultGoal&gt;install&lt;/defaultGoal&gt;
+    &lt;directory&gt;${basedir}/target&lt;/directory&gt;
+    &lt;finalName&gt;${artifactId}-${version}&lt;/finalName&gt;
+    &lt;filters&gt;
+      &lt;filter&gt;filters/filter1.properties&lt;/filter&gt;
+    &lt;/filters&gt;
+    //...
+&lt;/build&gt;
+</code></pre>
+<a class="header" href="#using-profiles" id="using-profiles"><h3>Using Profiles</h3></a>
+<p>Maven的另一个重要特性是它对配置文件的支持。配置文件基本上是一组配置值。通过使用配置文件，您可以为不同的环境（如生产/测试/开发）自定义构建</p>
+<pre><code class="language-xml">&lt;profiles&gt;
+    &lt;profile&gt;
+        &lt;id&gt;production&lt;/id&gt;
+        &lt;build&gt;
+            &lt;plugins&gt;
+                &lt;plugin&gt;
+                //...
+                &lt;/plugin&gt;
+            &lt;/plugins&gt;
+        &lt;/build&gt;
+    &lt;/profile&gt;
+    &lt;profile&gt;
+        &lt;id&gt;development&lt;/id&gt;
+        &lt;activation&gt;
+            &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;
+        &lt;/activation&gt;
+        &lt;build&gt;
+            &lt;plugins&gt;
+                &lt;plugin&gt;
+                //...
+                &lt;/plugin&gt;
+            &lt;/plugins&gt;
+        &lt;/build&gt;
+     &lt;/profile&gt;
+ &lt;/profiles&gt;
+</code></pre>
+<p>默认的配置文件是development， 如果想使用生产的配置文件， 可以使用下面的命令<code>mvn clean install -Pproduction</code></p>
+<a class="header" href="#maven-build-lifecycles" id="maven-build-lifecycles"><h2>Maven Build Lifecycles</h2></a>
+<p>每个Maven构建都遵循指定的生命周期。您可以执行多个构建生命周期目标，包括编译项目代码，创建包以及在本地Maven依赖存储库中安装存档文件的目标。</p>
+<p>以下列表显示了最重要的Maven生命周期阶段：</p>
+<ul>
+<li><em>validate</em> - 检查项目的正确性</li>
+<li><em>compile</em> - 将提供的源代码编译为二进制工件</li>
+<li><em>test</em> - 执行单元测试</li>
+<li><em>package</em> - 将已编译的代码打包到存档文件中</li>
+<li><em>integration-test</em> - 执行需要打包的其他测试</li>
+<li><em>verify</em> - 检查打包文件是否有效</li>
+<li><em>install</em> - 在本地maven仓库安装文件</li>
+<li><em>deploy</em> - 部署打包文件到远程服务器或者仓库</li>
+</ul>
+<a class="header" href="#multi-module-projects" id="multi-module-projects"><h3>Multi-Module Projects</h3></a>
+<p>Maven中处理多模块项目（也称为聚合器项目）的机制称为Reactor。</p>
+<p>Reactor收集所有可用的模块进行构建，然后将项目分类到正确的构建顺序，最后逐个构建它们</p>
+<p>pom.xml示例</p>
+<pre><code class="language-xml">&lt;parent&gt;
+    &lt;groupId&gt;xxxx&lt;/groupId&gt;
+    &lt;artifactId&gt;parent-project&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+&lt;/parent&gt;
+
+&lt;modules&gt;
+    &lt;module&gt;core&lt;/module&gt;
+    &lt;module&gt;service&lt;/module&gt;
+    &lt;module&gt;webapp&lt;/module&gt;
+&lt;/modules&gt;
+</code></pre>
+<a class="header" href="#参考资料" id="参考资料"><h2>参考资料</h2></a>
+<p><a href="https://www.baeldung.com/maven">Apache Maven Tutorial</a></p>
+<a class="header" href="#debug-in-idea" id="debug-in-idea"><h1>Debug in idea</h1></a>
+<ol>
+<li>获取源码  git clone https://github.com/apache/incubator-druid.git</li>
+<li>build 源码  mvn clean install -DskipTests</li>
+<li>idea 导入项目</li>
+<li>在.idea下面新建runConfigurations文件夹， 导入各个服务xml文件, Coordinator服务示例</li>
+</ol>
+<pre><code class="language-xml">&lt;component name=&quot;ProjectRunConfigurationManager&quot;&gt;
+  &lt;configuration default=&quot;false&quot; name=&quot;Coordinator&quot; type=&quot;Application&quot; factoryName=&quot;Application&quot;&gt;
+    &lt;extension name=&quot;coverage&quot; enabled=&quot;false&quot; merge=&quot;false&quot; sample_coverage=&quot;true&quot; runner=&quot;idea&quot; /&gt;
+    &lt;option name=&quot;MAIN_CLASS_NAME&quot; value=&quot;org.apache.druid.cli.Main&quot; /&gt;
+    &lt;option name=&quot;VM_PARAMETERS&quot; value=&quot;-server -Duser.timezone=UTC -Dfile.encoding=UTF-8 -Xmx256M -Xmx256M -XX:+UseG1GC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintAdaptiveSizePolicy -XX:+PrintReferenceGC -verbose:gc -XX:+PrintFlagsFinal -Djava.util.logging.manager=org.apache.logging.log4j.jul.LogManager -Dorg.jboss.logging.provider=slf4j -Ddruid.host=localhost -Ddruid.service=coordinator -Ddruid.extensions.directory=$PROJECT_DIR$/distribution/target/extensions/ -Ddruid.extensions.loadList=[\&amp;quot;druid-s3-extensions\&amp;quot;,\&amp;quot;druid-histogram\&amp;quot;,\&amp;quot;mysql-metadata-storage\&amp;quot;] -Ddruid.zk.service.host=localhost -Ddruid.metadata.storage.type=mysql -Ddruid.metadata.storage.connector.connectURI=&amp;quot;jdbc:mysql://localhost:3306/druid&amp;quot; -Ddruid.metadata.storage.connector.user=druid -Ddruid.metadata.storage.connector.password=diurd -Ddruid.serverview.type=batch -Ddruid.emitter=logging -Ddruid.coordinator.period=PT10S -Ddruid.coordinator.startDelay=PT5S&quot; /&gt;
+    &lt;option name=&quot;PROGRAM_PARAMETERS&quot; value=&quot;server coordinator&quot; /&gt;
+    &lt;option name=&quot;WORKING_DIRECTORY&quot; value=&quot;file://$PROJECT_DIR$&quot; /&gt;
+    &lt;option name=&quot;ALTERNATIVE_JRE_PATH_ENABLED&quot; value=&quot;false&quot; /&gt;
+    &lt;option name=&quot;ALTERNATIVE_JRE_PATH&quot; value=&quot;1.8&quot; /&gt;
+    &lt;option name=&quot;ENABLE_SWING_INSPECTOR&quot; value=&quot;false&quot; /&gt;
+    &lt;option name=&quot;ENV_VARIABLES&quot; /&gt;
+    &lt;option name=&quot;PASS_PARENT_ENVS&quot; value=&quot;true&quot; /&gt;
+    &lt;module name=&quot;druid-services&quot; /&gt;
+    &lt;envs /&gt;
+    &lt;method /&gt;
+  &lt;/configuration&gt;
+&lt;/component&gt;
+</code></pre>
+<a class="header" href="#第三方库" id="第三方库"><h1>第三方库</h1></a>
+<p>学习第三方库的使用</p>
+<a class="header" href="#inversion-of-control" id="inversion-of-control"><h1>Inversion of Control</h1></a>
+<p>控制反转是软件工程中的一个原则，通过该原理，对象或程序的一部分的控制被转移到容器或框架。它最常用于面向对象编程的上下文中。</p>
+<p>与我们的自定义代码调用库的传统编程相比，IoC使框架能够控制程序流并调用我们的自定义代码。为了实现这一点，框架使用内置额外行为的抽象。如果我们想要添加自己的行为，我们需要扩展框架的类或插入我们自己的类。</p>
+<p>它的优点有:</p>
+<ul>
+<li>将任务的执行与其实现分离</li>
+<li>使得在不同的实现之间切换更容易</li>
+<li>更高程度的模块化</li>
+<li>通过隔离组件或模拟其依赖关系并允许组件通过合同进行通信来更轻松地测试程序</li>
+</ul>
+<p>控制反转可以通过各种机制实现，例如：策略设计模式，服务定位模式，工厂模式和依赖注入（DI）。</p>
+<a class="header" href="#dependency-injection" id="dependency-injection"><h2>Dependency Injection</h2></a>
+<p>依赖注入是一种实现IoC的模式，其中被反转的控件是对象依赖项的设置。</p>
+<p>将对象与其他对象连接或将对象“注入”其他对象的行为由汇编程序而不是对象本身完成。</p>
+<a class="header" href="#google-guice" id="google-guice"><h3>Google Guice</h3></a>
+<p>模块是bindings定义的基本单元</p>
+<a class="header" href="#插件" id="插件"><h4>插件</h4></a>
+<p>基于grapviz生成依赖图
+<a href="https://github.com/google/guice/wiki/Grapher">Grapher</a></p>
+<a class="header" href="#apache-curator" id="apache-curator"><h1>Apache curator</h1></a>
+<p>apache curator 是一个zookeeper的java客户端第三方库, 它具有以下特性:</p>
+<ul>
+<li>连接管理和重试策略</li>
+<li>异步</li>
+<li>配置中心</li>
+<li>分布式服务解决方案， 实现了领导选举， 分布式锁</li>
+</ul>
+<a class="header" href="#依赖" id="依赖"><h2>依赖</h2></a>
+<p>添加依赖到pom.xml</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.curator&lt;/groupId&gt;
+    &lt;artifactId&gt;curator-x-async&lt;/artifactId&gt;
+    &lt;version&gt;4.0.1&lt;/version&gt;
+    &lt;exclusions&gt;
+        &lt;exclusion&gt;
+            &lt;groupId&gt;org.apache.zookeeper&lt;/groupId&gt;
+            &lt;artifactId&gt;zookeeper&lt;/artifactId&gt;
+        &lt;/exclusion&gt;
+    &lt;/exclusions&gt;
+&lt;/dependency&gt;
+</code></pre>
+<a class="header" href="#连接管理" id="连接管理"><h3>连接管理</h3></a>
+<a class="header" href="#jackson" id="jackson"><h1>Jackson</h1></a>
+<p>Jackson是java通过json做序列化， 反序列化的第三方库</p>
+<a class="header" href="#jackson-annotation" id="jackson-annotation"><h2>Jackson Annotation</h2></a>
+<a class="header" href="#序列化注解" id="序列化注解"><h3>序列化注解</h3></a>
+<a class="header" href="#jsonanygetter" id="jsonanygetter"><h4>@JsonAnyGetter</h4></a>
+<p>@JsonAnyGetter 序列化java的Map数据结构</p>
+<p>Example:</p>
+<pre><code class="language-java">public class Bean
+{
+
+  public String name;
+
+  private Map&lt;String, String&gt; properties;
+
+
+  @JsonAnyGetter
+  public Map&lt;String, String&gt; getProperties()
+  {
+    return properties;
+  }
+
+  public Bean(String name)
+  {
+
+    this.name = name;
+    this.properties = new HashMap&lt;String, String&gt;();
+
+  }
+
+
+  public void add(String k, String v)
+  {
+
+    this.properties.put(k, v);
+
+  }
+}
+
+</code></pre>
+<pre><code class="language-java">public class Main
+{
+
+
+  public static void main(String[] args) throws JsonProcessingException
+  {
+
+
+    Bean bean = new Bean(&quot;1&quot;);
+    bean.add(&quot;attr1&quot;, &quot;va11&quot;);
+    bean.add(&quot;attr2&quot;, &quot;val2&quot;);
+
+    String result = new ObjectMapper().writeValueAsString(bean);
+    System.out.println(result);
+  }
+}
+
+</code></pre>
+<a class="header" href="#jsonpropertyorder" id="jsonpropertyorder"><h4>@JsonPropertyOrder</h4></a>
+<p>保持序列化的顺序</p>
+<pre><code class="language-java">@JsonPropertyOrder({ &quot;name&quot;, &quot;id&quot; })
+public class MyBean {
+    public int id;
+    public String name;
+}
+
+</code></pre>
+<p>Output:</p>
+<pre><code>{
+    &quot;name&quot;:&quot;My bean&quot;,
+    &quot;id&quot;:1
+}
+</code></pre>
+<a class="header" href="#jsonrawvalue" id="jsonrawvalue"><h4>@JsonRawValue</h4></a>
+<p>一般用于嵌入json</p>
+<pre><code class="language-Java">public class RawBean {
+    public String name;
+ 
+    @JsonRawValue
+    public String json;
+}
+
+</code></pre>
+<p>Output:</p>
+<pre><code>{
+    &quot;name&quot;:&quot;My bean&quot;,
+    &quot;json&quot;:{
+        &quot;attr&quot;:false
+    }
+}
+
+</code></pre>
+<a class="header" href="#jsonvalue" id="jsonvalue"><h4>@JsonValue</h4></a>
+<p>序列化实例的单个方法</p>
+<pre><code class="language-java">public enum Bean
+{
+  Type1(&quot;type 1&quot;), Type2(&quot;Type 2&quot;);
+
+
+  private String name;
+
+  Bean(String name)
+  {
+    this.name = name;
+  }
+
+  @JsonValue
+  public String getName()
+  {
+    return name;
+  }
+}
+</code></pre>
+<a class="header" href="#jsonrootname" id="jsonrootname"><h4>@JsonRootName</h4></a>
+<p>使用注释来指定要使用的根包装齐器的名称.</p>
+<pre><code>
+@JsonRootName(value = &quot;user&quot;)
+public class Bean
+{
+  @JsonProperty
+  private String name;
+
+  @JsonProperty
+  private int Id;
+
+  public Bean(String name, int Id)
+  {
+    this.name = name;
+    this.Id = Id;
+  }
+}
+</code></pre>
+<p>Output:</p>
+<pre><code>{&quot;user&quot;:{&quot;name&quot;:&quot;wang&quot;,&quot;Id&quot;:1}}
+</code></pre>
+<a class="header" href="#jsonserialize" id="jsonserialize"><h4>@JsonSerialize</h4></a>
+<p>按照自定义的格式进行序列化， 常用于时间</p>
+<a class="header" href="#反序列化注解" id="反序列化注解"><h3>反序列化注解</h3></a>
+<a class="header" href="#jsoncreator" id="jsoncreator"><h4>@JsonCreator</h4></a>
+<p>配合JsonProperty将字符串序列化为java的类</p>
+<pre><code class="language-java">public class Bean
+{
+  public String name;
+
+  public int Id;
+
+  @JsonCreator
+  public Bean(
+      @JsonProperty(&quot;name&quot;) String name,
+      @JsonProperty(&quot;id&quot;) int Id
+  )
+  {
+    this.name = name;
+    this.Id = Id;
+  }
+}
+</code></pre>
+<a class="header" href="#jacksoninject" id="jacksoninject"><h4>@JacksonInject</h4></a>
+<p>@JacksonInject表示属性将从注入中获取其值，而不是从JSON数据中获取。</p>
+<a class="header" href="#jsonanysetter" id="jsonanysetter"><h4>@JsonAnySetter</h4></a>
+<p>@jacaksonAnySetter将json映射为java的map类型</p>
+<a class="header" href="#jsonsetter" id="jsonsetter"><h4>@JsonSetter</h4></a>
+<p>@JsonSetter是@JsonProperty的替代方案</p>
+<a class="header" href="#jsondeserialize" id="jsondeserialize"><h4>@JsonDeserialize</h4></a>
+<p>按照自定义时间字符串反序列化java的property</p>
+<a class="header" href="#jsonalias" id="jsonalias"><h4>@JsonAlias</h4></a>
+<p>@JsonAlias在反序列化期间为属性定义了一个或多个备用名称</p>
+<p>Example:</p>
+<pre><code class="language-java">public class AliasBean {
+    @JsonAlias({ &quot;fName&quot;, &quot;f_name&quot; })
+    private String firstName;   
+    private String lastName;
+}
+</code></pre>
+<a class="header" href="#jacakson一些属性过滤的注解" id="jacakson一些属性过滤的注解"><h3>jacakson一些属性过滤的注解</h3></a>
+<a class="header" href="#jsonignoreproperties" id="jsonignoreproperties"><h4>@JsonIgnoreProperties</h4></a>
+<p>忽略某个属性</p>
+<p>level: class</p>
+<a class="header" href="#jsonignore" id="jsonignore"><h4>@JsonIgnore</h4></a>
+<p>@JsonIgnore注释用于标记属性要在字段级别忽略</p>
+<p>level: field</p>
+<a class="header" href="#jsonignoretype" id="jsonignoretype"><h4>@JsonIgnoreType</h4></a>
+<p>@JsonIgnoreType标记要忽略的带注释类型的所有属性。</p>
+<a class="header" href="#jsoninclude" id="jsoninclude"><h4>@JsonInclude</h4></a>
+<p>我们可以使用@JsonInclude来排除具有 empty/ null / defualt的属性。</p>
+<a class="header" href="#jsonautodetect" id="jsonautodetect"><h4>@JsonAutoDetect</h4></a>
+<p>@JsonAutoDetect可以覆盖哪些属性可见而哪些不可见的默认语义。</p>
+<p>序列化私有的properties</p>
+<pre><code class="language-java">@JsonAutoDetect(fieldVisibility = Visibility.ANY)
+public class PrivateBean {
+    private int id;
+    private String name;
+}
+</code></pre>
+<a class="header" href="#jackson多态类型处理注释" id="jackson多态类型处理注释"><h3>jackson多态类型处理注释</h3></a>
+<ul>
+<li>@JsonTypeInfo – 表示序列化中包含的类型信息的详细信息</li>
+<li>@JsonSubTypes - 表示带注释的类型的子类型</li>
+<li>@JsonTypeName - 定义用于带注释的类的逻辑类型名称</li>
+</ul>
+<p>Example</p>
+<pre><code class="language-java">public class Zoo
+{
+
+  public Animal animal;
+
+
+  @JsonTypeInfo(
+      use = JsonTypeInfo.Id.NAME,
+      include = JsonTypeInfo.As.PROPERTY,
+      property = &quot;type&quot;
+  )
+  @JsonSubTypes(
+      {
+          @JsonSubTypes.Type(value = Dog.class, name = &quot;dog&quot;),
+      }
+  )
+  public static class Animal
+  {
+    public String name;
+
+  }
+
+
+  public Zoo(Animal a)
+  {
+    this.animal = a;
+  }
+
+  @JsonTypeName(&quot;dog&quot;)
+  public static class Dog extends Animal
+  {
+    public double barkVolume;
+
+    public Dog(String name)
+    {
+      this.name = name;
+    }
+
+  }
+}
+</code></pre>
+<pre><code class="language-java">public class Main
+{
+  public static void main(String[] args) throws JsonProcessingException
+  {
+
+    Zoo.Dog dog = new Zoo.Dog(&quot;Lacy&quot;);
+
+    Zoo bean = new Zoo(dog);
+
+
+    String result = new ObjectMapper().writeValueAsString(bean);
+
+    System.out.println(result);
+  }
+}
+</code></pre>
+<p><strong>output:</strong> {&quot;animal&quot;:{&quot;type&quot;:&quot;dog&quot;,&quot;name&quot;:&quot;Lacy&quot;,&quot;barkVolume&quot;:0.0}}</p>
+<a class="header" href="#jackson-常用注解" id="jackson-常用注解"><h3>Jackson 常用注解</h3></a>
+<a class="header" href="#jsonproperty" id="jsonproperty"><h4>@JsonProperty</h4></a>
+<p>我们可以添加@JsonProperty注释来指示JSON中的属性名称</p>
+<a class="header" href="#jsonformat" id="jsonformat"><h4>@JsonFormat</h4></a>
+<p>@JsonFormat注释指定序列化日期/时间值时的格式。</p>
+<p>Example:</p>
+<pre><code class="language-java">public class Event {
+    public String name;
+ 
+    @JsonFormat(
+      shape = JsonFormat.Shape.STRING,
+      pattern = &quot;dd-MM-yyyy hh:mm:ss&quot;)
+    public Date eventDate;
+}
+
+</code></pre>
+<a class="header" href="#jsonunwrapped" id="jsonunwrapped"><h4>@JsonUnwrapped</h4></a>
+<p>@JsonUnwrapped定义了序列化/反序列化时应解包/展平的值。</p>
+<p>Example:</p>
+<pre><code class="language-java">public class UnwrappedUser {
+    public int id;
+ 
+    @JsonUnwrapped
+    public Name name;
+ 
+    public static class Name {
+        public String firstName;
+        public String lastName;
+    }
+}
+</code></pre>
+<a class="header" href="#jsonview" id="jsonview"><h4>@JsonView</h4></a>
+<p>@JsonView表示将包含属性以进行序列化/反序列化的视图。</p>
+<p>Example:</p>
+<pre><code class="language-java">public class Views {
+    public static class Public {}
+    public static class Internal extends Public {}
+}
+
+
+
+public class Item {
+    @JsonView(Views.Public.class)
+    public int id;
+ 
+    @JsonView(Views.Public.class)
+    public String itemName;
+ 
+    @JsonView(Views.Internal.class)
+    public String ownerName;
+}
+</code></pre>
+<a class="header" href="#jsonmanagedreference-jsonbackreference" id="jsonmanagedreference-jsonbackreference"><h4>@JsonManagedReference, @JsonBackReference</h4></a>
+<p>@JsonManagedReference和@JsonBackReference注释可以处理父/子关系并解决循环问题。</p>
+<pre><code class="language-java">public class ItemWithRef
+{
+
+  public int id;
+  public String itemName;
+
+  @JsonManagedReference
+  public UserWithRef owner;
+
+
+  public ItemWithRef(int id, String itemName, UserWithRef o)
+  {
+    this.id = id;
+
+    this.itemName = itemName;
+
+    this.owner = o;
+
+  }
+}
+</code></pre>
+<pre><code class="language-java">public class UserWithRef
+{
+
+  public int id;
+  public String name;
+
+
+  @JsonBackReference
+  public List&lt;ItemWithRef&gt; userItems;
+
+  public UserWithRef(int id, String name)
+  {
+
+    this.id = id;
+    this.name = name;
+
+    this.userItems = new LinkedList&lt;ItemWithRef&gt;();
+
+  }
+
+
+  public void add(ItemWithRef item)
+  {
+    userItems.add(item);
+  }
+
+}
+</code></pre>
+<pre><code class="language-java">public class Main
+{
+
+
+  public static void main(String[] args) throws JsonProcessingException
+  {
+
+
+    UserWithRef user = new UserWithRef(1, &quot;john&quot;);
+
+    ItemWithRef item = new ItemWithRef(2, &quot;book&quot;, user);
+
+    user.add(item);
+
+
+    String result = new ObjectMapper().writeValueAsString(item);
+
+    System.out.println(result);
+
+
+  }
+}
+
+</code></pre>
+<p><strong>output:</strong> {&quot;id&quot;:2,&quot;itemName&quot;:&quot;book&quot;,&quot;owner&quot;:{&quot;id&quot;:1,&quot;name&quot;:&quot;john&quot;}}</p>
+<a class="header" href="#jsonidentityinfo" id="jsonidentityinfo"><h4>@JsonIdentityInfo</h4></a>
+<p>@JsonIdentityInfo指示在序列化/反序列化值时应使用对象标识 - 例如，处理无限递归类型的问题。</p>
+<a class="header" href="#jsonfilter" id="jsonfilter"><h4>@JsonFilter</h4></a>
+<p>@JsonFilter注释指定在序列化期间使用的过滤器。</p>
+<a class="header" href="#运维" id="运维"><h1>运维</h1></a>
+<p>根据imply的建议， 分为三个服务进行部署</p>
+<p>master Server: coordinator + overload</p>
+<p>data Server: historical + middleManger</p>
+<p>query Server: broker + router(可选)</p>
+<p>master 利用zookeeper进行leader, standby， 为了可用性， 可以部署两个master server，   其他服务根据业务量逐渐添加。</p>
+<p>最近看了一篇<a href="https://www.adaltas.com/en/2019/07/16/auto-scaling-druid-with-kubernetes/">基于k8s实现auto-scaling</a>, 还是推荐k8s进行部署</p>
+<a class="header" href="#基于k8s部署" id="基于k8s部署"><h2>基于k8s部署</h2></a>
+<ul>
+<li>构建druid 镜像</li>
+<li>部署zookeeper on k8s</li>
+<li>构建helm druid charts</li>
+<li>k8s HPA</li>
+</ul>
+<a class="header" href="#docker" id="docker"><h1>Docker</h1></a>
+<p>根据<a href="https://github.com/apache/incubator-druid/blob/eaa4651fa470a7fc0a678039179eac5d46096ed6/distribution/docker/Dockerfile">官方dockerfile</a> 构建镜像</p>
+<p>需要在项目的根目录下执行</p>
+<pre><code class="language-sh">docker build -t xxxx/druid:tag -f distribution/docker/Dockerfile  .
+</code></pre>
+<p>flink学习笔记</p>
+<a class="header" href="#架构" id="架构"><h1>架构</h1></a>
+<p>flink有四个组件， 分别是</p>
+<ul>
+<li>JobManager</li>
+<li>ResourceManager</li>
+<li>TaskManager</li>
+<li>Dispatcher</li>
+</ul>
+<a class="header" href="#jobmanager" id="jobmanager"><h2>JobManager</h2></a>
+<p>jobManger主要控制单个appllcation， 不同的application被不同的jobManager控制。</p>
+<p>jobManager需要必要的资源(TaskManager slots)来执行来自resourceManager的任务。当接收到足够的taskManager slots， 分发任务到TaskManager进行执行。</p>
+<a class="header" href="#resourcemanager" id="resourcemanager"><h2>ResourceManager</h2></a>
+<p>ResourceManager负责管理taskManager slots， flink的处理单元。 ResourceManager引导taskManger向jobManager提供空闲的slots。 如果ResourceManager没有足够的slots来满足jobManager的请求， 它会向资源提供服务(比如yarn)来启动容器来提供资源。 它同时会终止闲置的taskManagers来释放计算机资源。</p>
+<a class="header" href="#taskmanager" id="taskmanager"><h2>TaskManager</h2></a>
+<p>TaskManager是flink的工作进程. 每个taskManager提供slots， slots的个数限制了一个taskManager能够执行任务的个数。</p>
+<a class="header" href="#dispatcher" id="dispatcher"><h2>Dispatcher</h2></a>
+<p>提供一个REST 接口用来提交执行的appilication.</p>
+<p><img src="../images/infra.png" alt="infra" /></p>
+<a class="header" href="#高可用保证" id="高可用保证"><h3>高可用保证</h3></a>
+<a class="header" href="#taskmanager-failures" id="taskmanager-failures"><h4>TaskManager Failures</h4></a>
+<p>TaskManager 如果出现故障， jobManager会向ResourceManager请求相应的slots， 如果资源不够， jobManager不能重启application直到资源足够.</p>
+<a class="header" href="#jobmanager-failures" id="jobmanager-failures"><h4>JobManager Failures</h4></a>
+<p>JobManager存在单点故障， flink支持高可用模式， 通过zookeeper将对application的职责，元数据转移到另外的JobManager。</p>
+<p>它通过以下的步骤进行恢复:</p>
+<ol>
+<li>向zookeeper请求JobGraph， Jar File， 状态(最后一个保存点).</li>
+<li>向resourceManager请求足够的slots</li>
+<li>重启application，重置它所有任务的状态通过保存点。</li>
+</ol>
+<a class="header" href="#状态管理" id="状态管理"><h1>状态管理</h1></a>
+<p>大多数流处理应用都有状态， 比如kafka-streams的StateStoreSupplier, 创建topic来保存状态。</p>
+<a class="header" href="#flink-state" id="flink-state"><h2>Flink state</h2></a>
+<p>flink根据key来访问和维护状态， 它具有以下几种类型:</p>
+<ul>
+<li>Value state: 每个key对应一个值</li>
+<li>List state: 每个key对应一系列的值</li>
+<li>Map state: 每个key对应一个k-v map.</li>
+</ul>
+<p>并提供了以下的状态操作:</p>
+<ul>
+<li>List State</li>
+<li>Union list state</li>
+<li>Broadcast state</li>
+</ul>
+<a class="header" href="#state-存储" id="state-存储"><h3>State 存储</h3></a>
+<ol>
+<li>内存， 将状态存储在内存(JVM heap).</li>
+<li>RocksDB, 写到本地磁盘， 这种方式会比第一种慢.</li>
+</ol>
+<a class="header" href="#状态恢复" id="状态恢复"><h3>状态恢复</h3></a>
+<p>对于故障， flink通过Checkpoints, Savepoints来保证重启后恢复状态。</p>
+<p>flink的实现流程如下:</p>
+<ol>
+<li>停止数据的摄入, 重启application。</li>
+<li>重新设置所有任务的状态根据最晚的checkpoints。</li>
+<li>开始数据的摄入.</li>
+</ol>
+<p>flink状态恢复的算法基于state checkpoints。 checkpoints是间隔性， 自动生成根据配置。
+savepoints是需要用户来生成， 手动清除的。</p>
+<a class="header" href="#状态操作" id="状态操作"><h3>状态操作</h3></a>
+<a class="header" href="#时间" id="时间"><h1>时间</h1></a>
+<p>在flink中时间可分为以下类型:</p>
+<ul>
+<li>ProcessingTime, 本地处理时间</li>
+<li>EventTime,  事件里面携带的时间信息</li>
+<li>IngestionTime, 摄入时间</li>
+</ul>
+<p>通过配置来采用时间类型</p>
+<pre><code class="language-scala">val env = StreamExecutionEnvironment.getExecutionEnvironment
+env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime)
+</code></pre>
+<p>TimeCharacteristic有以下类型:</p>
+<ul>
+<li>TimeCharacteristic.EventTime</li>
+<li>TimeCharacteristic.ProcessingTime</li>
+</ul>
+<a class="header" href="#watermarks" id="watermarks"><h2>WaterMarks</h2></a>
+<p>Watermarks 用于在应用程序中导出每个任务的当前事件时间。</p>
+<p>默认的watermark生成的间隔是200ms， 可以通过配置的方式来改变</p>
+<pre><code class="language-scala">env.setAutoWatermarkInterval(5000)
+</code></pre>
+<p>也可以通过datastream api来指定自定义的watermarks。</p>
+<pre><code class="language-scala">val test: DataStream[T] = env
+        .addSource(new xxx)
+        .assignTimestampAndWatermarks(new MyAssigner())
+
+</code></pre>
+<p><code>MyAssigner</code>的类型可以是<code>AssignWithPeriodcWatermarks</code>或者<code>AssignerWithPunctuateWatermarks</code></p>
+<a class="header" href="#时间操作" id="时间操作"><h2>时间操作</h2></a>
+<a class="header" href="#tumbling-windows" id="tumbling-windows"><h3>Tumbling Windows</h3></a>
+<p>示例: <code>TumblingProcessingTimeWindows.of(Time.seconds(1))</code>
+类似kafka-streams的翻转窗口</p>
+<a class="header" href="#sliding-winodws" id="sliding-winodws"><h3>Sliding Winodws</h3></a>
+<p>示例: <code>SlindingProcessingTimeWindows.of(Time.hours(1), Time.minutes(15))</code>
+类似kafka-streams的滑动窗口</p>
+<a class="header" href="#session-windows" id="session-windows"><h3>Session Windows</h3></a>
+<p>示例: <code>EventTimeSessionWindows.withGap(Time.minutes(15))</code>
+类似kafka-streams的会话窗口</p>
+<a class="header" href="#flink-table" id="flink-table"><h1>Flink-table</h1></a>
+<a class="header" href="#关系代数" id="关系代数"><h1>关系代数</h1></a>
+<p>关系代数可以下面几组</p>
+<ul>
+<li>一元关系操作</li>
+<li>集合论中的关系代数运算</li>
+<li>二元关系运算</li>
+</ul>
+<a class="header" href="#一元关系操作" id="一元关系操作"><h2>一元关系操作</h2></a>
+<ul>
+<li>select</li>
+<li>project</li>
+<li>rename</li>
+</ul>
+<a class="header" href="#集合论中的关系代数运算" id="集合论中的关系代数运算"><h2>集合论中的关系代数运算</h2></a>
+<ul>
+<li>union</li>
+<li>intersection</li>
+<li>difference</li>
+<li>cartesian product</li>
+</ul>
+<a class="header" href="#二元关系运算" id="二元关系运算"><h2>二元关系运算</h2></a>
+<ul>
+<li>join</li>
+<li>division</li>
+</ul>
+<a class="header" href="#select" id="select"><h3>select</h3></a>
+<p>SELECT操作用于根据给定的选择条件选择元组的子集。（σ)符号表示它。它用作表达式来选择符合选择条件的元组。选择操作选择满足给定谓词的元组。</p>
+<p>$$ \sigma_{p}(r) $$</p>
+<p>σ 是谓语</p>
+<p>r 表的名称</p>
+<p>p 介词逻辑</p>
+<pre><code class="language-sql">select tuples from tutorials where topic = &quot;database&quot;
+</code></pre>
+<p>对应的关系代数为:</p>
+<p>$$ \sigma_{topic} = database ^{(tutorials)} $$</p>
+<a class="header" href="#project" id="project"><h3>project</h3></a>
+<p>投影消除了输入关系的所有属性，但是在投影列表中提到了这些属性。投影方法定义包含Relation的垂直子集的关系。</p>
+<p>这有助于提取指定属性的值以消除重复值。 （pi）用于从关系中选择属性的符号。此操作可帮助您保留关系中的特定列，并丢弃其他列。</p>
+<pre><code class="language-sql">select col1 from data1 
+</code></pre>
+<p>对应的关系代数为:</p>
+<p>$$ \pi_{col1} (data1) $$</p>
+<a class="header" href="#union" id="union"><h3>Union</h3></a>
+<p>UNION用∪符号表示。它包括表A或表B中的所有元组</p>
+<p>A UNION B 表示为:</p>
+<p><code>A U B</code></p>
+<a class="header" href="#set-difference" id="set-difference"><h3>Set Difference</h3></a>
+<p><code>A - B</code> 表示在A中的元组， 不在B中.</p>
+<a class="header" href="#intersection" id="intersection"><h3>Intersection</h3></a>
+<p>交叉由符号∩定义</p>
+<p><code>A ∩ B</code> 表示即在A, 也在B中的元组</p>
+<a class="header" href="#cartesian-product" id="cartesian-product"><h3>Cartesian product</h3></a>
+<p>这种类型的操作有助于合并两个关系中的列。通常，笛卡尔积在单独执行时从不是有意义的操作。但是，当它跟随其他操作时，它变得有意义。</p>
+<p>$$  \sigma_{column 2} = '1' ( A X B) $$</p>
+<a class="header" href="#join-operations" id="join-operations"><h3>Join Operations</h3></a>
+<p>操作本质也是一个笛卡尔积， 后面是选择标准。 它用⋈表示。</p>
+<p><strong>Inner join: 在内连接中，仅包括满足匹配条件的那些元组，而其余元组则被排除。 它具有以下类型</strong></p>
+<ul>
+<li>
+<p>Theta join: JOIN操作的一般情况称为Theta join。它用符号θ表示 <code>A ⋈θ B</code>,
+Theta join可以使用选择标准中的任何条件。</p>
+</li>
+<li>
+<p>EQUI join:  当theta连接仅使用等价条件时，它将成为equi连接。</p>
+</li>
+<li>
+<p>Natural join:  只有在关系之间存在公共属性（列）时，才能执行自然连接</p>
+</li>
+</ul>
+<p><strong>OUTER JOIN: 在外连接中，以及满足匹配条件的元组，我们还包括一些或所有与标准不匹配的元组。</strong></p>
+<ul>
+<li>
+<p>Left Outer Join: 在左外连接中，操作允许将所有元组保持在左关系中。但是，如果在右关系中找不到匹配的元组，则连接结果中的右关系属性将填充空值.</p>
+</li>
+<li>
+<p>Right Outer Join: 在右外连接中，操作允许将所有元组保持在正确的关系中。但是，如果在左关系中找不到匹配的元组，则连接结果中左关系的属性将填充空值。</p>
+</li>
+<li>
+<p>Full Outer Join: 在完全外连接中，无论匹配条件如何，来自两个关系的所有元组都包含在结果中。</p>
+</li>
+</ul>
+<a class="header" href="#apache-calcite" id="apache-calcite"><h1>Apache Calcite</h1></a>
+<p>Apache Calcite 是一个构造sql数据库的框架， 它主要有以下几个阶段:</p>
+<ul>
+<li>SQL parser</li>
+<li>SQL validation</li>
+<li>Query optimizer</li>
+<li>SQL generator</li>
+<li>Data federator</li>
+</ul>
+<pre><code>Query String &lt;-&gt; SqlNode &lt;-&gt; RelNode -- RexNode
+
+paser -&gt; validate -&gt; optimize -&gt; execute
+</code></pre>
+<a class="header" href="#组件" id="组件"><h2>组件</h2></a>
+<ul>
+<li>catalog.  定义能通过sql querys能够获取到的metadata和namespaces</li>
+<li>SQL Parser.  解析sql到一个抽象语法树(AST)</li>
+<li>SQL validator. 验证AST 通过metadata</li>
+<li>Query optimizer. 转化AST为逻辑计划， 优化逻辑计划， 转化成物理计划</li>
+<li>SQL generator - 转化物理计划为sql</li>
+</ul>
+<a class="header" href="#catalog" id="catalog"><h3>Catalog</h3></a>
+<p><strong>Schema:</strong></p>
+<ol>
+<li>A collection of schemas and tables</li>
+<li>Can be arbitrarily nested</li>
+</ol>
+<pre><code class="language-java">public interface Schema {
+
+    Table getTable(String name);
+
+    Set&lt;String&gt; getTableNames();
+
+    Schema getSubSchema(String name);
+
+    Set&lt;String&gt; getSubSchemaNames();
+}
+</code></pre>
+<p><strong>Table:</strong></p>
+<ol>
+<li>一个数据集</li>
+<li>类型通过 RelDataType定义</li>
+</ol>
+<pre><code class="language-java">public interface Table {
+    RelDataType getRowType(RelDataTypeFactory typeFactory);
+
+    Statistic getStatistic();
+
+    Schema.TableType getJdbcTableType();
+}
+</code></pre>
+<p><strong>RelDataType:</strong></p>
+<ol>
+<li>代表数据集的类型</li>
+</ol>
+<pre><code class="language-java">public interface RelDataType {
+    List&lt;RelDataTypeField&gt; getFieldList();
+    boolean isNullable();
+
+    RelDataType getCommponentType();
+    RelDataType getKeyType();
+    RelDataType getValueType();
+
+    Charset getCharset();
+
+    int getPrecision();
+    int getScala();
+
+    SqlTypeName getSqlTypeName(); // data type enum
+}
+</code></pre>
+<p><strong>Statistic:</strong>
+提供优化中使用的表统计信息</p>
+<pre><code class="language-java">public interface Statistic {
+    Double getRowCount();
+
+    boolean isKey(ImmutableBitSet columns);
+
+    List&lt;Relcollation&gt; getCollations();
+    RelDistribution getDistribution();
+}
+</code></pre>
+<p><img src="../images/ex1.png" alt="example" /></p>
+<a class="header" href="#sql-parser" id="sql-parser"><h3>SQl parser</h3></a>
+<p>parser 是通过java cc 实现的</p>
+<p>sqlDialect表示特定数据库的大小写和引用规则</p>
+<a class="header" href="#query-optimizer" id="query-optimizer"><h3>Query optimizer</h3></a>
+<p>关键概念</p>
+<ul>
+<li>Relational algebra   =&gt; RelNode</li>
+<li>Row expressions      =&gt; RexNode</li>
+<li>Traits               =&gt; RelTrait</li>
+<li>Conventions          =&gt; Convention</li>
+<li>Rules                =&gt; RelOptRule</li>
+<li>Planners             =&gt; RelOptPlanner</li>
+<li>Programs             =&gt; Program</li>
+</ul>
+<a class="header" href="#relational-algebra" id="relational-algebra"><h4>Relational algebra</h4></a>
+<p>RelNode与spark DataFrame的方法有些类似, 代表一种关系表达式</p>
+<pre><code>TableScan       SparkTableScan
+Project         SparkProject
+Filter          SparkFilter
+Aggregate       SparkAggregate
+Join            SparkJoin
+Union           SparkUnion
+Intersect       SparkIntersect
+Sort            SparkSort
+</code></pre>
+<a class="header" href="#row-expressions" id="row-expressions"><h4>Row expressions</h4></a>
+<p>RexNode 与spark的列方法类似，</p>
+<pre><code>Input column ref        RexInputRef
+Literal                 RexLiteral
+Struct field access     RexFieldAccess
+Function call           RexCall
+Window expression       RexOver
+
+</code></pre>
+<a class="header" href="#traits" id="traits"><h4>Traits</h4></a>
+<p>特质用来验证计划的输出</p>
+<ul>
+<li>Convention</li>
+<li>RelCollation</li>
+<li>RelDistribution</li>
+</ul>
+<a class="header" href="#rules" id="rules"><h4>Rules</h4></a>
+<p>Rule用来修改查询计划</p>
+<p>rules分为</p>
+<ul>
+<li>converters</li>
+<li>transformers</li>
+</ul>
+<p><img src="../images/ex2.png" alt="example2" /></p>
+<p><strong>Pattern matching</strong></p>
+<p><img src="../images/ex3.png" alt="example3" /></p>
+<a class="header" href="#planners" id="planners"><h4>Planners</h4></a>
+<p>planners 有两个类型:</p>
+<ul>
+<li>HepPlanner      类似于spark optimizer， 应用所有的rules直到没有rule能够被应用, 有无限递归的风险</li>
+<li>VolcanoPlanner  是一种cost-based optimizer. 迭代rules， 选择cost最少的plan。</li>
+</ul>
+<a class="header" href="#总结" id="总结"><h2>总结</h2></a>
+<pre><code class="language-java">string sql = &quot;select xxx &quot; ;
+        
+// Parse the query
+SqlParser parser = SqlParser.create(sql, parserConfig);
+SqlNode sqlNode = parser.parseStmt();
+
+...
+
+// validate the query 
+CalciteCatalogReader catalogReader = createCatalogReader();
+SqlValidator validator = SqlValidatorUtil.newValidator(
+            SqlStdOperatorTable.instance(), catalogReader, typeFactory, SqlConformance.DEFAULT);
+SqlNode validatedSqlNode = validator.validate(sqlNode);
+
+// Convert SqlNode to RelNode
+RexBuilder RexBuilder = createRexBuilder();
+RelOptCluster cluster = RelOptCluster.create(planner, RexBuilder);
+sqlToRelConverter sqlToRelConverter = 
+    new sqlToRelConverter(new ViewExpanderImpl(), validator, createCatalogReader(), cluster, convertletTable) ;
+
+Relroot root = sqlToRelConverter.convertQuery(validatedSqlNode, false, true)
+
+
+// optimize
+Relroot root = sqlToRelConverter.convertQuery(validatedSqlNode, false, true);
+
+RelOptPlanner planner = new VolcanoPlanner();
+
+Program program = Programs.ofRules(
+    FilterProjectTransposeRule.INSTANCE,
+    ProjectMergeRule.INSTANCE,
+    FilterMergeRUle.INSTANCE,
+    LoptOptimizeJoinRule.INSTANCE
+)
+
+
+// Create a desired output trait set
+
+RelTraitSet traitSet = planner.emptyTraitSet()
+    .replace(SparkConvention.INSTANCE);
+
+// Execute the program
+RelNode optimized = program.run(planner, root.rel, traitSet);
+</code></pre>
+<a class="header" href="#spark" id="spark"><h1>spark</h1></a>
+<a class="header" href="#spark-sql" id="spark-sql"><h1>spark-sql</h1></a>
+<a class="header" href="#debug-in-idea-1" id="debug-in-idea-1"><h2>Debug in Idea</h2></a>
+<ol>
+<li>下载spark源码</li>
+</ol>
+<pre><code class="language-shell">git clone https://github.com/apache/spark.git
+</code></pre>
+<ol start="2">
+<li>Build</li>
+</ol>
+<pre><code class="language-shell">./build/mvn -DskipTests clean package
+</code></pre>
+<ol start="3">
+<li>
+<p>AstBuilder.scala里面会依赖通过antlr生成的文件， 编译之后需要在spark-catalyst添加源文件,</p>
+<p><strong>具体操作步骤:</strong></p>
+<pre><code>File -&gt;  
+    Project Structure -&gt; 
+        选中spark-catalyst_2.11 -&gt; 
+            添加target/generated-sources为源文件夹
+</code></pre>
+</li>
+</ol>
+<p><img src="./images/antlr-generate.png" alt="antlr-generate.png" /></p>
+<ol start="4">
+<li>
+<p>在idea配置remote debugging,
+<strong>操作步骤:</strong>
+<code>Run -&gt; Edit Configurations -&gt; + -&gt; Remote -&gt; 默认的配置就行, 保存</code></p>
+</li>
+<li>
+<p>使用spark-shell进行触发，</p>
+<pre><code>    SPARK_SUBMIT_OPTS=&quot;-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005&quot; ./bin/spark-shell
+</code></pre>
+</li>
+<li>
+<p>在idea对代码打断点，启动监听,  回到第5步输入相应的代码进行触发。</p>
+</li>
+</ol>
+<a class="header" href="#执行流程" id="执行流程"><h3>执行流程</h3></a>
+<p><img src="./images/stages.png" alt="stages" /></p>
+<p>当执行一个sql的时候， 它会经历以下过程：</p>
+<ul>
+<li>Parser使用antlr解析sql，  生成Unresolved Logical Plan</li>
+<li>通过Catalog获取表信息， 根据Analyser定义好的rule做模式匹配，  生成Resolved Logical Plan</li>
+<li>Optimizer 会对Resolved Logical Plan 进行优化, 生成 Optimized Logical Plan</li>
+<li>Query Planner 将Optimized Logical Plan转换成多个 Physical Plan</li>
+<li>cost model 选取代价最小的物理计划</li>
+<li>code generation 转换成java的字节码， 加快运行</li>
+</ul>
+<a class="header" href="#parser" id="parser"><h4>Parser</h4></a>
+<p>代码 org.apache.spark.sql.parser</p>
+<p>使用antlr对sql进行词法分析, 并转化成trees</p>
+<p>执行sql场景:</p>
+<pre><code class="language-sql">select
+    sum(v)
+from
+    (select 
+        t1.id,
+        1 + 2 + t1.value as v
+     from t1 join t2
+     where t1.id = t2.id 
+     and t2.id &gt; 50000
+    ) tmp
+</code></pre>
+<p>生成Unresolved Plan 如下图所示</p>
+<pre><code class="language-shell">'Project [unresolvedalias('sum('v), None)]
++- 'SubqueryAlias `tmp`
+   +- 'Project ['t1.id, ((1 + 2) + 't1.value) AS v#20]
+      +- 'Filter (('t1.id = 't2.id) &amp;&amp; ('t2.id &gt; 50000))
+         +- 'Join Inner
+            :- 'UnresolvedRelation `t1`
+            +- 'UnresolvedRelation `t2`
+</code></pre>
+<p><img src="./images/unresolved_plan.png" alt="unresolved" /></p>
+<a class="header" href="#analyser" id="analyser"><h4>Analyser</h4></a>
+<p>代码 org.apache,.spark.sql.catalyst.analysis.Analyser</p>
+<p>Analyzer默认的规则</p>
+<pre><code class="language-scala">lazy val batches: Seq[Batch] = Seq(
+    Batch(&quot;Hints&quot;, fixedPoint,
+      new ResolveHints.ResolveBroadcastHints(conf),
+      ResolveHints.ResolveCoalesceHints,
+      ResolveHints.RemoveAllHints),
+    Batch(&quot;Simple Sanity Check&quot;, Once,
+      LookupFunctions),
+    Batch(&quot;Substitution&quot;, fixedPoint,
+      CTESubstitution,
+      WindowsSubstitution,
+      EliminateUnions,
+      new SubstituteUnresolvedOrdinals(conf)),
+    Batch(&quot;Resolution&quot;, fixedPoint,
+      ResolveTableValuedFunctions ::
+      ResolveRelations ::
+      ResolveReferences ::
+      ResolveCreateNamedStruct ::
+      ResolveDeserializer ::
+      ResolveNewInstance ::
+      ResolveUpCast ::
+      ResolveGroupingAnalytics ::
+      ResolvePivot ::
+      ResolveOrdinalInOrderByAndGroupBy ::
+      ResolveAggAliasInGroupBy ::
+      ResolveMissingReferences ::
+      ExtractGenerator ::
+      ResolveGenerate ::
+      ResolveFunctions ::
+      ResolveAliases ::
+      ResolveSubquery ::
+      ResolveSubqueryColumnAliases ::
+      ResolveWindowOrder ::
+      ResolveWindowFrame ::
+      ResolveNaturalAndUsingJoin ::
+      ResolveOutputRelation ::
+      ExtractWindowExpressions ::
+      GlobalAggregates ::
+      ResolveAggregateFunctions ::
+      TimeWindowing ::
+      ResolveInlineTables(conf) ::
+      ResolveHigherOrderFunctions(catalog) ::
+      ResolveLambdaVariables(conf) ::
+      ResolveTimeZone(conf) ::
+      ResolveRandomSeed ::
+      TypeCoercion.typeCoercionRules(conf) ++
+      extendedResolutionRules : _*),
+    Batch(&quot;Post-Hoc Resolution&quot;, Once, postHocResolutionRules: _*),
+    Batch(&quot;View&quot;, Once,
+      AliasViewChild(conf)),
+    Batch(&quot;Nondeterministic&quot;, Once,
+      PullOutNondeterministic),
+    Batch(&quot;UDF&quot;, Once,
+      HandleNullInputsForUDF),
+    Batch(&quot;FixNullability&quot;, Once,
+      FixNullability),
+    Batch(&quot;Subquery&quot;, Once,
+      UpdateOuterReferences),
+    Batch(&quot;Cleanup&quot;, fixedPoint,
+      CleanupAliases)
+  )
+</code></pre>
+<p>到了这一步 ResolveRelations用于查询用到的table（内存或者hive)， 处理expressions
+生成的逻辑图为</p>
+<pre><code>'Project [unresolvedalias(cast(sum(v)#30L as string), None)]
++- Aggregate [sum(cast(v#28 as bigint)) AS sum(v)#30L]
+   +- SubqueryAlias `tmp`
+      +- Project [id#11, ((1 + 2) + value#12) AS v#28]
+         +- Filter ((id#11 = id#17) &amp;&amp; (id#17 &gt; 50000))
+            +- Join Inner
+               :- SubqueryAlias `t1`
+               :  +- SerializeFromObject [assertnotnull(assertnotnull(input[0, $line36.$read$$iw$$iw$test, true])).id AS id#11, assertnotnull(assertnotnull(input[0, $line36.$read$$iw$$iw$test, true])).value AS value#12]
+               :     +- ExternalRDD [obj#10]
+               +- SubqueryAlias `t2`
+                  +- SerializeFromObject [assertnotnull(assertnotnull(input[0, $line36.$read$$iw$$iw$test, true])).id AS id#17, assertnotnull(assertnotnull(input[0, $line36.$read$$iw$$iw$test, true])).value AS value#18]
+                     +- ExternalRDD [obj#16]
+</code></pre>
+<p><img src="./images/plan1.png" alt="plan1" /> （摘自spark-summit)</p>
+<p>其实到了这一步就可以直接将logiccalPlan转换为Physical Plan进行执行.</p>
+<p>为了提高执行效率，便有了optimizer层的优化</p>
+<a class="header" href="#optimizer" id="optimizer"><h4>Optimizer</h4></a>
+<p>spark sql目前是基于规则的优化， 即RBO(rule-based optimization), 将一个Resolved Logical Plan 转换成一个Optimized Logical Plan</p>
+<p>目前规则的应用方式可以是</p>
+<ol>
+<li>Expression -&gt; Expression</li>
+<li>Logical Plan -&gt; Logical Plan</li>
+<li>logical plan -&gt; Physical Plan</li>
+</ol>
+<p><strong>Expression -&gt; Expression</strong></p>
+<p>Constant Folding</p>
+<p>优化方式:  减少不必要的计算</p>
+<pre><code class="language-scala">// &quot;1 + 2 + value&quot; =&gt; &quot;3 + value&quot;
+
+val expression: Expression = ...
+    expression.transform {
+        case Add(Literal(x, IntegerType), Literal(y, InterType)) =&gt;
+            Literal(x + y)
+
+    }
+
+</code></pre>
+<hr />
+<p><strong>Logical Plan -&gt; Logical Plan</strong></p>
+<p><em>Pridicate Pushdown</em></p>
+<p>优化方式: 通过减少参与计算的数据量的方法进行优化
+<img src="./images/plan2.png" alt="plan2" /></p>
+<p><em>column pruning</em>
+优化方式: 只操作特定的列，  数据在spark内存中存储的方式就是列存储
+<img src="./images/plan3.png" alt="plan3" /></p>
+<hr />
+<p><strong>Logical plan -&gt; Physical Plan</strong>
+通过应用一系列策略, 将Logical plan 转化成Physicla plan</p>
+<pre><code class="language-scala">object BasicOperators extends Strategy {
+    def apply(plan: LogicalPlan): Seq[SparkPlan] = plan match {
+        case logical.Project(porjectList, child) =&gt; 
+            execution.ProjectExec(projectList, planLater(child)) :: Nil
+        ...
+
+    }
+}
+</code></pre>
+<p>总共经历了两个过程：</p>
+<ol>
+<li>将optimized plan 转换为physical plan</li>
+<li>rule executor调整physical plan 让它准备执行</li>
+</ol>
+<a class="header" href="#总结-1" id="总结-1"><h1>总结</h1></a>
+<ol>
+<li>介绍了debug spark源码</li>
+<li>介绍一条sql在spark整个执行流程</li>
+<li>没有提到的cbo（cost based optimized）后续会补充</li>
+</ol>
+<p>参考资料：</p>
+<p><a href="https://www.youtube.com/watch?v=RmUn5vHlevc">spark 2017 summit</a></p>
+<p><a href="http://www.jasongj.com/spark/rbo/">Spark SQL / Catalyst 内部原理 与 RBO</a></p>
+<a class="header" href="#antlr" id="antlr"><h1>antlr</h1></a>
+<p>antlr是一个语法解析的库， 它实现了定义简单的语法， 生成相应的解析语法文件， 支持多种编程语言(java, c++, python)</p>
+<a class="header" href="#语法设计" id="语法设计"><h2>语法设计</h2></a>
+<p>antlr核心语法</p>
+<table><thead><tr><th align="left">Syntax</th><th align="left">Description</th></tr></thead><tbody>
+<tr><td align="left">x</td><td align="left">Match token, rule reference, or subrule x.</td></tr>
+<tr><td align="left">x y ...z</td><td align="left">Match a sequence of rule elements</td></tr>
+<tr><td align="left">(...|...|...)</td><td align="left">Subrule with multiple alternatives</td></tr>
+<tr><td align="left">x?</td><td align="left">Match x or skip it</td></tr>
+<tr><td align="left">x*</td><td align="left">Matxh x zero or more times.</td></tr>
+<tr><td align="left">X+</td><td align="left">Matxh x one or more times.</td></tr>
+<tr><td align="left">r:...;</td><td align="left">Define rule r.</td></tr>
+<tr><td align="left">r:...|...|....;</td><td align="left">Define rule r with multiple alternatives</td></tr>
+</tbody></table>
+<a class="header" href="#sequence" id="sequence"><h3>Sequence</h3></a>
+<p>'+'： 代表1个或多个元素</p>
+<p>‘*'： 代表0个或多个元素</p>
+<p>示例:</p>
+<pre><code>file: (row '\n')*;            //sequence with a '\n' terminator
+row: field (',', field)*;     //sequence with a ','  seperator
+field: int;                   //assume fields are just integers
+</code></pre>
+<pre><code>stats: (stat ';')*;           //match zero or more ';' -terminated statements
+</code></pre>
+<a class="header" href="#choice" id="choice"><h3>Choice</h3></a>
+<p>使用 '|' 处理选择</p>
+<p>示例:</p>
+<pre><code>type : 'float' | 'int' | 'void'; // user-defined types
+</code></pre>
+<a class="header" href="#token-dependecy" id="token-dependecy"><h3>Token Dependecy</h3></a>
+<p>使用括号进行声明</p>
+<p>示例:</p>
+<pre><code>vector: '[' INT+ ']' ;  // [1], [1 2], [1 2 3], ....
+</code></pre>
+<a class="header" href="#nested-phrase" id="nested-phrase"><h3>Nested Phrase</h3></a>
+<p>示例:</p>
+<pre><code>expr: ID '[' expr ']'    // a[1], a[b[1]]
+    | '(' expr ')'       // (1) (a[1]) (((1)))
+    | INT                // 1, 94117
+    ;
+</code></pre>
+<a class="header" href="#运算符优先级" id="运算符优先级"><h3>运算符优先级</h3></a>
+<p>通过定义运算符的顺序(从上到下)来区分优先级， 默认求值顺序为左到右。</p>
+<p>示例：</p>
+<pre><code>expr: expr '^'  expr
+    | expr '*'  expr
+    | expr '+'  expr
+    | INT
+    ;
+
+(1 + 2 * 4 ^ 4)  =&gt;  1 + (2 * (4 ^ 4))
+</code></pre>
+<a class="header" href="#词法分析器" id="词法分析器"><h3>词法分析器</h3></a>
+<p>匹配器</p>
+<p>示例:</p>
+<pre><code>ID: ('a'..'Z'|'A'..'Z')+;  // match 1-or-more upper or lowercase letters.
+ID: [a-zA-Z]+ ;            // match 1-or-more upper or lowercase letters
+</code></pre>
+<p>匹配数字：</p>
+<pre><code>INT: '0' .. '9'+;
+FLOAT: DIGIT + '.' DIGIT*
+     |         '.' DIGIT
+     ;
+
+DIGIT : [0-9];
+</code></pre>
+<p>匹配字符串:</p>
+<pre><code>STRING: '&quot;' .*? '&quot;';
+</code></pre>
+<p>匹配空白符和评论</p>
+<pre><code>assign : ID (WS|COMMENT)? '=' (WS|COMMENT)? expr (WS|COMMENT)? ;
+
+
+LINE_COMMENT : '//' .*? '\r'? '\n' -&gt; skip; // Match &quot;//&quot; stuff '\n'
+COMMENT : '/*' .*? /*/             -&gt; skip; // Match &quot;/*&quot; stuff &quot;*/&quot;
+
+WS: (' '|'\t'|'\r'|'\n')+ -&gt; skip;
+</code></pre>
+<a class="header" href="#语法和应用代码分离" id="语法和应用代码分离"><h2>语法和应用代码分离</h2></a>
+<p>当我们通过antlr定义语法后， 接下来就需要将语法和应用代码结合起来</p>
+<p>antlr提供以下方式:</p>
+<ul>
+<li>继承parser</li>
+<li>基于parse-tree listeners</li>
+<li>实现application基于visitors</li>
+</ul>
+<p>首先看了一个简单的实现:</p>
+<pre><code class="language-g4">grammer PropertyFile;
+@members {
+    void startFile() { }
+    void finishFile() { }
+    void defineProperty(Token name, Token value) { }
+}
+file : {startFile();} prop+ {finishFile();} ;
+prop : ID '=' STRING '\n' {defineProperty($ID, $STRING)} ;
+ID : [a-z]+ ;
+STRING: '&quot;' .*? '&quot;';
+</code></pre>
+<p>通过antlr生成<strong>PropertyFileParser</strong>, 实现一个类， 继承<strong>PropertyFileParser</strong></p>
+<pre><code class="language-Java">class PropertyFilePrinter extends PropertyFileParser {
+    void defineProperty(Token name, Token value) {
+        System.out.println(name.getText()+&quot;=&quot;+value.getText());
+    }
+}
+</code></pre>
+<p>运行这个application</p>
+<pre><code class="language-java">PropertyFileLexer lexer = new PropertyFileLexer(input);
+CommonTokenStream tokens = new CommonTokenStream(lexer);
+PropertyFilePrinter parser = new PropertyFilePrinter(tokens);
+parser.file();
+</code></pre>
+<a class="header" href="#基于parse-tree-listeners的实现" id="基于parse-tree-listeners的实现"><h3>基于parse-tree listeners的实现</h3></a>
+<pre><code class="language-g4">#PropertyFile.g4
+file: prop+ ;
+prop: ID '=' STRING '\n';
+</code></pre>
+<pre><code class="language-properties">#t.properties
+
+user=&quot;parrt&quot;
+machine=&quot;maniac&quot;
+</code></pre>
+<p><em><em>通过PropertyFile.g4， antlr将会生成一个接口</em>PropertyFileListener</em>, 对于每个rule都会生成进入，和离开事件.**</p>
+<pre><code class="language-java">import org.antlr.v4.runtime.tree.*;
+import org.antlr.v4.runtime.Token;
+
+public interface PropertyFileListener extends ParseTreeListener {
+    void enterFile(PropertyFileParser.FileContext ctx);
+    void exitFile(PropertyFileParser.FileContext ctx);
+    void enterProp(PropertyFileParser.PropContext ctx);
+    void exitProp(PropertyFileParser.PropContext ctx);
+
+}
+
+</code></pre>
+<p>默认实现允许我们仅覆盖和实现我们关心的那些方法， 这里是重新实现PropertyFileLoader， 具有监听器机制:</p>
+<pre><code class="language-Java">public static class PropertyFileLoader extends PropertyFileBaseListener {
+    Map&lt;String, String&gt; pops = new OrderedHashMap&lt;String, String&gt;();
+    public void exitProp(PropertyFileParser.PropContext ctx) {
+        String id = ctx.Id().getText()
+        String value = ctx.STRING().getText();
+        props.put(id, value);
+    }
+}
+</code></pre>
+<p>这个版本的实现与上个版本的差异是继承于base listener 而不是parser, 流程图如下<img src="./images/antlr1.png" alt="antlr" /></p>
+<p>运行这个application</p>
+<pre><code class="language-Java">ParseTreeWalker walker = new ParseTreeWalker();
+PropertyFileLOader loader = new PropertyFileLoader();
+walker.walk(loader, tree);
+System.out.println(loader.props);
+
+</code></pre>
+<a class="header" href="#实现应用通过visitors" id="实现应用通过visitors"><h3>实现应用通过visitors</h3></a>
+<p>当我们使用 -visitor 命令， antlr会生成<em>PropertyFileVisitor</em>接口和类<em>PropertyFileBaseVisitor</em></p>
+<pre><code class="language-java">public class PropertyFileBaseVisitor&lt;T&gt; extends AbstractParseTreeVisitor&lt;T&gt; implements PropertyFileVisitor&lt;T&gt;
+{
+    @Override public T visitFile(PropertyFileParser.FileContext ctx) { ... } 
+    @Override public T visitProp(PropertyFileParser.PropContext ctx) { ... }
+}
+</code></pre>
+<p>我们可以复制上面在exitPop里面实现的方法到visitProp里面</p>
+<pre><code class="language-java">public static class PropertyFileVisitor extends PropertyFileBaseVisitor&lt;Void&gt;
+{
+    Map&lt;String,String&gt; props = new OrderedHashMap&lt;String, String&gt;(); 
+    public Void visitProp(PropertyFileParser.PropContext ctx) {
+        String id = ctx.ID().getText(); // prop : ID '=' STRING '\n' ; 
+        String value = ctx.STRING().getText();
+        props.put(id, value);
+        return null; // Java says must return something even when Void
+    } 
+}
+</code></pre>
+<p>流程为<img src="./images/antlr2.png" alt="antlr2" /></p>
+<p>运行这个application</p>
+<pre><code class="language-java">PropertyFileVisitor loader = new PropertyFileVisitor(); 
+loader.visit(tree);
+System.out.println(loader.props); // print results
+
+</code></pre>
+<a class="header" href="#小试牛刀" id="小试牛刀"><h2>小试牛刀</h2></a>
+<p>使用命令行处理excel / csv文件(基于sql).</p>
+<p>语法层: 使用antlr</p>
+<p>执行层: 使用pandas api</p>
+<p>项目地址:</p>
+<a class="header" href="#优化" id="优化"><h1>优化</h1></a>
+<a class="header" href="#增量计算" id="增量计算"><h2>增量计算</h2></a>
+<p>场景： 统计用户的评论数， 1天内会运行多次</p>
+<p>数据最简为:</p>
+<table><thead><tr><th align="left">time</th><th align="left">user_id</th><th align="left">comment</th></tr></thead><tbody>
+<tr><td align="left">xxx</td><td align="left">xxx</td><td align="left">xxxx</td></tr>
+</tbody></table>
+<p>每天新增的数据量地址为：  event/comment/2019/01/01/comment/*.parquet</p>
+<a class="header" href="#全量方式" id="全量方式"><h3>全量方式</h3></a>
+<pre><code class="language-sql">select
+    user_id
+    count(1) as comment_times
+from user_comment
+group by user_id
+
+</code></pre>
+<a class="header" href="#增量方式" id="增量方式"><h3>增量方式</h3></a>
+<ol>
+<li>将结果写到结果集， 同时写一份到另外的地方作为缓存集 cache/2019/01/01/comment/*.parquet</li>
+<li>第二天增量数据为:  event/comment/2019/01/02/comment/*.parquet</li>
+</ol>
+<p>将最新的数据计算， union缓存数据, 再计算</p>
+<pre><code class="language-sql">select t.user_id, sum(t.comment_times) as comment_times
+from (select user_id, count(1) as comment_times from user_comment group by user_id
+      union
+      select * from cache) t
+group by t.user_id
+</code></pre>
+<p><strong>注意:</strong></p>
+<pre><code class="language-scala">df.write
+    .mode(&quot;overwrite&quot;)
+    .parquet(s&quot;s3a://${bucket}/analyse/results/activity/user_comment&quot;)
+
+df.write
+    .mode(&quot;overwrite&quot;)
+    .parquet(s&quot;s3a://${bucket}/analyse/cache/activity/user_comment/${RunDate}&quot;)
+</code></pre>
+<p>以这种方式写两份的话， 会导致计算两次。</p>
+<p>可通过外部程序将results/.../user_comment 复制到 cache/..../user_comment里面</p>
+<hr />
+<a class="header" href="#数据倾斜" id="数据倾斜"><h2>数据倾斜</h2></a>
+<p><strong>定位数据倾斜:</strong>
+<img src="./images/dataskew.jpg" alt="dataskew" />
+如图所示， 在一个stage阶段发现任务的处理数据量一个是1kb 一个是125Mb， 上面那个任务已经运行完了，在等待下面,</p>
+<a class="header" href="#处理的步骤" id="处理的步骤"><h3>处理的步骤</h3></a>
+<p>知道数据倾斜发生在哪一个stage之后，接着我们就需要根据stage划分原理，推算出来发生倾斜的那个stage对应代码中的哪一部分</p>
+<p><strong>本次示例的sql是: 统计每个视频每分钟观看消耗的流量</strong></p>
+<pre><code class="language-sql">select
+  from_unixtime(unix_timestamp(time, &quot;dd/MMM/yyyy:HH:mm:ss Z&quot;), &quot;YYYY-MM-dd HH:mm:00&quot;) as time,
+  videoId,
+  cast(sum(size) as long) as size
+from vod
+group by videoId, time
+order by time
+</code></pre>
+<p>看物理执行图可知
+<img src="./images/mapskew.png" alt="mapskew" /></p>
+<p>大量不同的key被分配到了相同的task, 造成该Task数据量比较大.</p>
+<pre><code>output rows 最高:最低 =&gt;   7,850,904: 17,623
+</code></pre>
+<p>造成原因:</p>
+<p>本次读取的就是6个文件， 3个大文件(155M左右)， 3个小文件(300kb左右)</p>
+<p>解决方案：</p>
+<p>整理文件， 将文件分片均匀</p>
+<a class="header" href="#关于join的数据倾斜" id="关于join的数据倾斜"><h4>关于join的数据倾斜</h4></a>
+<p>在SQL连接操作中，更改连接键以均匀方式重新分配数据，以便分区处理不会花费更多时间。</p>
+<p>这种技术称为 &quot;加盐&quot;， 具体的可以参看这篇文章<a href="https://dzone.com/articles/why-your-spark-apps-are-slow-or-failing-part-ii-da">Why Your Spark Apps Are Slow Or Failing</a></p>
+<a class="header" href="#shuffle" id="shuffle"><h4>shuffle</h4></a>
+<p>关于shuffle过程详细解释可以看这篇文章<a href="https://spark-internals.books.yourtion.com/markdown/4-shuffleDetails.html">spark-internals</a></p>
+<a class="header" href="#其他" id="其他"><h4>其他</h4></a>
+<p>推荐大佬写的 <a href="http://www.jasongj.com/spark/skew/">解决Spark数据倾斜（Data Skew）的N种姿势</a></p>
+<hr />
+<a class="header" href="#关于硬件" id="关于硬件"><h2>关于硬件</h2></a>
+<p>做到极致运用前需要了解下面几个参数:</p>
+<p>每个spark executor拥有固定的核数和堆大小， 如果是spark on yarn 的话这个需要调整yarn的参数</p>
+<ul>
+<li><code>yarn.nodemanager.resource.cpu-vcores</code> 控制在每个节点上 <code>container</code> 能够使用的最大core个数</li>
+<li><code>yarn.nodemanager.resource.memory-mb</code> 控制在每个节点上 <code>container</code> 能够使用的最大内存；</li>
+</ul>
+<ul>
+<li><code>--executor-cores</code>  设置spark 每个executor的并发数 <code>--executor-cores 5</code> 代表1个executor可以同时运行5个任务</li>
+<li><code>--executor-memory</code> 设置spark executor堆的大小</li>
+</ul>
+<p>Full gc会导致计算时间延长， 在spark ui上面会有 Task time （gc time)这一列， 当它变红了就说明gc时间过长, 超过了任务时长的10%</p>
+<p>关于gc的调优， 可参考这篇文章<a href="https://github.com/endymecy/spark-config-and-tuning/blob/master/spark-tuning.md">高级GC调优</a></p>
+<a class="header" href="#spark-on-k8s" id="spark-on-k8s"><h1>Spark on k8s</h1></a>
+<a class="header" href="#helm" id="helm"><h2>Helm</h2></a>
+<ol>
+<li>安装helm, helm是一个管理k8s application的应用， 能够帮助定义， 安装， 升级应用.</li>
+</ol>
+<pre><code class="language-sh">brew install kubernetes-helm
+
+
+# 指定国内源
+helm init --upgrade -i registry.cn-hangzhou.aliyuncs.com/google_containers/tiller:v2.14.3 --stable-repo-url https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts
+</code></pre>
+<a class="header" href="#sparkoperator" id="sparkoperator"><h2>SparkOperator</h2></a>
+<p>因为墙的原因，按文档上面推荐的方式拉镜像会失败, 需要本地挂代理拉镜像， 推到国内仓库.</p>
+<p><strong>从git仓库拉取chars</strong></p>
+<pre><code class="language-sh">git clone //github.com/helm/charts.git
+</code></pre>
+<p><strong>修改sparkoperator/values.yaml, 镜像名称， 版本</strong></p>
+<p>添加secret, 对templates以下文件作修改</p>
+<p>templates/_helpers.tpl 添加</p>
+<pre><code class="language-tpl">{{- define &quot;imagePullSecret&quot; }}
+{{- printf &quot;{\&quot;auths\&quot;: {\&quot;%s\&quot;: {\&quot;auth\&quot;: \&quot;%s\&quot;}}}&quot; .Values.imageCredentials.registry (printf &quot;%s:%s&quot; .Values.imageCredentials.username .Values.imageCredentials.password | b64enc) | b64enc }}
+{{- end }}
+</code></pre>
+<p>templates/secret.yaml 新建</p>
+<pre><code class="language-yaml">apiVersion: v1
+kind: Secret
+metadata:
+  name: {{ .Values.imageCredentials.name }}
+type: kubernetes.io/dockerconfigjson
+data:
+  .dockerconfigjson: {{ template &quot;imagePullSecret&quot; . }}
+</code></pre>
+<p>templates/deploy.yaml 添加</p>
+<pre><code class="language-yaml">imagePullSecrets:
+  - name: {{ .Values.imageCredentials.name }}
+</code></pre>
+<p>values.yaml 添加</p>
+<pre><code class="language-yaml">imageCredentials:
+  name: credentials-name
+  registry: private-docker-registry
+  username: user
+  password: pass
+</code></pre>
+<p>安装</p>
+<pre><code class="language-sh"># 在/Users/home/git/docker/charts/incubator路径下
+helm install sparkoperator
+</code></pre>
+<a class="header" href="#提交spark应用" id="提交spark应用"><h3>提交spark应用</h3></a>
+<pre><code class="language-yaml">apiVersion: &quot;sparkoperator.k8s.io/v1beta1&quot;
+kind: SparkApplication
+metadata:
+  name: spark-pi
+  namespace: default
+spec:
+  type: Scala
+  mode: cluster
+  image: &quot;swr.cn-east-2.myhuaweicloud.com/mudutv/spark:2.0.0-OpenShift-2.4.0&quot;
+  imagePullPolicy: IfNotPresent
+  imagePullSecrets:
+    - sparksecret
+  mainClass: org.apache.spark.examples.SparkPi
+  mainApplicationFile: &quot;local:///opt/spark/examples/jars/spark-examples_2.11-2.4.0.jar&quot;
+  sparkVersion: &quot;2.4.0&quot;
+  restartPolicy:
+    type: Never
+  driver:
+    cores: 0.1
+    coreLimit: &quot;200m&quot;
+    memory: &quot;512m&quot;
+    labels:
+      version: 2.4.0
+    serviceAccount: spark
+  executor:
+    cores: 1
+    instances: 1
+    memory: &quot;512m&quot;
+    labels:
+      version: 2.4.0
+</code></pre>
+<p>查看任务是否成功</p>
+<pre><code class="language-sh">kubectl get po 
+</code></pre>
+<pre><code>spark-pi-driver                                     1/1     Running             0          101s
+</code></pre>
+<a class="header" href="#k8s" id="k8s"><h1>k8s</h1></a>
+<a class="header" href="#headless-services" id="headless-services"><h1>Headless Services</h1></a>
+<p>有时不需要负载均衡, 而是单个服务Ip. 在这种情况下， 可以通过设置 <code>.spec.clusterIP</code> 为 <code>None</code>， 指定为<code>Headless Services</code></p>
+<p>优点: <strong>可以使用无头服务与其他服务发现机制进行交互，而不必与Kubernetes的实现捆绑在一起.</strong></p>
+<a class="header" href="#with-selector" id="with-selector"><h2>With Selector</h2></a>
+<p>对于定义选择器的无头服务，端点控制器在API中创建端点记录，并修改DNS配置以返回直接指向支持该服务的Pod的记录（地址）。</p>
+<a class="header" href="#without-selector" id="without-selector"><h2>Without Selector</h2></a>
+<p>对于没有定义选择器的无头服务，端点控制器不会创建端点记录。但是，DNS系统将查找并配置以下任一项：</p>
+<ul>
+<li>CNAME records for ExternalName</li>
+<li>A records for any Endpoints that share a name with the Service, for all other types.</li>
+</ul>
+<a class="header" href="#非自愿中断" id="非自愿中断"><h1>非自愿中断</h1></a>
+<p>除非手动中断， 或者不可避免的硬件或系统软件错误， 否则pod不会消失</p>
+<ul>
+<li>node节点硬件故障</li>
+<li>管理员删除vm</li>
+<li>内核panic</li>
+<li>资源不够</li>
+</ul>
+<a class="header" href="#解决中断" id="解决中断"><h2>解决中断</h2></a>
+<ul>
+<li>确保资源足够</li>
+<li>启动多个实例， 通过运行replicated stateless 和stateful applications</li>
+<li>为了在运行复制的应用程序时获得更高的可用性，请跨机架或跨区域来分布应用程序。</li>
+</ul>
+<a class="header" href="#disruption-budgets" id="disruption-budgets"><h3>Disruption Budgets</h3></a>
+<p>应用程序所有者可以为每个应用程序创建一个Pod Disruption Budget对象（PDB）。 PDB限制了由于自愿中断而同时关闭的已复制应用程序的Pod数量。</p>
+<p>PDB指定应用程序可以承受的副本数, 比如， 具有<code>.spec.replicas: 5</code> 表示在任何时间有5个pods.</p>
+<a class="header" href="#statful-service" id="statful-service"><h1>Statful Service</h1></a>
+<p>使用StatfulSet 控制器运行复制的有状态应用程序.</p>
+<a class="header" href="#configmap" id="configmap"><h2>ConfigMap</h2></a>
+<p>使用ConfigMap来区分不同角色的配置, 以下mysql示例来自官网的</p>
+<pre><code class="language-yml">apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: mysql
+    labels:
+        app: mysql
+data:
+    master.cnf: /
+        # Apply this config only on the master.
+        [mysqld]
+        log-bin
+    slave.cnf: /
+        # Apply this config only on slaves.
+        [mysqld]
+        super-read-only
+</code></pre>
+<a class="header" href="#statefulset" id="statefulset"><h2>StatefulSet</h2></a>
+<p>StatefulSet控制器按其序号顺序一次启动Pod。它一直等到每个Pod报告就绪为止，然后再开始下一个Pod。</p>
+<p>另外，控制器为每个Pod分配一个唯一的稳定名称，格式为&lt;statefulset-name&gt;-&lt;ordinal-index&gt;，这将导致Pod名为mysql-0，mysql-1和mysql-2。</p>
+<p>通过配置<code>initContainers</code>  来决定启动pod之前做的初始化</p>
+<a class="header" href="#helm-1" id="helm-1"><h1>Helm</h1></a>
+<p>Helm是一款包安装应用， 负责安装， 升级， 卸载k8s应用,  类似Homebrew.</p>
+<a class="header" href="#准备" id="准备"><h2>准备</h2></a>
+<p>Tiller是helm服务端运行在k8s里面的pod, 负责管理helm应用</p>
+<p>我们可以使用以下命令安装tiller</p>
+<pre><code class="language-sh">helm init 
+</code></pre>
+<p>如果tiller镜像因为墙的原因拉取失败， 可以手动拉取， 上传到国内仓库</p>
+<a class="header" href="#构建一个helm-chart" id="构建一个helm-chart"><h3>构建一个helm chart</h3></a>
+<pre><code class="language-sh">helm create testapi-chart
+</code></pre>
+<p>会生成testapi-chart文件夹， 路径结构为:</p>
+<pre><code>├── Chart.yaml
+├── charts
+├── templates
+│   ├── NOTES.txt
+│   ├── _helpers.tpl
+│   ├── deployment.yaml
+│   ├── ingress.yaml
+│   ├── service.yaml
+│   └── tests
+│       └── test-connection.yaml
+└── values.yaml
+</code></pre>
+<p>编辑这些文件， 通过lint进行检测</p>
+<pre><code class="language-sh">helm lint
+</code></pre>
+<p>打包成release版本</p>
+<pre><code class="language-sh">helm package testapi-chart --debug  # debug会有输出
+</code></pre>
+<p>会生成 <code>testapi-chart-0.1.0.tgz</code> 通过下列命令进行安装</p>
+<pre><code class="language-sh">helm install  testapi-chart-0.1.0.tgz
+</code></pre>
+<pre><code class="language-sh">helm delete xxx 删除应用
+
+helm rollback xxxx 1 向前回归一个版本
+
+helm upgrade . xxx  升级应用
+</code></pre>
+<a class="header" href="#设计模式" id="设计模式"><h1>设计模式</h1></a>
+<a class="header" href="#深入浅出uml类图" id="深入浅出uml类图"><h1>深入浅出UML类图</h1></a>
+<a class="header" href="#单向关联" id="单向关联"><h2>单向关联</h2></a>
+<p>用于表示一类对象与另一类对象之间有联系， 如下图所示， 登录框和按钮
+<img src="./images/1.png" alt="1.png" /></p>
+<p>用实线和尖头进行表示</p>
+<a class="header" href="#双向关联" id="双向关联"><h2>双向关联</h2></a>
+<p>比如顾客购买商品并拥有商品， 卖出的商品总有某个顾客与之相关联</p>
+<p><img src="./images/2.png" alt="2.png" /></p>
+<p>用实线表示双向关联</p>
+<a class="header" href="#多重性关联" id="多重性关联"><h2>多重性关联</h2></a>
+<p>表示两个关联对象在数量上的对应关系。在uml中， 对象之间的多重性可以直接在关联直线
+上用一个数字或一个数字范围表示。</p>
+<p>对象之间可以存在多种多重性关联关系， 多重性表示如表1所示:</p>
+<table><thead><tr><th align="left">表示方式</th><th align="left">多重性说明</th></tr></thead><tbody>
+<tr><td align="left">1..1</td><td align="left">表示另一个类的一个对象只与该类的一个对象有关系</td></tr>
+<tr><td align="left">0..*</td><td align="left">表示另一个类的一个对象与该类的零个或多个对象有关系</td></tr>
+<tr><td align="left">1..*</td><td align="left">表示另一个类的一个对象与该类的一个或多个对象有关系</td></tr>
+<tr><td align="left">0..1</td><td align="left">表示另一个类的一个对象没有或只有该类的一个对象有关系</td></tr>
+<tr><td align="left">m..n</td><td align="left">表示另一个类的一个对象与该类最少m， 最多n个对象有关系(m &lt;= n)</td></tr>
+</tbody></table>
+<p>比如一个界面可以拥有零个或多个按钮， 但是一个按钮只能属于一个界面， 一个Form类的对象可以与零个或多个Button类的对象相关联， 但一个Button类的对象只能与一个Form类的对象关联</p>
+<p><img src="./images/3.png" alt="3.png" /></p>
+<a class="header" href="#聚合关系" id="聚合关系"><h2>聚合关系</h2></a>
+<p>聚合关系表示整体与部分的关系. 聚合关系中， 成员对象是整体对象的一部分， 但是成员对象可以脱离整体对象独立存在。</p>
+<p><img src="./images/4.png" alt="4.png" /></p>
+<p>聚合关系使用带空心棱形的直线表示.</p>
+<a class="header" href="#组合关系" id="组合关系"><h2>组合关系</h2></a>
+<p>组合(Composition)关系也表示类之间整体和部分的关系，但是在组合关系中整体对象可以控制成员对象的生命周期，一旦整体对象不存在，成员对象也将不存在，成员对象与整体对象之间具有同生共死的关系。</p>
+<p>例如：人的头(Head)与嘴巴(Mouth)，嘴巴是头的组成部分之一，而且如果头没了，嘴巴也就没了，因此头和嘴巴是组合关系</p>
+<p><img src="./images/5.png" alt="5.png" /></p>
+<p>组合关系用带实心菱形的直线表示</p>
+<a class="header" href="#依赖关系" id="依赖关系"><h2>依赖关系</h2></a>
+<p>特定事物的改变可能会影响到使用该事物的其他事物， 在需要表示一个事物使用另一个事物时使用依赖关系。</p>
+<p>比如司机依赖汽车</p>
+<p><img src="./images/6.png" alt="6.png" /></p>
+<p>依赖关系使用带箭头的虚线表示.</p>
+<a class="header" href="#泛化关系" id="泛化关系"><h2>泛化关系</h2></a>
+<p>泛化关系也就是继承关系， 用于描述父类与子类之间的关系.</p>
+<p><img src="./images/7.png" alt="7.png" /></p>
+<p>泛化关系用带空心三角形的直线来表示.</p>
+<a class="header" href="#接口与实现关系" id="接口与实现关系"><h2>接口与实现关系</h2></a>
+<p>类实现了接口</p>
+<p><img src="./images/8.png" alt="8.png" /></p>
+<p>类与接口之间的实现关系用空心三角形的虚线来表示。</p>
+<a class="header" href="#资料" id="资料"><h3>资料</h3></a>
+<p><a href="http://www.uml.org.cn/oobject/201211231.asp">深入浅出UML类图</a></p>
+<a class="header" href="#创建型模式" id="创建型模式"><h1>创建型模式</h1></a>
+<p>创建型模式抽象了实例化过程。 它们帮助一个系统独立于如何创建， 组合和表示它的那些对象。</p>
+<a class="header" href="#builder生成器" id="builder生成器"><h2>builder(生成器)</h2></a>
+<p>意图: 将一个复杂对象的构建和它的表示分离， 使得同样的构建过程可以创建不同的表示。</p>
+<p>在以下情况使用Builder模式:</p>
+<ul>
+<li>当创建复杂对象的算法应该独立于该对象的组成部分以及它们的装配方式时</li>
+<li>当构造过程必须允许被构造的对象有不同的表示时。</li>
+</ul>
+<p>效果:</p>
+<ul>
+<li>它使你可以改变一个产品的内部表示</li>
+<li>它将构造代码和表示代码分开</li>
+<li>它使你可对构造过程进行更精细的控制</li>
+</ul>
+<a class="header" href="#factory-method工厂方法" id="factory-method工厂方法"><h2>Factory method(工厂方法)</h2></a>
+<p>意图: 定义一个用于创建对象的接口， 让子类决定实例化那一个类.</p>
+<p>适用性:</p>
+<ul>
+<li>当一个类不知道它所必须创建的对象的类的时候</li>
+<li>当一个类希望由它的子类来指定它所创建的对象的时候</li>
+<li>当类将创建对象的职责委托给多个帮助子类中的某一个，并且你希望将哪一个帮助子类是代理者这一信息局部化的时候</li>
+</ul>
+<a class="header" href="#prototype-原型" id="prototype-原型"><h2>PROTOTYPE (原型)</h2></a>
+<p>意图： 用原型实例指定创建对象的种类， 并且通过拷贝这些原型创建新的对象</p>
+<p>适用性: 当一个系统应该独立于它的产品创建， 构建和表示时</p>
+<ul>
+<li>当要实例化的类是在运行时刻指定时， 动态装载</li>
+<li>为了创建一个与产品类层次平行的工厂类层次时</li>
+<li>当一个类的实例只能有几个不同状态组合中的一种时， 建立相应数目的原型并克隆它们可能比每次用合适的状态手工实例化该类.</li>
+</ul>
+<p><strong>优点:</strong></p>
+<ol>
+<li>运行时刻增加和删除产品</li>
+<li>改变值以指定新对象</li>
+<li>改变结构以指定新对象</li>
+<li>减少子类的构造</li>
+</ol>
+<a class="header" href="#singleton单例模式" id="singleton单例模式"><h2>SINGLETON(单例模式)</h2></a>
+<p>意图: 保证一个类仅有一个实例， 并提供一个访问它的全局访问点</p>
+<p>适用性:</p>
+<ul>
+<li>当类只能有一个实例而且客户可以从一个众所周知的访问点访问它时.</li>
+<li>当这个唯一的实例时通过子类化可扩展的</li>
+</ul>
+<a class="header" href="#结构性模式" id="结构性模式"><h1>结构性模式</h1></a>
+<p>结构性模式涉及到如何组合类和对象以获得更大的结构.</p>
+<a class="header" href="#adapter-适配器" id="adapter-适配器"><h2>Adapter 适配器</h2></a>
+<p>意图： 将一个类的接口转换成客户希望的另外一个接口</p>
+<p>适用性：</p>
+<ul>
+<li>你想使用一个已经存在的类， 而它的接口步符合你的需求。</li>
+<li>你想创建一个可以服用的类， 该类可以与其他不相关的类或不可预见的类</li>
+<li>你想使用一些已经存在的子类</li>
+</ul>
+<a class="header" href="#bridge-桥接" id="bridge-桥接"><h2>BRIDGE 桥接</h2></a>
+<p>意图: 将抽象部分与它的实现部分分离， 是它们都可以独立地变化</p>
+<p>适用性:</p>
+<ul>
+<li>你不希望在抽象和它的实现部分之间有一个固定的绑定</li>
+<li>类的抽象以及它的实现都应该可以通过生成子类的方法加以扩充.</li>
+<li>对一个抽象的实现部分修改应对客户不产生影响， 即客户的代码不必重新编译</li>
+<li>想在多个对象间共享实现</li>
+</ul>
+<a class="header" href="#composite-组合" id="composite-组合"><h2>COMPOSITE 组合</h2></a>
+<p>意图: 将对象组合成树形结构以表示 “部分-整体” 的层次结构, Compisite使得用户对单个对象和组合对象的使用具有一致性.</p>
+<p>适用性：</p>
+<ul>
+<li>表示对象的部分-整体层次结构</li>
+<li>忽略组合对象与单个对象的不同，</li>
+</ul>
+<a class="header" href="#decorator-装饰器" id="decorator-装饰器"><h2>DECORATOR 装饰器</h2></a>
+<p>意图: 动态地给一个对象添加一些额外的职责</p>
+<p>适用性:</p>
+<ul>
+<li>在不影响其他对象的情况下， 以动态， 透明的方式给单个对象添加职责</li>
+<li>处理那些可以撤销的职责</li>
+<li>当不能采用生成子类的方法进行扩充时.</li>
+</ul>
+<a class="header" href="#facade-外观" id="facade-外观"><h2>FACADE 外观</h2></a>
+<p>为子系统中的一组接口提供一个一致的界面.</p>
+<p>适用性：</p>
+<ul>
+<li>为一个复杂的子系统提供一个简单接口时候</li>
+<li>客户程序与抽象类的实现部分之间存在着很大的依赖性。</li>
+<li>当你需要构建一个层次结构的子系统时, 使用facade模式定义子系统中每层的入口点.</li>
+</ul>
+<a class="header" href="#flyweight-享元" id="flyweight-享元"><h2>FLYWEIGHT 享元</h2></a>
+<p>运用共享技术有效地支持大量细粒度的对象</p>
+<p>适用性:</p>
+<ul>
+<li>一个应用程序使用了大量的对象.</li>
+<li>完全由于使用大量的对象， 造成很大的存储开销.</li>
+<li>对象的大多数状态都可变为外部状态.</li>
+<li>如果删除对象的外部状态， 那么可以用相对较少的共享对象取代很多组对象.</li>
+<li>应用程序不依赖于对象标识.</li>
+</ul>
+<a class="header" href="#proxy-代理" id="proxy-代理"><h2>PROXY 代理</h2></a>
+<p>为其他对象提供一种代理以控制对这个对象的访问</p>
+<p>适用性:</p>
+<ul>
+<li>远程代理， 为一个对象在不同的地址空间提供局部代表。</li>
+<li>虚代理， 根据需要创建开销很大的对象</li>
+<li>保护代理, 控制对原始对象的访问</li>
+<li>智能指引， 取代了简单的指针， 它在访问对象时执行一些附加操作.</li>
+</ul>
+<a class="header" href="#行为模式" id="行为模式"><h1>行为模式</h1></a>
+<a class="header" href="#chain-of-responsibility-职责链" id="chain-of-responsibility-职责链"><h2>chain of responsibility 职责链</h2></a>
+<p>意图: 使多个对象都有机会处理请求， 从而避免请求的发送者和接收者之间的耦合关系。</p>
+<p>适用性:</p>
+<ul>
+<li>有多个的对象可以处理一个请求， 那个对象处理该请求运行时刻自动确定</li>
+<li>可处理一个请求的对象集合应被动态指定.</li>
+</ul>
+<p>可以参考 nginx通过函数调用链实现模块化</p>
+<a class="header" href="#command-命令" id="command-命令"><h2>command 命令</h2></a>
+<p>意图: 将一个请求封装为一个对象， 从而使你可用不同的请求对客户进行参数化； 对请求排队或记录请求日志， 以及支持可撤销的操作。</p>
+<p>适用性:</p>
+<ul>
+<li>抽象出待执行的动作以参数化某对象。</li>
+<li>在不同的时刻指定， 排列和执行请求。</li>
+<li>支持取消操作</li>
+<li>支持修改日志</li>
+<li>用构建在原语操作上的高层操作构造一个系统。</li>
+</ul>
+<a class="header" href="#iterator-迭代器" id="iterator-迭代器"><h2>ITERATOR 迭代器</h2></a>
+<p>意图: 提供一种方法顺序访问一个聚合对象中各个元素， 而友不需要暴露该对象的内部表示</p>
+<p>适用性：</p>
+<ul>
+<li>访问一个聚合对象的内容而无需暴露它的内部表示</li>
+<li>支持对聚合对象的多种遍历</li>
+<li>为遍历不同的聚合结构提供一个统一的接口</li>
+</ul>
+<a class="header" href="#mediator-中介者" id="mediator-中介者"><h2>MEDIATOR 中介者</h2></a>
+<p>意图： 用一个中介对象来封装一系列的对象交互。 中介者使各对象不需要显式地相互引用， 从而使其耦合松散，而且可以独立地改变它们之间的交互.</p>
+<p>适用性:</p>
+<ul>
+<li>一组对象以定义良好但是复杂的方式进行通信</li>
+<li>一个对象引用其他很多对象并且直接与这些对象通信， 导致难以复用该对象</li>
+<li>想定制一个分布在多个类中的行为, 而又不想生成太多的子类.</li>
+</ul>
+<a class="header" href="#memento-备忘录" id="memento-备忘录"><h2>MEMENTO 备忘录</h2></a>
+<p>意图: 在不破外封装性的前提下， 捕获一个对象的内部状态， 并在该对象之外保持这个状态. 这样以后就可将该对象恢复到原先保存的状态</p>
+<p>适用性:</p>
+<ul>
+<li>必须保存一个对象在某一个时刻的状态， 这样以后需要时它才能恢复到先前的状态</li>
+<li>如果一个用接口来让其他对象直接得到这些状态， 将会暴露对象的实现细节并破坏对象的封装性.</li>
+</ul>
+<a class="header" href="#observer-观察者" id="observer-观察者"><h2>OBSERVER 观察者</h2></a>
+<p>意图: 定义对象间的一种一对多的依赖关系， 当一个对象的状态发生改变时， 所有依赖于它的对象都得到通知并被自动更新</p>
+<p>适用性:</p>
+<ul>
+<li>当一个抽象模型有两个方面， 其中一个方面依赖于另一个方面。将这两者封装在独立的对象中以使它们可以独立地改变和复用</li>
+<li>当对一个对象的改变需要同时改变其他对象， 而不知道具体有多少对象有待改变.</li>
+<li>当一个对象必须通知其他对象, 而它又不能假定其他对象是谁.</li>
+</ul>
+<a class="header" href="#state-状态" id="state-状态"><h2>STATE 状态</h2></a>
+<p>意图: 允许一个对象在其内部状态改变时改变它的行为， 对象看起来似乎修改了它的类。</p>
+<ul>
+<li>一个对象的行为取决于它的状态， 并且它必须在运行时刻根据状态改变它的行为</li>
+<li>一个操作中含有庞大的多分支的条件语句， 且这些分支依赖于该对象的状态。</li>
+</ul>
+<a class="header" href="#strategy-策略" id="strategy-策略"><h2>STRATEGY 策略</h2></a>
+<p>定义一系列的算法， 把它们一个个封装起来， 并且使它们可相互替换。</p>
+<p>适用性:</p>
+<ul>
+<li>许多相关的类仅仅是行为有异.</li>
+<li>需要使用一个算法的不同变体.</li>
+<li>算法使用客户不应该知道的数据</li>
+<li>一个类定义了多种行为， 并且这些行为在这个类的操作中以多个条件语句的形式出现。</li>
+</ul>
+<a class="header" href="#template-method-模版方法" id="template-method-模版方法"><h2>template method (模版方法)</h2></a>
+<p>定义一个操作中的算法的骨架， 而将一些步骤延迟到子类中.</p>
+<p>适用于下列情况:</p>
+<ul>
+<li>一次性实现了一个算法的不变的部分， 并将可行的行为留给子类来实现</li>
+<li>各子类中公共的行为应被提取出来并集中到一个公共父类中以避免代码重复。</li>
+<li>控制子类扩展</li>
+</ul>
+<a class="header" href="#visitor-访问者" id="visitor-访问者"><h2>VISITOR 访问者</h2></a>
+<p>表示一个作用于某对象结构中的各元素的操作。</p>
+<p>适用性:</p>
+<ul>
+<li>一个对象结构包含很多类对象, 它们有不同的接口</li>
+<li>需要对一个对象结构中的对象进行很多不同的并且不相关的操作</li>
+<li>定义对象结构的类很少改变， 但经常要在此结构上定义新的操作。</li>
+</ul>
+<a class="header" href="#postgres" id="postgres"><h1>postgres</h1></a>
+<a class="header" href="#事务访问通过mvcc" id="事务访问通过mvcc"><h1>事务访问通过MVCC</h1></a>
+<p>postgre 通过<code>xmin</code>和<code>xmax</code>来维护事务的生命周期</p>
+<p>可通过下面sql进行查看</p>
+<pre><code class="language-sql">select xmin， xmax ... from ... 
+</code></pre>
+<p>它允许每个数据库客户端会话对表进行更改，但在事务提交之前，它们不会对其他会话可见。</p>
+<p>举例来说:</p>
+<p>现在有两个客户端A， B 对表foo进行操作</p>
+<pre><code class="language-sql">select xmin, xmax, * from foo;
+</code></pre>
+<table><thead><tr><th align="left">xmin</th><th align="left">xmax</th><th align="left">id</th><th align="left">value</th></tr></thead><tbody>
+<tr><td align="left">830</td><td align="left">0</td><td align="left">1</td><td align="left">1</td></tr>
+</tbody></table>
+<p>A的操作</p>
+<pre><code class="language-sql">Begin;
+
+update test set value = 2 where id = 1;
+
+select xmin, xmax, * from foo;
+
+</code></pre>
+<p>A的操作此时没有提交， 结果是</p>
+<table><thead><tr><th>xmin</th><th>xmax</th><th>id</th><th>value</th></tr></thead><tbody>
+<tr><td align="left">832</td><td align="left">0</td><td align="left">1</td><td align="left">2</td></tr>
+</tbody></table>
+<p>而B此时去访问， 结果仍然是原始数据， 不同的是xmax.</p>
+<table><thead><tr><th>xmin</th><th>xmax</th><th>id</th><th>value</th></tr></thead><tbody>
+<tr><td align="left">830</td><td align="left">832</td><td align="left">1</td><td align="left">1</td></tr>
+</tbody></table>
+<p><strong>一旦一个会话启动一个事务，它就会对在该点之后对数据库进行的大多数更改视而不见，并且它自己的更改在提交之前保持私有状态。甚至那些不被认为是最终的，即使在你回滚其交易时进行更改的会话中，原始值仍然可以更好地返回</strong></p>
+<a class="header" href="#行锁冲突" id="行锁冲突"><h2>行锁冲突</h2></a>
+<p>第一个会话有一个打开的事务， 如果我们在第二个会话执行相同的操作会导致行锁冲突， 这个statement会挂起。</p>
+<p>postgre 通过<code>Read Commited</code> 模式来解决冲突.  服务器要做的是重新计划使用新副本来进行原始工作， 如果使用子句选择旧副本， 将检查新副本是否满足条件， 如果没有， 忽略新副本， 该子句不再找到它， 如果更新该行的对所有的前提都适用， 计划的更新将针对修改后的副本执行.</p>
+<p>比如两条sql</p>
+<pre><code class="language-sql">update test set value = 2 where id = 1;
+update test set value = value + 1 where id = 1;     # read value = 2  commited; 
+</code></pre>
+<p>结果<code>value=3</code></p>
+<p>另外一种模式是 <code>Serialization</code> 通过序列化执行指令.</p>
+<a class="header" href="#优缺点" id="优缺点"><h3>优缺点</h3></a>
+<ul>
+<li>它可以避免锁定许多可能阻止其他客户端执行其工作的资源。运行查询和读取数据所需的锁与写入数据库所需的锁不冲突</li>
+<li>可能会因不同会话之间的交互产生一些状况， 比如删除某张票， 另一个会话还能查询的到.</li>
+</ul>
+<a class="header" href="#索引" id="索引"><h1>索引</h1></a>
+<p>postgre索引类型有</p>
+<ul>
+<li>B-tree</li>
+<li>Hash</li>
+<li>GIN</li>
+<li>GIST</li>
+</ul>
+<p>因为B-tree和Hash索引比较常见， 所以不多做介绍.</p>
+<a class="header" href="#gin" id="gin"><h2>GIN</h2></a>
+<p>广义倒置索引(GIN) 对于不同类型的组织非常有用.</p>
+<p>GIN 用一个列表来存储key， 这个key是一个列表， 包含涉及到的行。 一行可以出现在多个key中。</p>
+<p>GIN对于索引数组值很有用，它允许搜索数组列包含特定值的所有行，或者与要匹配的数组有一些共同的元素。这也是实现全文搜索的方法之一</p>
+<a class="header" href="#gist" id="gist"><h2>Gist</h2></a>
+<p>广义搜索树（GiST）提供了一种构建平衡树结构的方法，用于存储数据，例如内置B树，只需定义如何处理key。</p>
+<p>PostgreSQL中包含的几何数据类型包括运算符，以允许索引按项之间的距离和它们是否相交来排序。</p>
+<a class="header" href="#索引排序" id="索引排序"><h3>索引排序</h3></a>
+<p>B树索引按升序存储其条目。从PostgreSQL 8.3开始，空值也存储在其中，默认为在表中持续。您可以撤消这两个默认值，例如:</p>
+<pre><code class="language-sql">CREATE index i on t (v desc nulls first);
+</code></pre>
+<a class="header" href="#部分索引" id="部分索引"><h3>部分索引</h3></a>
+<p>可通过where来限制索引的创建, 使得不会对表所有的数据创建索引</p>
+<pre><code class="language-sql">create index accounts_interesting_index on accounts where interesting is true;
+</code></pre>
+<a class="header" href="#索引基于表达式" id="索引基于表达式"><h3>索引基于表达式</h3></a>
+<p>postgre还支持表达式来创建索引</p>
+<pre><code>create index i_lower_index on t (lower(name));
+</code></pre>
+<a class="header" href="#统计信息" id="统计信息"><h1>统计信息</h1></a>
+<p><strong>查看索引的使用情况</strong></p>
+<pre><code class="language-sql">SELECT indexrelname,cast(idx_tup_read AS numeric) / idx_scan
+   AS avg_tuples,idx_scan,idx_tup_read FROM pg_stat_user_indexes where idx_scan &gt; 0;
+</code></pre>
+<hr />
+<p><strong>查看索引的大小</strong></p>
+<pre><code class="language-sql">SELECT
+         schemaname,
+         relname,
+         indexrelname,
+         idx_scan,
+         pg_size_pretty(pg_relation_size(i.indexrelid)) AS index_size
+       FROM
+         pg_stat_user_indexes i
+         JOIN pg_index USING (indexrelid)
+       WHERE
+         indisunique IS false
+       ORDER BY idx_scan,relname;
+</code></pre>
+<hr />
+<p><strong>查看链接情况</strong></p>
+<pre><code class="language-sql">SELECT * FROM pg_stat_activity;
+</code></pre>
+<p><em>查看活动状态</em></p>
+<pre><code class="language-sql">SELECT query, wait_event_type, wait_event
+      FROM pg_stat_activity
+</code></pre>
+<hr />
+<p><strong>查看锁的情况</strong></p>
+<pre><code class="language-sql">
+SELECT
+         locktype,
+         virtualtransaction,
+         transactionid,
+         nspname,
+         relname,
+         mode,
+         granted,
+         cast(date_trunc('second',query_start) AS timestamp) AS query_start,
+         substr(query,1,25) AS query
+       FROM
+         pg_locks
+           LEFT OUTER JOIN pg_class ON (pg_locks.relation = pg_class.oid)
+           LEFT OUTER JOIN pg_namespace ON (pg_namespace.oid =
+   pg_class.relnamespace),
+         pg_stat_activity
+       WHERE
+         NOT pg_locks.pid=pg_backend_pid() AND
+         pg_locks.pid=pg_stat_activity.
+             pid
+;```
+
+</code></pre>
+<a class="header" href="#分区-1" id="分区-1"><h1>分区</h1></a>
+<p>postgres的分区类型有:</p>
+<ul>
+<li>Table range partitioning</li>
+<li>Declarative partitioning</li>
+<li>Horizontal partitioning with PL/Proxy</li>
+</ul>
+<p>示例表:</p>
+<table><thead><tr><th align="left">orderid</th><th align="left"> orderdate </th><th align="left"> customerid</th><th align="left"> netamount</th><th align="left"> tax</th><th align="left"> totalamount</th></tr></thead><tbody>
+<tr><td align="left">1</td><td align="left">2004-01-01</td><td align="left">7888</td><td align="left">313.24</td><td align="left">25.84</td><td align="left">339.08</td></tr>
+<tr><td align="left">2</td><td align="left">2004-02-01</td><td align="left">1234</td><td align="left">222.33</td><td align="left">222.3</td><td align="left">111.33</td></tr>
+<tr><td align="left">...</td><td align="left">...</td><td align="left">...</td><td align="left">...</td><td align="left">...</td><td align="left">...</td></tr>
+</tbody></table>
+<a class="header" href="#table-range-partitioning" id="table-range-partitioning"><h2>Table range partitioning</h2></a>
+<p>创建分区</p>
+<pre><code class="language-sql">
+CREATE TABLE orders_2004_01 (
+      CHECK ( orderdate &gt;= DATE '2004-01-01' and orderdate &lt; DATE
+   '2004-02-01')
+   ) INHERITS (orders);
+
+...
+</code></pre>
+<p><strong>创建触发器重定向insert请求</strong></p>
+<pre><code class="language-sql">CREATE OR REPLACE FUNCTION orders_insert_trigger()
+   RETURNS TRIGGER AS $$
+   BEGIN
+       IF    ( NEW.orderdate &gt;= DATE '2004-12-01' AND
+             NEW.orderdate &lt; DATE '2005-01-01' ) THEN
+            INSERT INTO orders_2004_12 VALUES (NEW.*);
+       ELSIF ( NEW.orderdate &gt;= DATE '2004-11-01' AND
+             NEW.orderdate &lt; DATE '2004-12-01' ) THEN
+            INSERT INTO orders_2004_11 VALUES (NEW.*);
+       ...
+       ELSE
+             RAISE EXCEPTION 'Error in orders_insert_trigger():  date out of range';
+       END IF;
+       RETURN NULL;
+   END;
+</code></pre>
+<pre><code class="language-sql">CREATE TRIGGER insert_orders_trigger
+       BEFORE INSERT ON orders
+       FOR EACH ROW EXECUTE PROCEDURE orders_insert_trigger();
+</code></pre>
+<p><strong>还可以通过分区rule实现</strong></p>
+<a class="header" href="#declarative-partitioning" id="declarative-partitioning"><h2>Declarative partitioning</h2></a>
+<p>postgres 有内置的partition函数</p>
+<p><strong>partition by list</strong></p>
+<pre><code class="language-sql">  create table orders_state
+      (orderid integer not null,
+      orderdate date not null,
+      customerid integer not null,
+      tax numeric(12,2) not null ,
+      state char(2))
+   partition by list (state);
+</code></pre>
+<p>接下来创建子分区</p>
+<pre><code class="language-sql">CREATE TABLE ORDERS_US PARTITION OF ORDERS_state FOR VALUES IN ('US');
+
+
+CREATE TABLE ORDERS_state_EU PARTITION OF ORDERS_state FOR VALUES IN
+   ('IT','FR','ES','GR','PT');
+</code></pre>
+<hr />
+<p>** partition by range **</p>
+<pre><code class="language-sql">create table orders_state
+           (orderid integer not null,
+           orderdate date not null,
+           customerid integer not null,
+           tax numeric(12,2) not null ,
+           state char(2))
+partition by  RANGE (orderdate);
+</code></pre>
+<p>接下来创建子分区</p>
+<pre><code class="language-sql">CREATE TABLE orders_state_q1 PARTITION OF orders_state FOR VALUES FROM
+   ('2018-01-01') TO ('2018-03-01');
+   
+CREATE TABLE orders_state_q2 PARTITION OF orders_state FOR VALUES FROM
+   ('2018-03-01') TO ('2018-06-01');
+
+CREATE TABLE orders_state_q3 PARTITION OF orders_state FOR VALUES FROM
+   ('2018-06-01') TO ('2018-09-01');
+
+CREATE TABLE orders_state_q4 PARTITION OF orders_state FOR VALUES FROM
+   ('2018-09-01') TO ('2019-01-01');
+</code></pre>
+<a class="header" href="#删除旧分区" id="删除旧分区"><h3>删除旧分区</h3></a>
+<pre><code class="language-sql">alter table orders_state detach partition orders_state_q4
+</code></pre>
+<a class="header" href="#分区常见问题" id="分区常见问题"><h3>分区常见问题</h3></a>
+<ul>
+<li>没有开启 <code>constraint_exclusion</code></li>
+<li>忘记将分区添加索引</li>
+</ul>
+<a class="header" href="#horizontal-partitioning-with-plproxy" id="horizontal-partitioning-with-plproxy"><h2>Horizontal partitioning with PL/Proxy</h2></a>
+<p>分片强调在每个节点上放置共享数据结构，以便它们中的每一个可以彼此独立地操作。 通常，您在每个系统上需要的数据通常被称为应用程序的维度，查找或事实表，这些数据对于每组数据都是通用的。我们的想法是，应该采用无共享架构，其中每个分片分区都是自给自足的，用于回答与其包含的数据相关的查询。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+        
+        
+
+    </body>
+</html>

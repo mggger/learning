@@ -1,0 +1,252 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>深入浅出UML类图 - 学习笔记</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../scala/f.html"><strong aria-hidden="true">1.</strong> 函数式编程</a></li><li><ol class="section"><li><a href="../scala/functional/theory.html"><strong aria-hidden="true">1.1.</strong> 理论</a></li></ol></li><li><a href="../scala/akka.html"><strong aria-hidden="true">2.</strong> akka</a></li><li><ol class="section"><li><a href="../scala/akka/future.html"><strong aria-hidden="true">2.1.</strong> future</a></li><li><a href="../scala/akka/distribute.html"><strong aria-hidden="true">2.2.</strong> 分布式</a></li><li><a href="../scala/akka/config_log.html"><strong aria-hidden="true">2.3.</strong> 配置与日志</a></li><li><a href="../scala/akka/structure.html"><strong aria-hidden="true">2.4.</strong> Actor的结构模式</a></li><li><a href="../scala/akka/router.html"><strong aria-hidden="true">2.5.</strong> 路由消息</a></li><li><a href="../scala/akka/channel.html"><strong aria-hidden="true">2.6.</strong> 消息通道</a></li><li><a href="../scala/akka/stream.html"><strong aria-hidden="true">2.7.</strong> 流</a></li><li><a href="../scala/akka/profile.html"><strong aria-hidden="true">2.8.</strong> 性能调优</a></li></ol></li><li><a href="../kafka/index.html"><strong aria-hidden="true">3.</strong> kafka</a></li><li><ol class="section"><li><a href="../kafka/chapter_1.html"><strong aria-hidden="true">3.1.</strong> kafka使用场景</a></li><li><a href="../kafka/chapter_2.html"><strong aria-hidden="true">3.2.</strong> kafka使用指南-生产者</a></li><li><a href="../kafka/chapter_3.html"><strong aria-hidden="true">3.3.</strong> kafka使用指南-消费者</a></li><li><a href="../kafka/chapter_4.html"><strong aria-hidden="true">3.4.</strong> 消息可靠性保证</a></li><li><ol class="section"><li><a href="../kafka/chapter_4_1.html"><strong aria-hidden="true">3.4.1.</strong> 生产者</a></li><li><a href="../kafka/chapter_4_2.html"><strong aria-hidden="true">3.4.2.</strong> 消费者</a></li></ol></li><li><a href="../kafka/kafka-streaming.html"><strong aria-hidden="true">3.5.</strong> kafka-streams</a></li><li><ol class="section"><li><a href="../kafka/kafka-state.html"><strong aria-hidden="true">3.5.1.</strong> 流和状态</a></li><li><a href="../kafka/join.html"><strong aria-hidden="true">3.5.2.</strong> join</a></li><li><a href="../kafka/timestamp.html"><strong aria-hidden="true">3.5.3.</strong> 时间戳</a></li><li><a href="../kafka/ktable.html"><strong aria-hidden="true">3.5.4.</strong> KTable</a></li><li><a href="../kafka/watch.html"><strong aria-hidden="true">3.5.5.</strong> 性能测量</a></li><li><a href="../kafka/transaction.html"><strong aria-hidden="true">3.5.6.</strong> 精确一次处理语义</a></li></ol></li></ol></li><li><a href="../druid/about.html"><strong aria-hidden="true">4.</strong> druid</a></li><li><ol class="section"><li><a href="../druid/source/source.html"><strong aria-hidden="true">4.1.</strong> 源码学习</a></li><li><ol class="section"><li><a href="../druid/source/maven.html"><strong aria-hidden="true">4.1.1.</strong> maven</a></li><li><a href="../druid/source/debug.html"><strong aria-hidden="true">4.1.2.</strong> 调试</a></li><li><a href="../druid/source/3libs.html"><strong aria-hidden="true">4.1.3.</strong> 第三方库</a></li><li><ol class="section"><li><a href="../druid/source/google_guice.html"><strong aria-hidden="true">4.1.3.1.</strong> google guice</a></li><li><a href="../druid/source/curator.html"><strong aria-hidden="true">4.1.3.2.</strong> curator</a></li><li><a href="../druid/source/jackson.html"><strong aria-hidden="true">4.1.3.3.</strong> jackson</a></li></ol></li></ol></li><li><a href="../druid/deploy/deploy.html"><strong aria-hidden="true">4.2.</strong> 运维</a></li><li><ol class="section"><li><a href="../druid/deploy/docker.html"><strong aria-hidden="true">4.2.1.</strong> docker</a></li></ol></li></ol></li><li><a href="../flink/about.html"><strong aria-hidden="true">5.</strong> flink</a></li><li><ol class="section"><li><a href="../flink/flink/1.html"><strong aria-hidden="true">5.1.</strong> 架构</a></li><li><a href="../flink/flink/2.html"><strong aria-hidden="true">5.2.</strong> 状态管理</a></li><li><a href="../flink/flink/3.html"><strong aria-hidden="true">5.3.</strong> 时间戳</a></li><li><a href="../flink/table.html"><strong aria-hidden="true">5.4.</strong> flink table</a></li><li><ol class="section"><li><a href="../flink/table/1.html"><strong aria-hidden="true">5.4.1.</strong> 关系代数</a></li><li><a href="../flink/table/2.html"><strong aria-hidden="true">5.4.2.</strong> apache calcite</a></li></ol></li></ol></li><li><a href="../spark/about.html"><strong aria-hidden="true">6.</strong> spark</a></li><li><ol class="section"><li><a href="../spark/sparksql.html"><strong aria-hidden="true">6.1.</strong> SparkSql</a></li><li><a href="../spark/antlr.html"><strong aria-hidden="true">6.2.</strong> Antlr</a></li><li><a href="../spark/optimized_in_prod.html"><strong aria-hidden="true">6.3.</strong> 常用优化手段</a></li><li><a href="../spark/deploy.html"><strong aria-hidden="true">6.4.</strong> spark on k8s</a></li></ol></li><li><a href="../k8s/k8s/about.html"><strong aria-hidden="true">7.</strong> k8s</a></li><li><ol class="section"><li><a href="../k8s/k8s/headless.html"><strong aria-hidden="true">7.1.</strong> Headless Services</a></li><li><a href="../k8s/k8s/disruptions.html"><strong aria-hidden="true">7.2.</strong> Disruptions</a></li><li><a href="../k8s/k8s/stateful.html"><strong aria-hidden="true">7.3.</strong> stateful service</a></li><li><a href="../k8s/helm.html"><strong aria-hidden="true">7.4.</strong> Helm</a></li></ol></li><li><a href="../design/about.html"><strong aria-hidden="true">8.</strong> 设计模式</a></li><li><ol class="section"><li><a href="../design/uml.html" class="active"><strong aria-hidden="true">8.1.</strong> 深入浅出UML类图</a></li><li><a href="../design/create.html"><strong aria-hidden="true">8.2.</strong> 创建型模式</a></li><li><a href="../design/structure.html"><strong aria-hidden="true">8.3.</strong> 结构性模式</a></li><li><a href="../design/behavior.html"><strong aria-hidden="true">8.4.</strong> 行为模式</a></li></ol></li><li><a href="../postgres/about.html"><strong aria-hidden="true">9.</strong> postgres</a></li><li><ol class="section"><li><a href="../postgres/mvcc.html"><strong aria-hidden="true">9.1.</strong> MVCC</a></li><li><a href="../postgres/index.html"><strong aria-hidden="true">9.2.</strong> 索引</a></li><li><a href="../postgres/statistics.html"><strong aria-hidden="true">9.3.</strong> 统计信息</a></li><li><a href="../postgres/partition.html"><strong aria-hidden="true">9.4.</strong> 分区</a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">学习笔记</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#深入浅出uml类图" id="深入浅出uml类图"><h1>深入浅出UML类图</h1></a>
+<a class="header" href="#单向关联" id="单向关联"><h2>单向关联</h2></a>
+<p>用于表示一类对象与另一类对象之间有联系， 如下图所示， 登录框和按钮
+<img src="./images/1.png" alt="1.png" /></p>
+<p>用实线和尖头进行表示</p>
+<a class="header" href="#双向关联" id="双向关联"><h2>双向关联</h2></a>
+<p>比如顾客购买商品并拥有商品， 卖出的商品总有某个顾客与之相关联</p>
+<p><img src="./images/2.png" alt="2.png" /></p>
+<p>用实线表示双向关联</p>
+<a class="header" href="#多重性关联" id="多重性关联"><h2>多重性关联</h2></a>
+<p>表示两个关联对象在数量上的对应关系。在uml中， 对象之间的多重性可以直接在关联直线
+上用一个数字或一个数字范围表示。</p>
+<p>对象之间可以存在多种多重性关联关系， 多重性表示如表1所示:</p>
+<table><thead><tr><th align="left">表示方式</th><th align="left">多重性说明</th></tr></thead><tbody>
+<tr><td align="left">1..1</td><td align="left">表示另一个类的一个对象只与该类的一个对象有关系</td></tr>
+<tr><td align="left">0..*</td><td align="left">表示另一个类的一个对象与该类的零个或多个对象有关系</td></tr>
+<tr><td align="left">1..*</td><td align="left">表示另一个类的一个对象与该类的一个或多个对象有关系</td></tr>
+<tr><td align="left">0..1</td><td align="left">表示另一个类的一个对象没有或只有该类的一个对象有关系</td></tr>
+<tr><td align="left">m..n</td><td align="left">表示另一个类的一个对象与该类最少m， 最多n个对象有关系(m &lt;= n)</td></tr>
+</tbody></table>
+<p>比如一个界面可以拥有零个或多个按钮， 但是一个按钮只能属于一个界面， 一个Form类的对象可以与零个或多个Button类的对象相关联， 但一个Button类的对象只能与一个Form类的对象关联</p>
+<p><img src="./images/3.png" alt="3.png" /></p>
+<a class="header" href="#聚合关系" id="聚合关系"><h2>聚合关系</h2></a>
+<p>聚合关系表示整体与部分的关系. 聚合关系中， 成员对象是整体对象的一部分， 但是成员对象可以脱离整体对象独立存在。</p>
+<p><img src="./images/4.png" alt="4.png" /></p>
+<p>聚合关系使用带空心棱形的直线表示.</p>
+<a class="header" href="#组合关系" id="组合关系"><h2>组合关系</h2></a>
+<p>组合(Composition)关系也表示类之间整体和部分的关系，但是在组合关系中整体对象可以控制成员对象的生命周期，一旦整体对象不存在，成员对象也将不存在，成员对象与整体对象之间具有同生共死的关系。</p>
+<p>例如：人的头(Head)与嘴巴(Mouth)，嘴巴是头的组成部分之一，而且如果头没了，嘴巴也就没了，因此头和嘴巴是组合关系</p>
+<p><img src="./images/5.png" alt="5.png" /></p>
+<p>组合关系用带实心菱形的直线表示</p>
+<a class="header" href="#依赖关系" id="依赖关系"><h2>依赖关系</h2></a>
+<p>特定事物的改变可能会影响到使用该事物的其他事物， 在需要表示一个事物使用另一个事物时使用依赖关系。</p>
+<p>比如司机依赖汽车</p>
+<p><img src="./images/6.png" alt="6.png" /></p>
+<p>依赖关系使用带箭头的虚线表示.</p>
+<a class="header" href="#泛化关系" id="泛化关系"><h2>泛化关系</h2></a>
+<p>泛化关系也就是继承关系， 用于描述父类与子类之间的关系.</p>
+<p><img src="./images/7.png" alt="7.png" /></p>
+<p>泛化关系用带空心三角形的直线来表示.</p>
+<a class="header" href="#接口与实现关系" id="接口与实现关系"><h2>接口与实现关系</h2></a>
+<p>类实现了接口</p>
+<p><img src="./images/8.png" alt="8.png" /></p>
+<p>类与接口之间的实现关系用空心三角形的虚线来表示。</p>
+<a class="header" href="#资料" id="资料"><h3>资料</h3></a>
+<p><a href="http://www.uml.org.cn/oobject/201211231.asp">深入浅出UML类图</a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../design/about.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../design/create.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../design/about.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../design/create.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -1,0 +1,8 @@
+[book]
+authors = ["mggger"]
+multilingual = false
+src = "src"
+title = "学习笔记"
+
+[output.html]
+mathjax-support = true
