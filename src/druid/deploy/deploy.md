@@ -17,4 +17,3 @@ master 利用zookeeper进行leader, standby， 为了可用性， 可以部署�
 - 构建druid 镜像
 - 部署zookeeper on k8s 
 - 构建helm druid charts
-- k8s HPA

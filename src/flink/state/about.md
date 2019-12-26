@@ -3,18 +3,24 @@
 
 ## Flink state
 
-flink根据key来访问和维护状态， 它具有以下几种类型:
+### Operator state 
+
+operator state 仅限于 opeartor task.  这意味着由同一并行任务处理的所有记录都可以访问同一状态。相同或不同operator的其他任务无法访问操作员状态
+
+flink 提供了三种operator state操作
+
+- List State         
+- Union list state    
+- Broadcast state
+
+
+### Keyed state
+
+flink每个键值维护一个状态实例，并将具有相同键的所有记录分区到维护该键状态的operator任务。
 
 - Value state: 每个key对应一个值
 - List state: 每个key对应一系列的值
 - Map state: 每个key对应一个k-v map.
-
-
-并提供了以下的状态操作:
-
-- List State
-- Union list state
-- Broadcast state
 
 
 ### State 存储

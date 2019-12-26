@@ -23,6 +23,35 @@
 
 模块是bindings定义的基本单元
 
+#### BindingAnnotations
+通过注解和类型用来确认一个独一无二的binding.
+
+```Java
+public class RealBillingService implements BillingService {
+
+  @Inject
+  public RealBillingService(@Named("Checkout") CreditCardProcessor processor,
+      TransactionLog transactionLog) {
+    ...
+  }
+```
+bind 实现类
+
+```java
+bind(CreditCardProcessor.class)
+        .annotatedWith(Names.named("Checkout"))
+        .to(CheckoutCreditCardProcessor.class);
+```
+
+#### InstacenBinding
+能够为类型绑定实例， 常用在配置.
+```java
+bind(String.class)
+    .annotatedWith(Named.named("JDBC URL"))
+    .toInstance("jdbc:mysql://localhost/pizza");
+```
+
+
 
 #### 插件
 基于grapviz生成依赖图

@@ -1,1 +1,1 @@
-# Flink-table
+# flink table
