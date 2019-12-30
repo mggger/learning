@@ -53,7 +53,6 @@
 - [spark](./spark/about.md)
     - [SparkSql](./spark/sparksql.md)
     - [Antlr](./spark/antlr.md)
-    - [常用优化手段](./spark/optimized_in_prod.md)
     - [spark on k8s](./spark/deploy.md)
 
 - [k8s](./k8s/k8s/about.md)
