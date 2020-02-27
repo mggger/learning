@@ -13,9 +13,6 @@
         - [流](./scala/akka/stream.md)
         - [性能调优](./scala/akka/profile.md)
     - [sbt](./scala/sbt.md)
-
-
-
 - [kafka](./kafka/index.md)
     - [kafka使用场景](./kafka/chapter_1.md)
     - [kafka使用指南-生产者](./kafka/chapter_2.md)
@@ -30,7 +27,6 @@
         - [KTable](./kafka/ktable.md)
         - [性能测量](./kafka/watch.md)
         - [精确一次处理语义](./kafka/transaction.md)
-
 - [druid](./druid/about.md)
     - [源码学习](./druid/source/source.md)
         - [maven](./druid/source/maven.md)
@@ -41,7 +37,6 @@
             - [jackson](./druid/source/jackson.md)        
     - [运维](./druid/deploy/deploy.md)
         - [docker](./druid/deploy/docker.md)
-
 - [flink](./flink/about.md)
     - [架构](./flink/flink/about.md)
     - [状态管理](./flink/state/about.md)
@@ -49,31 +44,35 @@
     - [flink table](./flink/table.md)
         - [关系代数](./flink/table/1.md)
         - [apache calcite](./flink/table/2.md)
-
 - [spark](./spark/about.md)
     - [SparkSql](./spark/sparksql.md)
     - [Antlr](./spark/antlr.md)
     - [常用优化手段](./spark/optimized_in_prod.md)
     - [spark on k8s](./spark/deploy.md)
-
+- [微服务](./microservices/about.md)
+    - [kong](./microservices/kong/about.md)
+        - [jwt plugin](./microservices/kong/jwt.md)
 - [k8s](./k8s/k8s/about.md)
+    - [标签](./k8s/k8s/label.md)
+    - [副本机制和pod controller](./k8s/k8s/controller.md)
     - [Headless Services](./k8s/k8s/headless.md)
     - [Disruptions](./k8s/k8s/disruptions.md)
     - [stateful service](./k8s/k8s/stateful.md)
+    - [configMap](./k8s/k8s/configMap.md)
     - [Helm](./k8s/helm.md)
-
 - [设计模式](./design/about.md)
     - [深入浅出UML类图](./design/uml.md)
     - [创建型模式](./design/create.md)
     - [结构性模式](./design/structure.md)
     - [行为模式](./design/behavior.md)
-
 - [postgres](./postgres/about.md)
     - [MVCC](./postgres/mvcc.md)
     - [索引](./postgres/index.md)
     - [统计信息](./postgres/statistics.md)
     - [分区](./postgres/partition.md)
-
 - [算法](./algorithm/about.md)
+    - [数据结构](./algorithm/datastruct/about.md)
+        - [链表](./algorithm/datastruct/list.md)
     - [kmp](./algorithm/kmp.md)
     - [拓扑排序](./algorithm/topo_sort.md)
+
