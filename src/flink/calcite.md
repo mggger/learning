@@ -93,7 +93,7 @@ public interface Statistic {
 }
 ```
 
-![example](../images/ex1.png)
+![example](./images/ex1.png)
 
 ### SQl parser
 parser 是通过java cc 实现的

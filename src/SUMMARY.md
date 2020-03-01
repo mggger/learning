@@ -38,7 +38,7 @@
     - [运维](./druid/deploy/deploy.md)
         - [docker](./druid/deploy/docker.md)
 - [flink](./flink/infra.md)
-    - [source](./flink/source.md)
+    - [流式应用](./flink/process.md)
     - [状态管理](./flink/state.md)
     - [时间运算](./flink/time.md)
     - [关系代数](./flink/algebra.md)

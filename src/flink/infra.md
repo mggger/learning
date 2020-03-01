@@ -24,7 +24,7 @@ TaskManager是flink的工作进程. 每个taskManager提供slots， slots的个�
 提供一个REST 接口用来提交执行的appilication.
 
 
-![infra](../images/infra.png)
+![infra](./images/infra.png)
 
 
 ### 高可用保证
