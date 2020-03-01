@@ -33,7 +33,7 @@ TaskManager是flink的工作进程. 每个taskManager提供slots， slots的个�
 TaskManager 如果出现故障， jobManager会向ResourceManager请求相应的slots， 如果资源不够， jobManager不能重启application直到资源足够. 
 
 #### JobManager Failures
-JobManager存在单点故障， flink支持高可用模式， 通过zookeeper将对application的职责，元数据转移到另外的JobManager。
+JobManager存在单点故障， flink支持高可用模式， 通过zookeeper将对application的职责的元数据转移到另外的JobManager。
 
 它通过以下的步骤进行恢复:
 
