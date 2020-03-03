@@ -148,11 +148,11 @@ rules分为
 - converters   
 - transformers
 
-![example2](../images/ex2.png)
+![example2](./images/ex2.png)
 
 **Pattern matching**
 
-![example3](../images/ex3.png)
+![example3](./images/ex3.png)
 
 
 #### Planners

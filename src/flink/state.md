@@ -13,14 +13,49 @@ flink 提供了三种operator state操作
 - Union list state    
 - Broadcast state
 
+#### Broadcast state
+通过Broadcast state可以动态配置一个流式程序
 
-### Keyed state
 
-flink每个键值维护一个状态实例，并将具有相同键的所有记录分区到维护该键状态的operator任务。
+使用下面三个步骤将一个broadcast state应用在一个流上
 
-- Value state: 每个key对应一个值
-- List state: 每个key对应一系列的值
-- Map state: 每个key对应一个k-v map.
+示例:
+
+```scala
+val sensorData: DataStream[SensorReading] =  ???
+val thresholds: DataStream[ThresholdUpdate] = ??? 
+val keyedSensorData: KeyedStream[SensorReading, String] = sensorData.keyby(_.id)
+
+// 创建一个broadcase state
+val broadcastStateDescriptor = new MapStateDescriptor[String, Double](
+        "thresholds", classOf[String], classOf[Double]
+    )
+
+val broadcastThresholds: BroadcastStream[ThresholdUpdate] = 
+    thresholds.broadcast(broadcastStateDescriptor)
+
+val alerts: DataStream[(String, Double, Double)] = 
+    keyedSensorData
+    .connect(broadcastThresholds)
+    .process(new function())
+
+
+// 关于获取broadcast state
+
+...
+val broadcastThresholds = ctx.getBroadcastState(broadcastStateDescriptor) 
+```
+
+#### CheckpointFunction
+```CheckpointFunction``` 是一个低阶api， 它提供钩子函数去注册和管理keyed state 和operator stated
+
+它定义了两个函数
+```
+initializeState()
+snapshotState()
+```
+
+
 
 
 ### State 存储

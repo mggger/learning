@@ -154,13 +154,39 @@
 <li>Union list state</li>
 <li>Broadcast state</li>
 </ul>
-<a class="header" href="#keyed-state" id="keyed-state"><h3>Keyed state</h3></a>
-<p>flink每个键值维护一个状态实例，并将具有相同键的所有记录分区到维护该键状态的operator任务。</p>
-<ul>
-<li>Value state: 每个key对应一个值</li>
-<li>List state: 每个key对应一系列的值</li>
-<li>Map state: 每个key对应一个k-v map.</li>
-</ul>
+<a class="header" href="#broadcast-state" id="broadcast-state"><h4>Broadcast state</h4></a>
+<p>通过Broadcast state可以动态配置一个流式程序</p>
+<p>使用下面三个步骤将一个broadcast state应用在一个流上</p>
+<p>示例:</p>
+<pre><code class="language-scala">val sensorData: DataStream[SensorReading] =  ???
+val thresholds: DataStream[ThresholdUpdate] = ??? 
+val keyedSensorData: KeyedStream[SensorReading, String] = sensorData.keyby(_.id)
+
+// 创建一个broadcase state
+val broadcastStateDescriptor = new MapStateDescriptor[String, Double](
+        &quot;thresholds&quot;, classOf[String], classOf[Double]
+    )
+
+val broadcastThresholds: BroadcastStream[ThresholdUpdate] = 
+    thresholds.broadcast(broadcastStateDescriptor)
+
+val alerts: DataStream[(String, Double, Double)] = 
+    keyedSensorData
+    .connect(broadcastThresholds)
+    .process(new function())
+
+
+// 关于获取broadcast state
+
+...
+val broadcastThresholds = ctx.getBroadcastState(broadcastStateDescriptor) 
+</code></pre>
+<a class="header" href="#checkpointfunction" id="checkpointfunction"><h4>CheckpointFunction</h4></a>
+<p><code>CheckpointFunction</code> 是一个低阶api， 它提供钩子函数去注册和管理keyed state 和operator stated</p>
+<p>它定义了两个函数</p>
+<pre><code>initializeState()
+snapshotState()
+</code></pre>
 <a class="header" href="#state-存储" id="state-存储"><h3>State 存储</h3></a>
 <ol>
 <li>内存， 将状态存储在内存(JVM heap).</li>
