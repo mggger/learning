@@ -30,7 +30,12 @@ google到数学里定义的群(group): G为非空集合，如果在G上定义的
 
 ```scala
 trait  Monoid[A] {
+
+    
+    // 满足 combine(combine(a, b), c) == combine(a, combine(b, c))
     def combine(x: A, y: A): A
+
+    // 满足combine（a, empty) == a 和 combine(empty, a) == a 
     def empty: A
 }
 ```
@@ -58,12 +63,12 @@ trait Functor[F[_]] {
 
 不论我们将多个小操作一个接一个地排序，还是在映射前将它们组合成一个更大的功能，函子都保证相同的语义。为确保确实如此，必须遵守以下法律：
 
-**identity:** 
+**identity** 
 ```scala
 fa.map(a => a) == fa 
 ```
 
-** Composi􏰃on:**
+**composion**
 ```scala
 fa.map(g(f(_))) == fa.map(f).map(g)
 ```

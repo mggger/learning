@@ -76,6 +76,7 @@
 - [算法](./algorithm/about.md)
     - [数据结构](./algorithm/datastruct/about.md)
         - [链表](./algorithm/datastruct/list.md)
+        - [红黑树](./algorithm/datastruct/rbtree.md)
     - [kmp](./algorithm/kmp.md)
     - [拓扑排序](./algorithm/topo_sort.md)
 
