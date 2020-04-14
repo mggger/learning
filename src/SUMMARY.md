@@ -5,6 +5,7 @@
         - [理论](./scala/functional/theory.md)
     - [一些特性](./scala/feature/feature.md)
         - [lazy](./scala/feature/lazy.md)
+        - [reflect](./scala/feature/reflect.md)
     - [akka](./scala/akka.md)
         - [future](./scala/akka/future.md)
         - [分布式](./scala/akka/distribute.md)
