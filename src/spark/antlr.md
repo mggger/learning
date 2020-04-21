@@ -255,12 +255,8 @@ System.out.println(loader.props); // print results
 ```
 
 ## 小试牛刀
-使用命令行处理excel / csv文件(基于sql).
+罗马数字计算器
 
-语法层: 使用antlr
-
-执行层: 使用pandas api
-
-项目地址: 
+项目地址: https://github.com/mggger/roman-calculator
 
 
