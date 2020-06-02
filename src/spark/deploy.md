@@ -72,7 +72,7 @@ metadata:
 spec:
   type: Scala
   mode: cluster
-  image: "swr.cn-east-2.myhuaweicloud.com/mudutv/spark:2.0.0-OpenShift-2.4.0"
+  image: "spark:2.0.0-OpenShift-2.4.0"
   imagePullPolicy: IfNotPresent
   imagePullSecrets:
     - sparksecret

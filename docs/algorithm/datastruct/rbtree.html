@@ -144,98 +144,67 @@
                 <div id="content" class="content">
                     <main>
                         <a class="header" href="#红黑树" id="红黑树"><h1>红黑树</h1></a>
-<p>红黑树是一个二分查找树具有下列的属性:</p>
+<p>红黑树是一个平衡的二分查找树具有下列的属性:</p>
 <ul>
-<li>每一个节点要么是红的，要么是黑的</li>
-<li>每一个叶子节点(null)是黑的</li>
-<li>如果一个节点是红的， 那么它的两个孩子是黑色的</li>
-<li>从节点到后代叶的简单路径包含相同数量的黑色节点。</li>
+<li>
+<p>红色节点平衡条件:  每一个红色节点有一个黑色父亲</p>
+</li>
+<li>
+<p>黑色节点平衡条件： root节点到null节点包含相等的黑色节点数目.</p>
+</li>
 </ul>
-<p>一些结论：</p>
+<p>另外一种解释:</p>
+<ul>
+<li>红链接均为左链接</li>
+<li>没有任何一个节点同时和两条红链接相连;</li>
+</ul>
+<p>结论：</p>
 <p>一个红黑树具有n个内部节点，它的高度最大为 <code>2log(n+1)</code>,  所以它搜索的复杂度为O(log n)</p>
 <a class="header" href="#红黑树的插入" id="红黑树的插入"><h2>红黑树的插入</h2></a>
 <ol>
-<li>检查是否树为空</li>
-<li>如果树为空， 则新建一个黑色的root节点</li>
-<li>如果树不为空， 插入新的叶子节点， 颜色为红色
+<li>
+<p>检查是否树为空</p>
+</li>
+<li>
+<p>如果树为空， 则新建一个黑色的root节点</p>
+</li>
+<li>
+<p>重新着色: 如果节点p 的左, 右子树都是红色， 则将p设置为红色， 左右子树设置为黑色.</p>
+</li>
+<li>
+<p>如果树不为空， 插入新的叶子节点， 颜色为红色</p>
 <ul>
-<li>如果新节点的父亲节点为黑色， 则退出操作</li>
-<li>如果新节点的父亲节点为红色， 检查父节点同级newNode的颜色
+<li>如果值大于当前节点(root)的值， 将这个新节点插入root右子树</li>
+<li>如果值小于当前节点(root)的值,    将这个新节点插入root左子树</li>
+<li>如果值等于当前节点(root)的值,     不做任何改变， 返回root节点的状态</li>
+</ul>
+<p>如果当前节点的右子树是红色的， 左子树是黑色的，进行左旋</p>
+<p>如果当前节点的左子树是红色的， 左子树的左子树是红色的， 进行右旋</p>
+<p>如果当前节点的左子树是红色的， 右子树是红色的， 则进行重新着色.</p>
+</li>
+</ol>
+<a class="header" href="#红黑树的删除" id="红黑树的删除"><h2>红黑树的删除</h2></a>
+<a class="header" href="#deletemin" id="deletemin"><h4>deleteMin</h4></a>
+<p>操作手段:</p>
+<ol>
+<li>
+<p>如果root节点是2-节点， 并且它的两个子节点都是2-节点， 将这三个节点合并成一个4-节点.</p>
+</li>
+<li>
+<p>否则需要保证根的左节点不是2- 节点,  如有必要可以从它右侧的兄弟节点借一个键来</p>
+</li>
+</ol>
 <ul>
-<li>如果颜色为黑色或NULL，则进行适当的旋转并重新着色。</li>
-<li>如果颜色为红色，则执行重新着色。重复相同的操作，直到树变为Red Black Tree。</li>
+<li>
+<p>如果当前节点不是2-节点 完成</p>
+</li>
+<li>
+<p>如果当前节点是2-节点， 兄弟节点不是2-节点， 从兄弟节点借一个键值</p>
+</li>
+<li>
+<p>如果当前节点的左子节点和它的亲兄弟节点都是2-节点， 将左子节点，父节点中的最小键和左子节点最近的兄弟节点合并为一个4-节点， 使父节点由4-节点 -&gt; 3-节点或者3-节点 -&gt; 2-节点</p>
+</li>
 </ul>
-</li>
-</ul>
-</li>
-</ol>
-<a class="header" href="#重新着色" id="重新着色"><h3>重新着色</h3></a>
-<p>我们先尝试重新着色，如果重新着色不起作用，则进行旋转</p>
-<ol>
-<li>如果叔叔的颜色是红色的， 重新着色</li>
-<li>如果叔叔的颜色是黑色的， 则进行旋转或者重新着色</li>
-</ol>
-<p>设x为要插入的节点</p>
-<ol>
-<li>
-<p>插入x， 颜色为红色</p>
-</li>
-<li>
-<p>如果x是root节点， 则调整x的颜色为黑色</p>
-</li>
-<li>
-<p>重复下面的操作: 如果x的父亲不是黑色并且x不是root节点</p>
-<p>a. 如果x的叔叔是红色的 (x的爷爷必须为黑色)</p>
-<pre><code> 1. 调整x的叔叔和父亲为黑色的
- 2. 调整x的的祖父为红色
- 3. 将x的祖父递归， 重复2, 3
-</code></pre>
-<p><img src="./images/rb1.png" alt="1.png" /></p>
-<p>b. 如果x的叔叔是黑色的, 会有下面四种情况， 设x的父亲为p， x的祖父为g</p>
-<pre><code> 1. left left case  （p是g的左子树， x是p的左子树)
-</code></pre>
-<p><img src="./images/rb2.png" alt="2.png" /></p>
-<pre><code> 2. left right case  (p是g的左子树， x是p的右子树)
-</code></pre>
-<p><img src="./images/rb3.png" alt="3.png" /></p>
-<pre><code> 3. right right case （1 的对称)
-</code></pre>
-<p><img src="./images/rb4.png" alt="4.png" /></p>
-<pre><code> 4. right left case 
-</code></pre>
-<p><img src="./images/rb5.png" alt="5.png" /></p>
-</li>
-</ol>
-<a class="header" href="#旋转的操作" id="旋转的操作"><h3>旋转的操作</h3></a>
-<p><img src="./images/rotation.gif" alt="rotation" /></p>
-<p>左旋</p>
-<pre><code class="language-scala">
-private[this] def balanceLeft[A, B, B1 &gt;: B](isBlack: Boolean, z: A, zv: B, 
-    l: Tree[A, B1], 
-    d: Tree[A, B1]): Tree[A, B1] = {
-    if (isRedTree(l) &amp;&amp; isRedTree(l.left))
-      RedTree(l.key, l.value, BlackTree(l.left.key, l.left.value, l.left.left, l.left.right), 
-      BlackTree(z, zv, l.right, d))
-    else if (isRedTree(l) &amp;&amp; isRedTree(l.right))
-      RedTree(l.right.key, l.right.value, BlackTree(l.key, l.value, l.left, l.right.left), 
-      BlackTree(z, zv, l.right.right, d))
-    else
-      mkTree(isBlack, z, zv, l, d)
-  }
-</code></pre>
-<p>右旋</p>
-<pre><code class="language-scala">private[this] def balanceRight[A, B, B1 &gt;: B](isBlack: Boolean, x: A, xv: B, 
-    a: Tree[A, B1], r: Tree[A, B1]): Tree[A, B1] = {
-    if (isRedTree(r) &amp;&amp; isRedTree(r.left))
-      RedTree(r.left.key, r.left.value, BlackTree(x, xv, a, r.left.left), 
-      BlackTree(r.key, r.value, r.left.right, r.right))
-    else if (isRedTree(r) &amp;&amp; isRedTree(r.right))
-      RedTree(r.key, r.value, BlackTree(x, xv, a, r.left), 
-      BlackTree(r.right.key, r.right.value, r.right.left, r.right.right))
-    else
-      mkTree(isBlack, x, xv, a, r)
-  }
-</code></pre>
 <a class="header" href="#参考资料" id="参考资料"><h4>参考资料</h4></a>
 <p><a href="https://www.geeksforgeeks.org/red-black-tree-set-2-insert/">RBTree</a></p>
 <p><a href="http://www.btechsmartclass.com/data_structures/red-black-trees.html">red-black-trees</a></p>
